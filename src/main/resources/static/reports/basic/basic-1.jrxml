@@ -24,17 +24,9 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b1.png" )]]></imageExpression>
-			</image>
-			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
-				<reportElement x="0" y="0" width="800" height="449" isRemoveLineWhenBlank="true" uuid="e70a4866-7e06-4fcc-9709-2ce967e683f7">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<box padding="0">
-					<pen lineWidth="1.0" lineStyle="Solid"/>
-				</box>
-				<imageExpression><![CDATA["b1.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b1.png" ):
+"b1.png"]]></imageExpression>
 			</image>
 			<rectangle radius="4">
 				<reportElement x="108" y="36" width="125" height="24" uuid="69e8c330-b9e4-4e8d-a87c-b5a47a3269ac">
