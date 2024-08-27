@@ -7,7 +7,7 @@
 		<![CDATA[]]>
 	</queryString>
 	<detail>
-		<part uuid="5a88aeec-7345-4f9d-a0ba-27a48c0fc74b">
+		<part uuid="b611e449-f0ee-4513-9ea0-81dc15746523">
 			<p:subreportPart xmlns:p="http://jasperreports.sourceforge.net/jasperreports/parts" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/parts http://jasperreports.sourceforge.net/xsd/parts.xsd">
 				<subreportParameter name="REPORT_DATA_SOURCE">
 					<subreportParameterExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></subreportParameterExpression>
