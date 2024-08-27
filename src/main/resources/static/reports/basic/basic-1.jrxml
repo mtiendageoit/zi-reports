@@ -11,13 +11,14 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="params" class="java.util.Map" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
 	<detail>
 		<band height="449" splitType="Stretch">
 			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
-				<reportElement x="0" y="0" width="800" height="449" isRemoveLineWhenBlank="true" uuid="18b17603-c665-4298-a1d4-86ffa4944393">
+				<reportElement mode="Transparent" x="0" y="0" width="800" height="449" isRemoveLineWhenBlank="true" uuid="18b17603-c665-4298-a1d4-86ffa4944393">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -29,6 +30,11 @@
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b1.png" ):
 "b1.png"]]></imageExpression>
 			</image>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="20" y="217" width="310" height="40" uuid="b8279ed5-bb0c-4bd1-b6ec-77693a7da617"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{params}.get( "address" )]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>

@@ -3,6 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="basic" pageWidth="595" pageHeight="842" sectionType="Part" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="d2716064-8ae4-40cf-a575-33afba400e3a">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="true"/>
+	<parameter name="params" class="java.util.Map" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -14,6 +15,9 @@
 				</subreportParameter>
 				<subreportParameter name="REPORT_CLASS_LOADER">
 					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-1.jasper" ):
@@ -27,6 +31,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-1.jasp
 				</subreportParameter>
 				<subreportParameter name="REPORT_CLASS_LOADER">
 					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-2.jasper" ):
