@@ -10,7 +10,9 @@ import com.zonainmueble.reports.services.IReportService;
 
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/reports")
@@ -19,6 +21,8 @@ public class ApiController {
 
   @PostMapping
   public ResponseEntity<byte[]> report(@RequestParam ReportType type, @Valid @RequestBody ReportRequestDto input) {
+    log.info("Processing report type: {}, input: {}", input);
+
     IReportService service = serviceFactory.serviceOf(type);
     byte[] report = service.generateReport(input);
 
