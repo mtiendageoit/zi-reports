@@ -11,6 +11,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="net.sf.jasperreports.components.map.key" value="AIzaSyDi9WC7UZjkzFdofNS8K0jYbRurOrIVrfQ"/>
 	<parameter name="params" class="java.util.Map" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[]]>
@@ -30,11 +31,33 @@
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b1.png" ):
 "b1.png"]]></imageExpression>
 			</image>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="14" y="47" width="314" height="165" uuid="5293b11f-9329-4aa4-8757-062dac704005">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25" lineColor="#242424"/>
+				</box>
+				<imageExpression><![CDATA[$P{params}.get( "mapImage1" )]]></imageExpression>
+			</image>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="20" y="217" width="310" height="40" uuid="b8279ed5-bb0c-4bd1-b6ec-77693a7da617"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$P{params}.get( "address" )]]></textFieldExpression>
 			</textField>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="107" y="36" width="127" height="24" forecolor="#8A8A8A" uuid="6463cb2c-03f4-4059-b9f4-a86aff97463f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="107" y="37" width="126" height="22" uuid="57e697b9-3123-457c-8be6-351c54c128de"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Ubicación del análisis]]></text>
+			</staticText>
 		</band>
 	</detail>
 </jasperReport>

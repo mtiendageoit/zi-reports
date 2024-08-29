@@ -48,6 +48,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-2.jasp
 				<subreportParameter name="REPORT_CLASS_LOADER">
 					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
 				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
+				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-3.jasper" ):
 "basic-3.jasper"]]></subreportExpression>
@@ -60,6 +63,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-3.jasp
 				</subreportParameter>
 				<subreportParameter name="REPORT_CLASS_LOADER">
 					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-4.jasper" ):
@@ -74,6 +80,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-4.jasp
 				<subreportParameter name="REPORT_CLASS_LOADER">
 					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
 				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
+				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-5.jasper" ):
 "basic-5.jasper"]]></subreportExpression>
@@ -86,6 +95,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-5.jasp
 				</subreportParameter>
 				<subreportParameter name="REPORT_CLASS_LOADER">
 					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-6.jasper" ):
@@ -100,6 +112,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-6.jasp
 				<subreportParameter name="REPORT_CLASS_LOADER">
 					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
 				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
+				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-7.jasper" ):
 "basic-7.jasper"]]></subreportExpression>
@@ -112,6 +127,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-7.jasp
 				</subreportParameter>
 				<subreportParameter name="REPORT_CLASS_LOADER">
 					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-8.jasper" ):

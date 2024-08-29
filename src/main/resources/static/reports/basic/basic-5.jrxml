@@ -11,6 +11,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="params" class="java.util.Map" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -29,6 +30,28 @@
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b5.png" ):
 "b5.png"]]></imageExpression>
 			</image>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="25" y="72" width="365" height="300" uuid="77965d10-4268-4b97-a060-2c504780fb77">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25" lineColor="#242424"/>
+				</box>
+				<imageExpression><![CDATA[$P{params}.get( "mapImage5" )]]></imageExpression>
+			</image>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="76" y="56" width="233" height="24" forecolor="#8A8A8A" uuid="4785d7da-1351-4355-aed5-b8a8acc2097f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="76" y="57" width="232" height="22" uuid="e477166c-be3d-42a6-a040-6f765e86bfbe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Ubicación del análisis]]></text>
+			</staticText>
 		</band>
 	</detail>
 </jasperReport>
