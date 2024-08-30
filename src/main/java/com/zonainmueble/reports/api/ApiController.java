@@ -3,10 +3,10 @@ package com.zonainmueble.reports.api;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import com.zonainmueble.reports.dto.ReportRequestDto;
+import com.zonainmueble.reports.dto.ReportRequest;
 import com.zonainmueble.reports.enums.ReportType;
 import com.zonainmueble.reports.factories.ReportServiceFactory;
-import com.zonainmueble.reports.services.IReportService;
+import com.zonainmueble.reports.services.ReportService;
 
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -20,10 +20,10 @@ public class ApiController {
   private final ReportServiceFactory serviceFactory;
 
   @PostMapping
-  public ResponseEntity<byte[]> report(@RequestParam ReportType type, @Valid @RequestBody ReportRequestDto input) {
+  public ResponseEntity<byte[]> report(@RequestParam ReportType type, @Valid @RequestBody ReportRequest input) {
     log.info("Processing report type: {}, input: {}", input);
 
-    IReportService service = serviceFactory.serviceOf(type);
+    ReportService service = serviceFactory.serviceOf(type);
     byte[] report = service.generateReport(input);
 
     HttpHeaders headers = new HttpHeaders();

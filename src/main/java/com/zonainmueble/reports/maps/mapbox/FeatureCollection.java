@@ -1,4 +1,4 @@
-package com.zonainmueble.reports.maps;
+package com.zonainmueble.reports.maps.mapbox;
 
 import lombok.Data;
 import java.util.List;

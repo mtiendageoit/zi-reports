@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @ValidCoordinates
-public class ReportRequestDto {
+public class ReportRequest {
   @NotBlank
   private String address;
 

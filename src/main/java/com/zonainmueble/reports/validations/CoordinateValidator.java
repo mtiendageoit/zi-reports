@@ -1,18 +1,18 @@
 package com.zonainmueble.reports.validations;
 
-import com.zonainmueble.reports.dto.ReportRequestDto;
+import com.zonainmueble.reports.dto.ReportRequest;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class CoordinateValidator implements ConstraintValidator<ValidCoordinates, ReportRequestDto> {
+public class CoordinateValidator implements ConstraintValidator<ValidCoordinates, ReportRequest> {
 
     @Override
     public void initialize(ValidCoordinates constraintAnnotation) {
     }
 
     @Override
-    public boolean isValid(ReportRequestDto dto, ConstraintValidatorContext context) {
+    public boolean isValid(ReportRequest dto, ConstraintValidatorContext context) {
         if (dto == null) {
             return true; // Considerar que si el DTO es null, la validación no aplica
         }

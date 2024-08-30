@@ -1,7 +1,6 @@
 package com.zonainmueble.reports.services;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -15,7 +14,7 @@ import net.sf.jasperreports.engine.*;
 
 @Slf4j
 @Service
-public class JasperReport {
+public class JasperReportService {
 
   @Value("${spring.profiles.active}")
   private String activeProfile;
