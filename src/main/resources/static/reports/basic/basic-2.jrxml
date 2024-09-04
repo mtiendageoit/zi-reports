@@ -57,6 +57,164 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b2.png" ):
 				</textElement>
 				<text><![CDATA[Area de cobertura 5 minutos caminando]]></text>
 			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="646" y="82" width="123" height="36" forecolor="#723669" uuid="91498ac2-1ff5-4ffa-a107-b8055ec15759"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tiendas de Conveniencia
+(abarrotes, Oxxo, parecidos)]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="612" y="16" width="36" height="42" uuid="f459f522-8859-4727-b220-3880dd7eac9e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="28" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_atm" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="646" y="23" width="123" height="28" forecolor="#723669" uuid="4467733f-222b-42ac-97ad-d5686a55843c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cajeros Automáticos 
+(cercanos) 
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="610" y="80" width="36" height="42" uuid="1c4e57d2-7157-4fd7-af8f-fefc87df2211"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="28" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_convenience_store" )]]></textFieldExpression>
+			</textField>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="578" y="232" width="185" height="24" forecolor="#8A8A8A" uuid="92a551aa-b17f-4e48-b782-f70e15c07e52">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="579" y="233" width="183" height="23" uuid="c0a375f2-e09d-4ccb-872a-4ea8a2c2084a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Precio  de bienes inmuebles por metro Cuadrado para transacciones de venta]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="11" y="15" width="170" height="48" uuid="8dd5b356-28a0-42df-990d-90de46caa85b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "zona_habitantes" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="15" y="90" width="167" height="35" uuid="6a0d8c93-706c-40ed-979e-0d90f1634ad1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "zona_habitantes_infantil" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="12" y="191" width="172" height="28" uuid="02e5b8aa-00d8-4272-9372-07d01423ab49">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["de los habitantes tienen " + $P{params}.get( "zona_peh_desc_1" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="12" y="154" width="172" height="37" uuid="1a0811c8-9271-4167-b68f-bd5693514d2f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="28" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "zona_peh_porcentaje_1" ) + "%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="12" y="268" width="172" height="28" uuid="4f90a0ff-162a-4c8d-b36d-5e2b7c204999">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["de los habitantes tienen " + $P{params}.get( "zona_peh_desc_2" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="64" y="247" width="75" height="21" uuid="c0333862-5439-44ce-90ef-cb6f5a579301">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "zona_peh_porcentaje_2" ) + "%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="57" y="324" width="75" height="30" forecolor="#F71C19" uuid="0d74a321-acfc-4a3c-9776-8013175debac">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "habitantes_vivienda" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement mode="Opaque" x="12" y="370" width="172" height="71" forecolor="#8F7DB0" uuid="8e12f5b9-161a-49fd-80ff-d91e9adc8fe1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="19" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "zona_densidad" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="38" y="354" width="114" height="16" forecolor="#FC144A" uuid="876b0e41-9f50-4865-a0c2-22e6c71092bf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Habitantes x Vivienda]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="12" y="223" width="172" height="24" uuid="4c17748d-aa28-454a-aec0-57975806a5ca">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En promedio en "+ $P{params}.get( "nombre_edo" )+" el "+$P{params}.get( "zona_peh_porcentaje_edo_1" )+"% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_1" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="12" y="294" width="172" height="24" uuid="c7e45edb-bc10-42d9-826b-d19a2fdd7c4e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En promedio en " + $P{params}.get( "nombre_edo" ) + " el "+ $P{params}.get( "zona_peh_porcentaje_edo_2" ) + "% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_2" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="20" y="125" width="158" height="22" uuid="e39a4369-c3b5-49d7-aa91-64323cd6868e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En comparación con la media de " +  $P{params}.get( "nombre_edo" ) + " Rangos de edad de 0 a 11 años"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="20" y="63" width="158" height="16" uuid="5a5f22f9-c9e0-4bfa-abf9-afc1af457a3b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En comparación con los datos de  " + $P{params}.get( "nombre_edo" )]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>

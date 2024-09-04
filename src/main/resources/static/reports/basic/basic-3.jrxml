@@ -52,6 +52,64 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b3.png" ):
 				</textElement>
 				<text><![CDATA[Ubicación del análisis]]></text>
 			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="406" y="92" width="375" height="200" uuid="807043af-7340-491d-8bc2-90d3618ab574">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" markup="styled">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[El reporte básico de ubicación te entrega datos de gran valor del <style isBold="true">entorno demográfico entre otros factores de la ubicación del inmueble </style>a partir de un área de cobertura (polígono) la cual es determinada por la distancia recorrida desde la ubicación de análisis caminando 5 minutos en cualquier dirección posible.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="408" y="308" width="174" height="19" uuid="ffd1653e-d39d-4b70-bbfb-b4de039102ad"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tiempos de Viaje Analizados]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="594" y="308" width="174" height="19" uuid="61572390-8755-4c12-bc1c-8403658a9165"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Medios de Transporte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="409" y="389" width="174" height="19" uuid="4154142f-7f98-47cc-beb1-3392fc76fa64"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha y hora del reporte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="490" y="59" width="223" height="22" uuid="bfa9d6ef-f25d-46fe-ac99-ba66e4435fca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[¿Qué encontraré en este reporte?]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="409" y="409" width="171" height="18" uuid="f7423896-f998-4d82-be50-b2274f2a5f06">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{params}.get( "build_time" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="29" y="389" width="350" height="40" uuid="529ce93f-eff6-4d64-90a1-c7211756faf3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{params}.get( "address" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="4" width="800" height="39" forecolor="#793F70" uuid="b35ec7f0-cd42-4e45-92f8-b21d6515cd83"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte básico de ubicación]]></text>
+			</staticText>
 		</band>
 	</detail>
 </jasperReport>

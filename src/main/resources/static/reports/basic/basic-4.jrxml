@@ -11,6 +11,10 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<subDataset name="grafica_dataset" uuid="252cfc66-5fd9-461c-a816-b34ceffbebd8">
+		<field name="category" class="java.lang.String"/>
+		<field name="value" class="java.lang.Double"/>
+	</subDataset>
 	<parameter name="params" class="java.util.Map" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[]]>
@@ -40,6 +44,13 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 				</box>
 				<imageExpression><![CDATA[$P{params}.get( "mapImage4" )]]></imageExpression>
 			</image>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="17" y="4" width="250" height="66" uuid="d8888cfe-d328-48e7-b949-a8ec5ee1c758">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{params}.get( "address" )]]></textFieldExpression>
+			</textField>
 			<rectangle radius="6">
 				<reportElement mode="Opaque" x="41" y="59" width="205" height="24" forecolor="#8A8A8A" uuid="78db7d6e-6ea7-483f-bfe8-02819cc5319b">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -66,13 +77,6 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 				</textElement>
 				<textFieldExpression><![CDATA["En 2010 habían " + $P{params}.get( "habitantes2010" )]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement mode="Opaque" x="17" y="4" width="250" height="66" uuid="d8888cfe-d328-48e7-b949-a8ec5ee1c758">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{params}.get( "address" )]]></textFieldExpression>
-			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="100" y="392" width="84" height="30" uuid="6fe2ad72-e6b5-4b68-9987-f623fe0ee24a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -85,7 +89,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="22" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{params}.get( "anios_estudio" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get( "zona_peh_grado_promedio_1" ) + " años"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="275" y="77" width="55" height="22" uuid="d72e389c-f77b-40a9-9989-512313d2836b">
@@ -165,7 +169,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="11" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[ $P{params}.get( "viviendas_1_dormitorio" ) +" tienen 1 dormitorio"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get( "viviendas_1_dormitorio" ) +" tienen 1 dormitorio"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="440" y="205" width="130" height="40" uuid="0d147d50-5d1e-466c-98cd-4fc49ae371fa">
@@ -175,7 +179,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="11" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[ $P{params}.get( "viviendas_2mas_dormitorios" ) +" tienen 2 o más dormitorios"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get( "viviendas_2mas_dormitorios" ) +" tienen 2 o más dormitorios"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="433" y="145" width="136" height="32" uuid="1a0d47b5-7ad5-4ed4-8718-109de59b0ae3">
@@ -457,6 +461,99 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 				</textElement>
 				<textFieldExpression><![CDATA["Grupos de edad (años)"]]></textFieldExpression>
 			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="184" y="422" width="80" height="25" uuid="10db0197-feeb-4dc7-a4a8-1aa6a2a0350a"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Equivalente a " + $P{params}.get( "zona_peh_desc_1" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="14" y="378" width="84" height="12" uuid="2e44d63f-7f8d-45ef-84d1-6a78851693bb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5.4" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número de habitantes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="100" y="378" width="84" height="12" uuid="9913b290-8e06-45ef-96c7-14743466eb8c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5.4" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Niñas y niños]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="184" y="378" width="80" height="12" uuid="3bc4b2c5-0375-4d2e-b5e8-ceec8ed8baa3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="5.4" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Escolaridad promedio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="590" y="8" width="80" height="20" forecolor="#2D9BAF" uuid="2539a44a-1724-45f5-89cf-d2961bddafb2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Gentrificación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="679" y="11" width="110" height="100" forecolor="#70536B" uuid="08a39c13-a85f-41dc-bfe1-31d4f712889b"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Flujo de personas que llegan a la zona desde otros Estados y que sustituyen a la población originaria (del mismo Estado)
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="637" y="126" width="148" height="20" forecolor="#723669" uuid="5b259f49-a508-455f-976a-49799abce8a3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cajeros Automáticos (ATM)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="640" y="209" width="148" height="20" forecolor="#723669" uuid="736ac6fd-8734-44fc-8b2a-bdd56fcdf42f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tiendas de Conveniencia
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="640" y="226" width="148" height="18" forecolor="#723669" uuid="d6da0c61-6505-4052-b309-7fbc6ce13943"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[(abarrotes, Oxxo, parecidos)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="615" y="280" width="148" height="14" forecolor="#723669" uuid="46afa0e7-9f4b-492a-a7a6-6b9fe15b0611"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nivel de escolaridad]]></text>
+			</staticText>
+			<pieChart>
+				<chart isShowLegend="false" evaluationTime="Report">
+					<reportElement mode="Opaque" x="520" y="295" width="270" height="152" uuid="2abdbda2-29ff-4590-9b77-90c2f93d9184"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<datasetRun subDataset="grafica_dataset" uuid="821d7500-b2ac-4445-a5a6-bf4294e321c6">
+							<dataSourceExpression><![CDATA[$P{params}.get( "grafica_dataset" )]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+					<keyExpression><![CDATA[$F{category}]]></keyExpression>
+					<valueExpression><![CDATA[$F{value}]]></valueExpression>
+				</pieDataset>
+				<piePlot isCircular="true" labelFormat="{0} ({2})">
+					<plot/>
+					<itemLabel>
+						<font size="7"/>
+					</itemLabel>
+				</piePlot>
+			</pieChart>
 		</band>
 	</detail>
 </jasperReport>

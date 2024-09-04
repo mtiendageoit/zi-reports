@@ -52,6 +52,70 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b5.png" ):
 				</textElement>
 				<text><![CDATA[Ubicación del análisis]]></text>
 			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="5" width="770" height="39" forecolor="#793F70" uuid="377c9c58-14a2-44ac-8b4a-6043bb236104"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Conclusión general del reporte básico de ubicación]]></text>
+			</staticText>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="487" y="59" width="230" height="24" forecolor="#8A8A8A" uuid="e913590c-49a6-4d33-9fdb-455d740a23cc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="487" y="60" width="230" height="22" uuid="aa96add8-5a3d-459d-9e58-1aa3832c67ad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Conclusión general]]></text>
+			</staticText>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="29" y="389" width="350" height="40" uuid="df8747d5-c134-4c19-a719-6e4466b92b97"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{params}.get( "address" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="408" y="308" width="174" height="19" uuid="2287f20c-6f16-40e9-9340-7c6f92b78a7a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tiempos de Viaje Analizados]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="594" y="308" width="174" height="19" uuid="e17311a5-b2c5-4734-b76b-9ced7f1bcc26"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Medios de Transporte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="409" y="389" width="174" height="19" uuid="af1ba50c-85fe-4e91-b233-ea5b575b32ad"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha y hora del reporte]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="409" y="409" width="171" height="18" uuid="2bcb7efb-9375-4a6c-ba59-7d529d96f7b3">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{params}.get( "build_time" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="406" y="92" width="375" height="200" uuid="c4e13fee-40ac-496f-883b-df4be1fd93d3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" markup="styled">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[La ubicación en Manuel López Cotilla 1535-1553, Col del Valle Centro, Benito Juárez, Ciudad de México, ofrece una comunidad educada y estable, con 93% de los residentes teniendo educación superior y una baja gentrificación del 28%. Con servicios accesibles como tiendas de conveniencia y cajeros automáticos en un radio de 5 minutos caminando, y un entorno demográfico favorable para familias, esta zona es una excelente opción tanto para comprar como para rentar.
+]]></text>
+			</staticText>
 		</band>
 	</detail>
 </jasperReport>

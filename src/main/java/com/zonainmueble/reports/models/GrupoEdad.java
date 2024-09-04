@@ -1,11 +1,11 @@
-package com.zonainmueble.reports.statistics;
+package com.zonainmueble.reports.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
-public class PopulationRange {
+public class GrupoEdad {
   @Id
   private int id;
   private Double p0a2f20;
