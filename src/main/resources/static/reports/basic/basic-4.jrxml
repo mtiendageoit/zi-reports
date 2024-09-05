@@ -66,7 +66,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 			<textField>
 				<reportElement mode="Opaque" x="14" y="392" width="84" height="30" uuid="987b869d-9282-4f85-ba64-d944af6d31fb"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="22" isBold="true"/>
+					<font size="20" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{params}.get( "habitantes" )]]></textFieldExpression>
 			</textField>
@@ -80,14 +80,14 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 			<textField>
 				<reportElement mode="Opaque" x="100" y="392" width="84" height="30" uuid="6fe2ad72-e6b5-4b68-9987-f623fe0ee24a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="22" isBold="true"/>
+					<font size="20" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{params}.get( "ninos" )]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="184" y="392" width="80" height="30" uuid="a8cad1a7-2f52-44b7-8008-c43e7dd16cd3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="22" isBold="true"/>
+					<font size="20" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{params}.get( "zona_peh_grado_promedio_1" ) + " años"]]></textFieldExpression>
 			</textField>
@@ -198,19 +198,19 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 				</textElement>
 				<textFieldExpression><![CDATA[$P{params}.get( "gentrificacion" ) + " %"]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement mode="Transparent" x="667" y="154" width="80" height="30" uuid="0f1bc9c3-f911-4b13-b136-829c78a13c9a"/>
+			<textField textAdjust="ScaleFont">
+				<reportElement mode="Opaque" x="667" y="154" width="80" height="30" uuid="0f1bc9c3-f911-4b13-b136-829c78a13c9a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="22" isBold="false"/>
+					<font size="23" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["5"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_numero_1" )]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement mode="Transparent" x="666" y="239" width="80" height="30" uuid="b6ab2dd9-5c8d-473d-a0d0-2c6016c6c6e2"/>
+				<reportElement mode="Opaque" x="666" y="239" width="80" height="30" uuid="b6ab2dd9-5c8d-473d-a0d0-2c6016c6c6e2"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="22" isBold="false"/>
+					<font size="23" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["5"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_numero_2" )]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="330" y="145" width="55" height="13" uuid="033225e6-3ea6-4d67-b268-688056f31964">
@@ -503,28 +503,6 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="637" y="126" width="148" height="20" forecolor="#723669" uuid="5b259f49-a508-455f-976a-49799abce8a3"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Cajeros Automáticos (ATM)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="640" y="209" width="148" height="20" forecolor="#723669" uuid="736ac6fd-8734-44fc-8b2a-bdd56fcdf42f"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
-					<font size="10" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Tiendas de Conveniencia
-]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="640" y="226" width="148" height="18" forecolor="#723669" uuid="d6da0c61-6505-4052-b309-7fbc6ce13943"/>
-				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
-					<font size="9" isBold="false"/>
-				</textElement>
-				<text><![CDATA[(abarrotes, Oxxo, parecidos)]]></text>
-			</staticText>
-			<staticText>
 				<reportElement mode="Opaque" x="615" y="280" width="148" height="14" forecolor="#723669" uuid="46afa0e7-9f4b-492a-a7a6-6b9fe15b0611"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font size="11" isBold="true"/>
@@ -554,6 +532,30 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 					</itemLabel>
 				</piePlot>
 			</pieChart>
+			<textField textAdjust="ScaleFont">
+				<reportElement mode="Opaque" x="640" y="126" width="148" height="28" forecolor="#723669" uuid="a4711100-d7eb-4150-9350-27345ee3ce75">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_nombre_1" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement mode="Opaque" x="642" y="205" width="148" height="34" forecolor="#723669" uuid="9167d168-0667-4f81-abd7-93f34241f554">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_nombre_2" )]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>

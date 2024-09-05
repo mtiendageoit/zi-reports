@@ -57,37 +57,6 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b2.png" ):
 				</textElement>
 				<text><![CDATA[Area de cobertura 5 minutos caminando]]></text>
 			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="646" y="82" width="123" height="36" forecolor="#723669" uuid="91498ac2-1ff5-4ffa-a107-b8055ec15759"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Tiendas de Conveniencia
-(abarrotes, Oxxo, parecidos)]]></text>
-			</staticText>
-			<textField>
-				<reportElement mode="Opaque" x="612" y="16" width="36" height="42" uuid="f459f522-8859-4727-b220-3880dd7eac9e"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="28" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{params}.get( "pois_atm" )]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement mode="Opaque" x="646" y="23" width="123" height="28" forecolor="#723669" uuid="4467733f-222b-42ac-97ad-d5686a55843c"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
-					<font size="10" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Cajeros Automáticos 
-(cercanos) 
-]]></text>
-			</staticText>
-			<textField>
-				<reportElement mode="Opaque" x="610" y="80" width="36" height="42" uuid="1c4e57d2-7157-4fd7-af8f-fefc87df2211"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="28" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{params}.get( "pois_convenience_store" )]]></textFieldExpression>
-			</textField>
 			<rectangle radius="6">
 				<reportElement mode="Opaque" x="578" y="232" width="185" height="24" forecolor="#8A8A8A" uuid="92a551aa-b17f-4e48-b782-f70e15c07e52">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -214,6 +183,61 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b2.png" ):
 					<font size="6" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["En comparación con los datos de  " + $P{params}.get( "nombre_edo" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement mode="Opaque" x="620" y="21" width="148" height="28" forecolor="#723669" uuid="bf25b6b8-891d-40d7-95d9-bcca9a67a3b7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_nombre_1" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement mode="Opaque" x="644" y="48" width="80" height="30" uuid="c39e2d3d-ae1b-426d-a099-66bdacd1f6b2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="23" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_numero_1" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
+				<reportElement mode="Opaque" x="623" y="82" width="148" height="34" forecolor="#723669" uuid="6939dd0f-caf4-414b-8b20-dc4eb511feb1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_nombre_2" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="663" y="110" width="60" height="30" uuid="f046b8f1-ddb0-4d85-a8f7-aff2d7ca5e03"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="23" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_numero_2" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="552" y="309" width="80" height="18" uuid="74c40e98-e783-41d7-af2f-1ca96e4f83f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["$" + $P{params}.get( "precio_m2_min" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="702" y="309" width="80" height="18" uuid="71537329-3101-40d7-b01d-a9824d6f9a2a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["$" + $P{params}.get( "precio_m2_max" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="578" y="324" width="181" height="18" uuid="3d8948af-39d4-42b8-832c-9872e6816df4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$" + $P{params}.get( "precio_m2" )]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

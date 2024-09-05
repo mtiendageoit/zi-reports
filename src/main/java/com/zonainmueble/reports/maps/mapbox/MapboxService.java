@@ -95,7 +95,7 @@ public class MapboxService implements IsochroneService {
       case DRIVING_TRAFFIC:
         return "driving-traffic";
       default:
-        throw new NoSuchElementException("Elemento not exists");
+        throw new NoSuchElementException("Element not exists");
     }
   }
 
@@ -106,7 +106,7 @@ public class MapboxService implements IsochroneService {
       case DISTANCE:
         return "contours_meters";
       default:
-        throw new NoSuchElementException("Elemento not exists");
+        throw new NoSuchElementException("Element not exists");
     }
   }
 

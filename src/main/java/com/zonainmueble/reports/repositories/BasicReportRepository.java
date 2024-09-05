@@ -14,10 +14,10 @@ import lombok.AllArgsConstructor;
 public class BasicReportRepository {
   private final JdbcTemplate jdbcTemplate;
 
-  public Optional<Estado> estado(double latitude, double longitude) {
-    String sql = "SELECT * FROM public.___zi_estado_intersectado(?, ?)";
+  public Optional<Municipio> municipio(double latitude, double longitude) {
+    String sql = "SELECT * FROM public.___zi_municipio_intersectado(?, ?)";
 
-    List<Estado> data = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Estado.class), latitude,
+    List<Municipio> data = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Municipio.class), latitude,
         longitude);
 
     if (data.isEmpty()) {
@@ -53,4 +53,15 @@ public class BasicReportRepository {
         isochroneWKT, claveEdo);
     return data;
   }
+
+  public PrecioMetroCuadrado precioMetroCuadrado(String claveEdo, String claveMun) {
+    String sql = "SELECT * FROM public.___zi_precio_tierra_metro_cuadrado(?, ?)";
+
+    List<PrecioMetroCuadrado> data = jdbcTemplate.query(sql,
+        BeanPropertyRowMapper.newInstance(PrecioMetroCuadrado.class), claveEdo,
+        claveMun);
+
+    return data.get(0);
+  }
+
 }

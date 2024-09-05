@@ -1,12 +1,16 @@
 package com.zonainmueble.reports.services.impl;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
 import com.zonainmueble.reports.dto.*;
 import com.zonainmueble.reports.enums.*;
 import com.zonainmueble.reports.exceptions.*;
+import com.zonainmueble.reports.maps.here.*;
+import com.zonainmueble.reports.maps.here.pois.HereMapsPoisResponse;
+import com.zonainmueble.reports.maps.here.pois.Poi;
 import com.zonainmueble.reports.models.*;
 import com.zonainmueble.reports.repositories.*;
 import com.zonainmueble.reports.services.*;
@@ -18,50 +22,65 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 @Service
 @AllArgsConstructor
 public class BasicReportService implements ReportService {
-  private final int FIVE_MINUTES = 5;
+  private final int ISOCHRONE_MODE_VALUE = 5;
+  private final IsochroneMode ISOCHRONE_MODE = IsochroneMode.TIME;
+  private final TransportType ISOCHRONE_TRANSPORT_TYPE = TransportType.WALKING;
+
   private final String JASPER_REPORT_PATH = "/static/reports/basic/basic.jasper";
 
   private final BasicReportRepository repository;
 
-  private final PoisService poisService;
   private final MapImageService mapImageService;
+  private final HereMapsService hereMapsService;
   private final IsochroneService isochroneService;
   private final JasperReportService jasperReportService;
 
   @Override
   public byte[] generateReport(ReportRequest input) {
-    Estado estado = repository.estado(input.getLatitude(), input.getLongitude())
+    Municipio municipio = repository.municipio(input.getLatitude(), input.getLongitude())
         .orElseThrow(() -> new ReportException("COORDINATES_OUT_OF_ALLOWED_REGION",
             "The coordinates are out of the allowed region."));
 
     Map<String, Object> params = new HashMap<String, Object>();
-    params.put("params", reportParams(input, estado));
+    params.put("params", reportParams(input, municipio));
     return jasperReportService.generatePdf(JASPER_REPORT_PATH, params);
   }
 
-  private Map<String, Object> reportParams(ReportRequest input, Estado estado) {
+  private Map<String, Object> reportParams(ReportRequest input, Municipio municipio) {
     Polygon iso = isochrone(input);
     String wkt = ReportsUtils.polygonToWKT(iso);
     Poblacion poblacion = repository.poblacion(wkt);
-    List<PoblacionPorcentajeEstudios> pEstudios = repository.poblacionPorcentajeEstudios(wkt, estado.getClaveEdo());
+    List<PoblacionPorcentajeEstudios> pEstudios = repository.poblacionPorcentajeEstudios(wkt, municipio.getClaveEdo());
 
     Map<String, Object> params = new HashMap<String, Object>();
-    params.putAll(generalParams(input, estado));
+    params.putAll(generalParams(input, municipio));
     params.putAll(poblacionParams(poblacion));
     params.putAll(grupoEdadParams(wkt));
-    params.putAll(poblacionResumenParams(estado, poblacion));
+    params.putAll(poblacionResumenParams(municipio, poblacion));
     params.putAll(poblacionPorcentajeEstudiosParams(pEstudios));
     params.putAll(graficaPorcentajeEstudiosParams(pEstudios));
-    params.putAll(reportPoisParams());
+    params.putAll(precioMetroCuadradoParams(municipio));
+
+    params.putAll(reportPoisParams(input, iso));
     params.putAll(reportMapParams(input, iso));
 
     return params;
   }
 
-  private Map<String, Object> generalParams(ReportRequest input, Estado estado) {
+  private Map<? extends String, ? extends Object> precioMetroCuadradoParams(Municipio municipio) {
+    PrecioMetroCuadrado precio = repository.precioMetroCuadrado(municipio.getClaveEdo(), municipio.getClaveMun());
+
+    Map<String, Object> params = new HashMap<String, Object>();
+    params.put("precio_m2_min", NumberUtils.formatToDecimal(precio.getPrecioMinimo(), 1));
+    params.put("precio_m2_max", NumberUtils.formatToDecimal(precio.getPrecioMaximo(), 1));
+    params.put("precio_m2", NumberUtils.formatToDecimal(precio.getPrecio(), 1));
+    return params;
+  }
+
+  private Map<String, Object> generalParams(ReportRequest input, Municipio mun) {
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("address", input.getAddress());
-    params.put("nombre_edo", estado.getNombre());
+    params.put("nombre_edo", mun.getNombreEdo());
     params.put("build_time", ReportsUtils.reportBuildTime());
     return params;
   }
@@ -111,8 +130,8 @@ public class BasicReportService implements ReportService {
     return params;
   }
 
-  private Map<String, Object> poblacionResumenParams(Estado edo, Poblacion pob) {
-    PoblacionResumen data = repository.poblacionResumen(edo.getClaveEdo(), pob);
+  private Map<String, Object> poblacionResumenParams(Municipio mun, Poblacion pob) {
+    PoblacionResumen data = repository.poblacionResumen(mun.getClaveEdo(), pob);
 
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("zona_habitantes", data.getHabitantesDesc());
@@ -151,14 +170,84 @@ public class BasicReportService implements ReportService {
     return params;
   }
 
-  private Map<String, Object> reportPoisParams() {
-    PoisResponse response = poisService.pois();
-
+  private Map<String, Object> reportPoisParams(ReportRequest input, Polygon isochrone) {
+    List<PoisCategory> pois = getPois(input, isochrone);
     Map<String, Object> params = new HashMap<String, Object>();
-    params.put("pois_atm", response.getPois().get(0).getTotal());
-    params.put("pois_convenience_store", response.getPois().get(1).getTotal());
+
+    if (!pois.isEmpty()) {
+      params.put("pois_nombre_1", pois.get(0).getName());
+      params.put("pois_numero_1", NumberUtils.formatToInt(pois.get(0).getCount()));
+
+      if (pois.size() > 1) {
+        params.put("pois_nombre_2", pois.get(1).getName());
+        params.put("pois_numero_2", NumberUtils.formatToInt(pois.get(1).getCount()));
+      }
+    }
 
     return params;
+  }
+
+  private List<PoisCategory> getPois(ReportRequest input, Polygon isochrone) {
+    PoisRequest request = new PoisRequest();
+    request.setCenter(new Coordinate(input.getLatitude(), input.getLongitude()));
+    request.setBoundingBox(ReportsUtils.extentFrom(isochrone));
+    request.setCategories(null);
+    request.setLimit(null);
+
+    HereMapsPoisResponse response = hereMapsService.pois(request);
+    return categorizeAndSort(mainCategories(), response.getItems());
+  }
+
+  public List<PoisCategory> categorizeAndSort(List<PoisCategory> mainCategories, List<Poi> pois) {
+    List<PoisCategory> categories = new ArrayList<PoisCategory>();
+
+    Map<String, Long> count = pois.stream()
+        .collect(Collectors.groupingBy(poi -> poi.getMainCategory().getId(), Collectors.counting()));
+
+    categories.addAll(categoriesCount(mainCategories, count));
+    categories.addAll(categoriesCount(categoriesNotIn(pois, mainCategories), count));
+
+    return categories;
+  }
+
+  private List<PoisCategory> categoriesCount(List<PoisCategory> categories, Map<String, Long> count) {
+    return categories.stream()
+        .peek(category -> category.setCount(count.getOrDefault(category.getKey(), 0L).intValue()))
+        .filter(category -> category.getCount() > 0)
+        .sorted(Comparator.comparingInt(PoisCategory::getCount).reversed())
+        .collect(Collectors.toList());
+  }
+
+  private List<PoisCategory> categoriesNotIn(List<Poi> pois, List<PoisCategory> mainCategories) {
+    Set<String> mainKeys = mainCategories.stream()
+        .map(PoisCategory::getKey)
+        .collect(Collectors.toSet());
+
+    return pois.stream()
+        .map(Poi::getMainCategory)
+        .filter(Objects::nonNull)
+        .filter(category -> !mainKeys.contains(category.getId()))
+        .distinct()
+        .map(category -> new PoisCategory(category.getId(), category.getName()))
+        .collect(Collectors.toList());
+  }
+
+  private List<PoisCategory> mainCategories() {
+    List<PoisCategory> categories = new ArrayList<PoisCategory>();
+    categories.add(new PoisCategory("550-5510-0204", "Jardín", "ICONO"));
+    categories.add(new PoisCategory("600-6000-0061", "Tienda de conveniencia", "ICONO"));
+    categories.add(new PoisCategory("600-6100-0062", "Centro comercial", "ICONO"));
+    categories.add(new PoisCategory("600-6200-0063", "Grandes almacenes", "ICONO"));
+    categories.add(new PoisCategory("600-6400-0069", "Farmacia", "ICONO"));
+    categories.add(new PoisCategory("600-6900-0247", "Mercado", "ICONO"));
+    categories.add(new PoisCategory("700-7000-0107", "Banco", "ICONO"));
+    categories.add(new PoisCategory("700-7010-0108", "cajero automático", "ICONO"));
+    categories.add(new PoisCategory("800-8000-0000", "Hospital o centro de atención médica", "ICONO"));
+    categories.add(new PoisCategory("800-8000-0158", "Servicios Médicos-Clínicas", "ICONO"));
+    categories.add(new PoisCategory("800-8000-0159", "Hospital", "ICONO"));
+    categories.add(new PoisCategory("800-8000-0325", "Sala de emergencias hospitalarias", "ICONO"));
+    categories.add(new PoisCategory("800-8600-0191", "Fitness-Club de salud", "ICONO"));
+    return categories;
   }
 
   private Map<String, Object> reportMapParams(ReportRequest input, Polygon isochrone) {
@@ -187,9 +276,9 @@ public class BasicReportService implements ReportService {
   private Polygon isochrone(ReportRequest input) {
     IsochroneRequest request = IsochroneRequest.builder()
         .center(new Coordinate(input.getLatitude(), input.getLongitude()))
-        .transportType(TransportType.WALKING)
-        .mode(IsochroneMode.TIME)
-        .modeValues(List.of(FIVE_MINUTES))
+        .mode(ISOCHRONE_MODE)
+        .modeValues(List.of(ISOCHRONE_MODE_VALUE))
+        .transportType(ISOCHRONE_TRANSPORT_TYPE)
         .build();
 
     return isochroneService.isochroneFrom(request).getPolygons().get(0);
