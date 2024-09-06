@@ -54,14 +54,18 @@ public class BasicReportRepository {
     return data;
   }
 
-  public PrecioMetroCuadrado precioMetroCuadrado(String claveEdo, String claveMun) {
+  public Optional<PrecioMetroCuadrado> precioMetroCuadrado(String claveEdo, String claveMun) {
     String sql = "SELECT * FROM public.___zi_precio_tierra_metro_cuadrado(?, ?)";
 
     List<PrecioMetroCuadrado> data = jdbcTemplate.query(sql,
         BeanPropertyRowMapper.newInstance(PrecioMetroCuadrado.class), claveEdo,
         claveMun);
 
-    return data.get(0);
+    if (data.isEmpty()) {
+      return Optional.empty();
+    }
+
+    return Optional.of(data.get(0));
   }
 
 }

@@ -77,14 +77,14 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b5.png" ):
 				<textFieldExpression><![CDATA[$P{params}.get( "address" )]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="408" y="308" width="174" height="19" uuid="2287f20c-6f16-40e9-9340-7c6f92b78a7a"/>
+				<reportElement mode="Opaque" x="408" y="312" width="174" height="19" uuid="2287f20c-6f16-40e9-9340-7c6f92b78a7a"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Tiempos de Viaje Analizados]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="594" y="308" width="174" height="19" uuid="e17311a5-b2c5-4734-b76b-9ced7f1bcc26"/>
+				<reportElement mode="Opaque" x="594" y="312" width="174" height="19" uuid="e17311a5-b2c5-4734-b76b-9ced7f1bcc26"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -105,17 +105,18 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b5.png" ):
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$P{params}.get( "build_time" )]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement mode="Opaque" x="406" y="92" width="375" height="200" uuid="c4e13fee-40ac-496f-883b-df4be1fd93d3">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<textField textAdjust="ScaleFont">
+				<reportElement mode="Opaque" x="410" y="88" width="368" height="211" uuid="ca016f13-cfac-432a-952b-51cf5d0d7826">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Justified" markup="styled">
+				<textElement textAlignment="Justified" verticalAlignment="Top">
 					<font size="15"/>
 				</textElement>
-				<text><![CDATA[La ubicación en Manuel López Cotilla 1535-1553, Col del Valle Centro, Benito Juárez, Ciudad de México, ofrece una comunidad educada y estable, con 93% de los residentes teniendo educación superior y una baja gentrificación del 28%. Con servicios accesibles como tiendas de conveniencia y cajeros automáticos en un radio de 5 minutos caminando, y un entorno demográfico favorable para familias, esta zona es una excelente opción tanto para comprar como para rentar.
-]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "conclusion" )]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>

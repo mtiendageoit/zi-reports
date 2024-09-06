@@ -53,16 +53,6 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b3.png" ):
 				<text><![CDATA[Ubicación del análisis]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="406" y="92" width="375" height="200" uuid="807043af-7340-491d-8bc2-90d3618ab574">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Justified" markup="styled">
-					<font size="18"/>
-				</textElement>
-				<text><![CDATA[El reporte básico de ubicación te entrega datos de gran valor del <style isBold="true">entorno demográfico entre otros factores de la ubicación del inmueble </style>a partir de un área de cobertura (polígono) la cual es determinada por la distancia recorrida desde la ubicación de análisis caminando 5 minutos en cualquier dirección posible.]]></text>
-			</staticText>
-			<staticText>
 				<reportElement mode="Opaque" x="408" y="308" width="174" height="19" uuid="ffd1653e-d39d-4b70-bbfb-b4de039102ad"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
@@ -110,6 +100,18 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b3.png" ):
 				</textElement>
 				<text><![CDATA[Reporte básico de ubicación]]></text>
 			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="406" y="92" width="375" height="200" uuid="32568c0a-6ffe-4dd4-9115-c9142dd75b35">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El reporte básico de ubicación te entrega datos de gran valor del entorno demográfico entre otros factores de la ubicación del inmueble a partir de un área de cobertura (polígono) la cual es determinada por la distancia recorrida desde la ubicación de análisis "+$P{params}.get( "isochrone_transport_type" )+" "+$P{params}.get( "isochrone_time_minutes" )+" minutos en cualquier dirección posible."]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>

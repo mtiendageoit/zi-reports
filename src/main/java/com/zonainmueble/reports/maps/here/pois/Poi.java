@@ -2,7 +2,7 @@ package com.zonainmueble.reports.maps.here.pois;
 
 import java.util.*;
 
-import com.zonainmueble.reports.maps.here.Position;
+import com.zonainmueble.reports.maps.here.Location;
 
 import lombok.Data;
 
@@ -14,8 +14,8 @@ public class Poi {
   private String resultType;
 
   private Address address;
-  private Position position;
-  private List<Position> access;
+  private Location position;
+  private List<Location> access;
 
   private Double distance; // meters
   private List<Category> categories;

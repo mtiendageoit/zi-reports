@@ -5,7 +5,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.zonainmueble.reports.maps.google.GoogleMapsService;
 import com.zonainmueble.reports.maps.here.HereMapsService;
-import com.zonainmueble.reports.maps.mapbox.MapboxService;
 import com.zonainmueble.reports.services.*;
 
 import lombok.AllArgsConstructor;
@@ -17,13 +16,8 @@ public class MapsConfig {
 
   @Bean
   public IsochroneService isochroneService() {
-  return new HereMapsService(restTemplate);
+    return new HereMapsService(restTemplate);
   }
-
-  // @Bean
-  // public IsochroneService isochroneService() {
-  //   return new MapboxService(restTemplate);
-  // }
 
   @Bean
   public MapImageService mapImageService() {

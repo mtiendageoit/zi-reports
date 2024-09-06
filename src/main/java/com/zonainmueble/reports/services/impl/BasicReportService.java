@@ -12,6 +12,7 @@ import com.zonainmueble.reports.maps.here.*;
 import com.zonainmueble.reports.maps.here.pois.HereMapsPoisResponse;
 import com.zonainmueble.reports.maps.here.pois.Poi;
 import com.zonainmueble.reports.models.*;
+import com.zonainmueble.reports.openai.*;
 import com.zonainmueble.reports.repositories.*;
 import com.zonainmueble.reports.services.*;
 import com.zonainmueble.reports.utils.*;
@@ -30,6 +31,7 @@ public class BasicReportService implements ReportService {
 
   private final BasicReportRepository repository;
 
+  private final OpenAIService openAIService;
   private final MapImageService mapImageService;
   private final HereMapsService hereMapsService;
   private final IsochroneService isochroneService;
@@ -63,17 +65,67 @@ public class BasicReportService implements ReportService {
 
     params.putAll(reportPoisParams(input, iso));
     params.putAll(reportMapParams(input, iso));
+    params.putAll(conclusionParams(params));
 
     return params;
   }
 
-  private Map<? extends String, ? extends Object> precioMetroCuadradoParams(Municipio municipio) {
-    PrecioMetroCuadrado precio = repository.precioMetroCuadrado(municipio.getClaveEdo(), municipio.getClaveMun());
+  private Map<String, Object> conclusionParams(Map<String, Object> reportParams) {
+    String systemMessage = aiSystemMessage();
+    String userMessage = aiContentMessage(reportParams);
+
+    CompletionRequest request = new CompletionRequest();
+    request.setModel(OpenAIModel.GPT_4_MINI.getId());
+    request.setMessages(List.of(new Message(MessageRole.system.name(), systemMessage),
+        new Message(MessageRole.user.name(), userMessage)));
+
+    String conclusion = openAIService.generateCompletion(request);
 
     Map<String, Object> params = new HashMap<String, Object>();
-    params.put("precio_m2_min", NumberUtils.formatToDecimal(precio.getPrecioMinimo(), 1));
-    params.put("precio_m2_max", NumberUtils.formatToDecimal(precio.getPrecioMaximo(), 1));
-    params.put("precio_m2", NumberUtils.formatToDecimal(precio.getPrecio(), 1));
+    params.put("conclusion", conclusion);
+    return params;
+  }
+
+  private String aiContentMessage(Map<String, Object> p) {
+    String message = "Dirección: " + p.get("address") + "." + p.get("zona_habitantes") + ", "
+        + p.get("zona_habitantes_infantil") + ", " + p.get("zona_peh_porcentaje_1") + "% de los habitantes tienen "
+        + p.get("zona_peh_desc_1") + ", hay " + p.get("habitantes_vivienda") + " Habitantes x Vivienda, "
+        + p.getOrDefault("pois_numero_1", "") + " " + p.getOrDefault("pois_nombre_1", "") + " "
+        + p.getOrDefault("pois_numero_2", "") + " " + p.getOrDefault("pois_nombre_2", "") + ", numero de habitantes "
+        + p.get("habitantes")
+        + ", en 2010 habian " + p.get("habitantes2010") + ", numero de niños: " +
+        p.get("ninos") + ", escolaridad promedio " + p.get("zona_peh_grado_promedio_1") + " años equivalentes a "
+        + p.get("zona_peh_desc_1") + ", " + p.get("familias") + " familias, " + p.get("viviendas") + " viviendas, "
+        + p.get("viviendas_1_dormitorio") + " viviendas tienen 1 dormitorio, " + p.get("viviendas_2mas_dormitorios")
+        + " tienen 2 dormitorios o mas. El area de estudio es un poligono de " + p.get("isochrone_time_minutes")
+        + " minutos " + p.get("isochrone_transport_type");
+
+    return message;
+  }
+
+  private String aiSystemMessage() {
+    return "Eres un experto en bienes raices, por favor toma estos datos y realiza una conclusion con estilo neutral que pueda ayudar a tener una visión para poder comprar, rentar o invertir en la propiedad situada en la dirección dada. Tu respuesta debe ser consisa y facil de entender. En formato prosa por favor. Expresate de forma neutral con respecto a los datos. Tu respuesta no debe exceder las 100 palabras.";
+  }
+
+  private Map<String, Object> precioMetroCuadradoParams(Municipio municipio) {
+    Optional<PrecioMetroCuadrado> precio = repository.precioMetroCuadrado(municipio.getClaveEdo(),
+        municipio.getClaveMun());
+
+    Map<String, Object> params = new HashMap<String, Object>();
+
+    String precioM2Minimo = "NA";
+    String precioM2Maximo = "NA";
+    String precioM2 = "NA";
+
+    if (precio.isPresent()) {
+      precioM2Minimo = NumberUtils.formatToDecimal(precio.get().getPrecioMinimo(), 1);
+      precioM2Maximo = NumberUtils.formatToDecimal(precio.get().getPrecioMaximo(), 1);
+      precioM2 = NumberUtils.formatToDecimal(precio.get().getPrecio(), 1);
+    }
+
+    params.put("precio_m2_min", precioM2Minimo);
+    params.put("precio_m2_max", precioM2Maximo);
+    params.put("precio_m2", precioM2);
     return params;
   }
 
@@ -81,8 +133,24 @@ public class BasicReportService implements ReportService {
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("address", input.getAddress());
     params.put("nombre_edo", mun.getNombreEdo());
+    params.put("isochrone_time_minutes", ISOCHRONE_MODE_VALUE);
+    params.put("isochrone_transport_type", transportType());
     params.put("build_time", ReportsUtils.reportBuildTime());
     return params;
+  }
+
+  private String transportType() {
+    switch (ISOCHRONE_TRANSPORT_TYPE) {
+      case WALKING:
+        return "caminando";
+      case CYCLING:
+        return "en bicicleta";
+      case DRIVING:
+      case DRIVING_TRAFFIC:
+        return "en auto";
+      default:
+        throw new BaseException("INVALID_TRANSPORT_TYPE", "The transport type no exists");
+    }
   }
 
   private Map<String, Object> poblacionParams(Poblacion pob) {
