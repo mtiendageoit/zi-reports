@@ -50,7 +50,7 @@ public class GoogleMapsService implements MapImageService {
 
     StringBuilder urlBuilder = new StringBuilder(staticUrl).append("?");
     urlBuilder.append("format=png");
-    urlBuilder.append("&maptype=roadmap");
+    urlBuilder.append("&maptype=").append(input.getMapType());
     urlBuilder.append("&size=").append(input.getSize().getWidth()).append("x").append(input.getSize().getHeight());
 
     if (input.getMarkers() != null && !input.getMarkers().isEmpty()) {

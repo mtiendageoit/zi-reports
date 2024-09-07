@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.zonainmueble.reports.config.AppConfig;
 import com.zonainmueble.reports.dto.*;
 import com.zonainmueble.reports.enums.*;
 import com.zonainmueble.reports.exceptions.*;
@@ -26,11 +27,13 @@ public class BasicReportService implements ReportService {
   private final int ISOCHRONE_MODE_VALUE = 5;
   private final IsochroneMode ISOCHRONE_MODE = IsochroneMode.TIME;
   private final TransportType ISOCHRONE_TRANSPORT_TYPE = TransportType.WALKING;
-
   private final String JASPER_REPORT_PATH = "/static/reports/basic/basic.jasper";
 
+  private final AppConfig config;
   private final BasicReportRepository repository;
 
+  private final ReportsUtils reportsUtils;
+  private final GeometryUtils geometryUtils;
   private final OpenAIService openAIService;
   private final MapImageService mapImageService;
   private final HereMapsService hereMapsService;
@@ -49,8 +52,9 @@ public class BasicReportService implements ReportService {
   }
 
   private Map<String, Object> reportParams(ReportRequest input, Municipio municipio) {
-    Polygon iso = isochrone(input);
-    String wkt = ReportsUtils.polygonToWKT(iso);
+    Polygon iso = geometryUtils.buffer(isochrone(input), config.getIsochroneBufferMeters());
+    String wkt = geometryUtils.polygonToWKT(iso);
+
     Poblacion poblacion = repository.poblacion(wkt);
     List<PoblacionPorcentajeEstudios> pEstudios = repository.poblacionPorcentajeEstudios(wkt, municipio.getClaveEdo());
 
@@ -71,11 +75,11 @@ public class BasicReportService implements ReportService {
   }
 
   private Map<String, Object> conclusionParams(Map<String, Object> reportParams) {
-    String systemMessage = aiSystemMessage();
+    String systemMessage = config.getCompletionsSystemMessage();
+
     String userMessage = aiContentMessage(reportParams);
 
     CompletionRequest request = new CompletionRequest();
-    request.setModel(OpenAIModel.GPT_4_MINI.getId());
     request.setMessages(List.of(new Message(MessageRole.system.name(), systemMessage),
         new Message(MessageRole.user.name(), userMessage)));
 
@@ -101,10 +105,6 @@ public class BasicReportService implements ReportService {
         + " minutos " + p.get("isochrone_transport_type");
 
     return message;
-  }
-
-  private String aiSystemMessage() {
-    return "Eres un experto en bienes raices, por favor toma estos datos y realiza una conclusion con estilo neutral que pueda ayudar a tener una visión para poder comprar, rentar o invertir en la propiedad situada en la dirección dada. Tu respuesta debe ser consisa y facil de entender. En formato prosa por favor. Expresate de forma neutral con respecto a los datos. Tu respuesta no debe exceder las 100 palabras.";
   }
 
   private Map<String, Object> precioMetroCuadradoParams(Municipio municipio) {
@@ -135,7 +135,7 @@ public class BasicReportService implements ReportService {
     params.put("nombre_edo", mun.getNombreEdo());
     params.put("isochrone_time_minutes", ISOCHRONE_MODE_VALUE);
     params.put("isochrone_transport_type", transportType());
-    params.put("build_time", ReportsUtils.reportBuildTime());
+    params.put("build_time", reportsUtils.reportBuildTime());
     return params;
   }
 
@@ -227,8 +227,12 @@ public class BasicReportService implements ReportService {
 
     List<CategoryData> data = new ArrayList<>();
 
+    Double percentage;
     for (PoblacionPorcentajeEstudios item : pEstudios) {
-      data.add(new CategoryData(item.getDescripcionCorta(), item.getPParticipacionRango() * 100));
+      percentage = item.getPParticipacionRango() * 100;
+      if (percentage >= 1) {// No mostrar los valores menores a 1%
+        data.add(new CategoryData(item.getDescripcionCorta(), percentage));
+      }
     }
 
     JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
@@ -240,6 +244,7 @@ public class BasicReportService implements ReportService {
 
   private Map<String, Object> reportPoisParams(ReportRequest input, Polygon isochrone) {
     List<PoisCategory> pois = getPois(input, isochrone);
+
     Map<String, Object> params = new HashMap<String, Object>();
 
     if (!pois.isEmpty()) {
@@ -258,12 +263,12 @@ public class BasicReportService implements ReportService {
   private List<PoisCategory> getPois(ReportRequest input, Polygon isochrone) {
     PoisRequest request = new PoisRequest();
     request.setCenter(new Coordinate(input.getLatitude(), input.getLongitude()));
-    request.setBoundingBox(ReportsUtils.extentFrom(isochrone));
-    request.setCategories(null);
-    request.setLimit(null);
+    request.setBoundingBox(geometryUtils.boundingBox(isochrone));
+    request.setLimit(100);
 
     HereMapsPoisResponse response = hereMapsService.pois(request);
-    return categorizeAndSort(mainCategories(), response.getItems());
+    List<Poi> pois = geometryUtils.within(response.getItems(), isochrone);
+    return categorizeAndSort(mainCategories(), pois);
   }
 
   public List<PoisCategory> categorizeAndSort(List<PoisCategory> mainCategories, List<Poi> pois) {
@@ -323,19 +328,19 @@ public class BasicReportService implements ReportService {
     List<Marker> markers = List.of(new Marker(new Coordinate(input.getLatitude(), input.getLongitude())));
 
     Map<String, Object> params = new HashMap<String, Object>();
-    byte[] image1 = mapImageService.image(new MapImageRequest(310, 165, markers, polygons));
+    byte[] image1 = mapImageService.image(new MapImageRequest(310, 165, "roadmap", markers, polygons));
     params.put("mapImage1", image1);
 
-    byte[] image2 = mapImageService.image(new MapImageRequest(350, 370, markers, polygons));
+    byte[] image2 = mapImageService.image(new MapImageRequest(350, 370, "roadmap", markers, polygons));
     params.put("mapImage2", image2);
 
-    byte[] image3 = mapImageService.image(new MapImageRequest(350, 300, markers, null));
+    byte[] image3 = mapImageService.image(new MapImageRequest(350, 300, "roadmap", markers, null));
     params.put("mapImage3", image3);
 
-    byte[] image4 = mapImageService.image(new MapImageRequest(255, 270, markers, polygons));
+    byte[] image4 = mapImageService.image(new MapImageRequest(255, 270, "roadmap", markers, polygons));
     params.put("mapImage4", image4);
 
-    byte[] image5 = mapImageService.image(new MapImageRequest(365, 300, markers, polygons));
+    byte[] image5 = mapImageService.image(new MapImageRequest(365, 300, "hybrid", markers, polygons));
     params.put("mapImage5", image5);
 
     return params;

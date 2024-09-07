@@ -3,6 +3,7 @@ package com.zonainmueble.reports.openai;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 
 import lombok.Data;
@@ -19,6 +20,9 @@ public class OpenAIService {
   @Value("${apis.openai.completions.url}")
   private String completionsUrl;
 
+  @Value("${apis.openai.completions.model}")
+  private String completionsModel;
+
   private final RestTemplate restTemplate;
 
   public OpenAIService(RestTemplate restTemplate) {
@@ -27,6 +31,10 @@ public class OpenAIService {
 
   public String generateCompletion(CompletionRequest input) {
     String url = this.completionsUrl;
+
+    if (!StringUtils.hasText(input.getModel())) {
+      input.setModel(completionsModel);
+    }
 
     try {
       HttpHeaders headers = new HttpHeaders();

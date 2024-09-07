@@ -41,7 +41,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b1.png" ):
 				<imageExpression><![CDATA[$P{params}.get( "mapImage1" )]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement mode="Opaque" x="14" y="1" width="314" height="40" forecolor="#793F70" uuid="63a8d0aa-9636-45b1-8ea1-4f4be9fb895f"/>
+				<reportElement mode="Opaque" x="4" y="1" width="328" height="40" forecolor="#793F70" uuid="63a8d0aa-9636-45b1-8ea1-4f4be9fb895f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="21" isBold="true"/>
 				</textElement>

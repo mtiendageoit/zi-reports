@@ -81,7 +81,10 @@ public class HereMapsService implements IsochroneService {
       urlBuilder.append("&in=bbox:").append(join.toString());
     }
 
-    urlBuilder.append("&limit=").append("100");
+    if (input.getLimit() != null) {
+      urlBuilder.append("&limit=").append(input.getLimit());
+    }
+
     urlBuilder.append("&apiKey=").append(key);
 
     return urlBuilder.toString();
