@@ -68,4 +68,15 @@ public class BasicReportRepository {
     return Optional.of(data.get(0));
   }
 
+  public List<PoisCategory> poisCategories() {
+    String sql = """
+        SELECT nivel_3 AS key, nombre_espanol AS name, icon
+        FROM tipo_puntos_interes_here_maps
+        WHERE basico_gratuito=true
+        """;
+
+    List<PoisCategory> data = jdbcTemplate.query(sql,
+        BeanPropertyRowMapper.newInstance(PoisCategory.class));
+    return data;
+  }
 }

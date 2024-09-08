@@ -113,25 +113,19 @@ public class BasicReportService implements ReportService {
 
     Map<String, Object> params = new HashMap<String, Object>();
 
-    String precioM2Minimo = "NA";
-    String precioM2Maximo = "NA";
-    String precioM2 = "NA";
-
     if (precio.isPresent()) {
-      precioM2Minimo = NumberUtils.formatToDecimal(precio.get().getPrecioMinimo(), 1);
-      precioM2Maximo = NumberUtils.formatToDecimal(precio.get().getPrecioMaximo(), 1);
-      precioM2 = NumberUtils.formatToDecimal(precio.get().getPrecio(), 1);
+      params.put("precio_m2_min", NumberUtils.formatToDecimal(precio.get().getPrecioMinimo(), 1));
+      params.put("precio_m2_max", NumberUtils.formatToDecimal(precio.get().getPrecioMaximo(), 1));
+      params.put("precio_m2", NumberUtils.formatToDecimal(precio.get().getPrecio(), 1));
     }
 
-    params.put("precio_m2_min", precioM2Minimo);
-    params.put("precio_m2_max", precioM2Maximo);
-    params.put("precio_m2", precioM2);
     return params;
   }
 
   private Map<String, Object> generalParams(ReportRequest input, Municipio mun) {
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("address", input.getAddress());
+    params.put("clave_edo", mun.getClaveEdo());
     params.put("nombre_edo", mun.getNombreEdo());
     params.put("isochrone_time_minutes", ISOCHRONE_MODE_VALUE);
     params.put("isochrone_transport_type", transportType());
@@ -247,13 +241,22 @@ public class BasicReportService implements ReportService {
 
     Map<String, Object> params = new HashMap<String, Object>();
 
+    // Mostrar top 3 de pois
     if (!pois.isEmpty()) {
       params.put("pois_nombre_1", pois.get(0).getName());
       params.put("pois_numero_1", NumberUtils.formatToInt(pois.get(0).getCount()));
+      params.put("pois_icono_1", pois.get(0).getIcon());
 
       if (pois.size() > 1) {
         params.put("pois_nombre_2", pois.get(1).getName());
         params.put("pois_numero_2", NumberUtils.formatToInt(pois.get(1).getCount()));
+        params.put("pois_icono_2", pois.get(0).getIcon());
+      }
+
+      if (pois.size() > 2) {
+        params.put("pois_nombre_3", pois.get(2).getName());
+        params.put("pois_numero_3", NumberUtils.formatToInt(pois.get(2).getCount()));
+        params.put("pois_icono_3", pois.get(0).getIcon());
       }
     }
 
@@ -266,9 +269,11 @@ public class BasicReportService implements ReportService {
     request.setBoundingBox(geometryUtils.boundingBox(isochrone));
     request.setLimit(100);
 
+    List<PoisCategory> pc = repository.poisCategories();
+
     HereMapsPoisResponse response = hereMapsService.pois(request);
     List<Poi> pois = geometryUtils.within(response.getItems(), isochrone);
-    return categorizeAndSort(mainCategories(), pois);
+    return categorizeAndSort(pc, pois);
   }
 
   public List<PoisCategory> categorizeAndSort(List<PoisCategory> mainCategories, List<Poi> pois) {
@@ -303,24 +308,6 @@ public class BasicReportService implements ReportService {
         .distinct()
         .map(category -> new PoisCategory(category.getId(), category.getName()))
         .collect(Collectors.toList());
-  }
-
-  private List<PoisCategory> mainCategories() {
-    List<PoisCategory> categories = new ArrayList<PoisCategory>();
-    categories.add(new PoisCategory("550-5510-0204", "Jardín", "ICONO"));
-    categories.add(new PoisCategory("600-6000-0061", "Tienda de conveniencia", "ICONO"));
-    categories.add(new PoisCategory("600-6100-0062", "Centro comercial", "ICONO"));
-    categories.add(new PoisCategory("600-6200-0063", "Grandes almacenes", "ICONO"));
-    categories.add(new PoisCategory("600-6400-0069", "Farmacia", "ICONO"));
-    categories.add(new PoisCategory("600-6900-0247", "Mercado", "ICONO"));
-    categories.add(new PoisCategory("700-7000-0107", "Banco", "ICONO"));
-    categories.add(new PoisCategory("700-7010-0108", "cajero automático", "ICONO"));
-    categories.add(new PoisCategory("800-8000-0000", "Hospital o centro de atención médica", "ICONO"));
-    categories.add(new PoisCategory("800-8000-0158", "Servicios Médicos-Clínicas", "ICONO"));
-    categories.add(new PoisCategory("800-8000-0159", "Hospital", "ICONO"));
-    categories.add(new PoisCategory("800-8000-0325", "Sala de emergencias hospitalarias", "ICONO"));
-    categories.add(new PoisCategory("800-8600-0191", "Fitness-Club de salud", "ICONO"));
-    return categories;
   }
 
   private Map<String, Object> reportMapParams(ReportRequest input, Polygon isochrone) {

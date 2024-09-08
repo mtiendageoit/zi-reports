@@ -56,7 +56,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b2.png" ):
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement mode="Transparent" x="579" y="233" width="183" height="23" uuid="c0a375f2-e09d-4ccb-872a-4ea8a2c2084a"/>
+				<reportElement mode="Transparent" x="579" y="233" width="183" height="23" uuid="c0a375f2-e09d-4ccb-872a-4ea8a2c2084a">
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="9" isBold="false"/>
 				</textElement>
@@ -215,18 +217,24 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b2.png" ):
 				</textElement>
 				<textFieldExpression><![CDATA[$P{params}.get( "pois_numero_2" )]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement mode="Opaque" x="552" y="309" width="80" height="18" uuid="74c40e98-e783-41d7-af2f-1ca96e4f83f2"/>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="552" y="309" width="80" height="18" uuid="74c40e98-e783-41d7-af2f-1ca96e4f83f2">
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA["$" + $P{params}.get( "precio_m2_min" )]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement mode="Opaque" x="702" y="309" width="80" height="18" uuid="71537329-3101-40d7-b01d-a9824d6f9a2a"/>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="702" y="309" width="80" height="18" uuid="71537329-3101-40d7-b01d-a9824d6f9a2a">
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA["$" + $P{params}.get( "precio_m2_max" )]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement mode="Opaque" x="578" y="324" width="181" height="18" uuid="3d8948af-39d4-42b8-832c-9872e6816df4"/>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="578" y="324" width="181" height="18" uuid="3d8948af-39d4-42b8-832c-9872e6816df4">
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
