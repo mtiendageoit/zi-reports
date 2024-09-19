@@ -11,7 +11,7 @@ import lombok.AllArgsConstructor;
 
 @Repository
 @AllArgsConstructor
-public class BasicReportRepository {
+public class ReportRepository {
   private final JdbcTemplate jdbcTemplate;
 
   public Optional<Municipio> municipio(double latitude, double longitude) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="basico-1" pageWidth="842" pageHeight="490" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d48c48d-d56d-4025-bb85-7dc3c4157b5b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="integral-1" pageWidth="842" pageHeight="490" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d48c48d-d56d-4025-bb85-7dc3c4157b5b">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -27,11 +27,11 @@
 					<pen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b1.png" ):
-"b1.png"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/i1.png" ):
+"i1.png"]]></imageExpression>
 			</image>
 			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
-				<reportElement x="14" y="47" width="314" height="165" uuid="5293b11f-9329-4aa4-8757-062dac704005">
+				<reportElement x="21" y="44" width="314" height="276" uuid="5293b11f-9329-4aa4-8757-062dac704005">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
@@ -48,17 +48,17 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b1.png" ):
 				<text><![CDATA[Reporte básico de ubicación]]></text>
 			</staticText>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement mode="Opaque" x="20" y="217" width="310" height="40" uuid="b8279ed5-bb0c-4bd1-b6ec-77693a7da617"/>
+				<reportElement mode="Opaque" x="21" y="320" width="314" height="40" uuid="b8279ed5-bb0c-4bd1-b6ec-77693a7da617"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$P{params}.get( "address" )]]></textFieldExpression>
 			</textField>
 			<rectangle radius="6">
-				<reportElement mode="Opaque" x="107" y="36" width="127" height="24" forecolor="#8A8A8A" uuid="6463cb2c-03f4-4059-b9f4-a86aff97463f">
+				<reportElement mode="Opaque" x="105" y="38" width="127" height="24" forecolor="#8A8A8A" uuid="6463cb2c-03f4-4059-b9f4-a86aff97463f">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="107" y="37" width="126" height="22" uuid="57e697b9-3123-457c-8be6-351c54c128de"/>
+				<reportElement x="105" y="39" width="126" height="22" uuid="57e697b9-3123-457c-8be6-351c54c128de"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="11" isBold="false"/>
 				</textElement>

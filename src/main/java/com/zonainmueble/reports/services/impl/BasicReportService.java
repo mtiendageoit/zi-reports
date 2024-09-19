@@ -30,25 +30,22 @@ public class BasicReportService implements ReportService {
   private final String JASPER_REPORT_PATH = "/static/reportes/basico/basico.jasper";
 
   private final AppConfig config;
-  private final BasicReportRepository repository;
+  private ReportRepository repository;
 
-  private final ReportsUtils reportsUtils;
+  private final JasperReportService jasper;
+  private final CommonReportService common;
   private final GeometryUtils geometryUtils;
   private final OpenAIService openAIService;
   private final MapImageService mapImageService;
   private final HereMapsService hereMapsService;
   private final IsochroneService isochroneService;
-  private final JasperReportService jasperReportService;
 
   @Override
   public byte[] generateReport(ReportRequest input) {
-    Municipio municipio = repository.municipio(input.getLatitude(), input.getLongitude())
-        .orElseThrow(() -> new ReportException("COORDINATES_OUT_OF_ALLOWED_REGION",
-            "The coordinates are out of the allowed region."));
-
+    Municipio municipio = common.municipioFrom(input.getLatitude(), input.getLongitude());
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("params", reportParams(input, municipio));
-    return jasperReportService.generatePdf(JASPER_REPORT_PATH, params);
+    return jasper.generatePdf(JASPER_REPORT_PATH, params);
   }
 
   private Map<String, Object> reportParams(ReportRequest input, Municipio municipio) {
@@ -129,7 +126,7 @@ public class BasicReportService implements ReportService {
     params.put("nombre_edo", mun.getNombreEdo());
     params.put("isochrone_time_minutes", ISOCHRONE_MODE_VALUE);
     params.put("isochrone_transport_type", transportType());
-    params.put("build_time", reportsUtils.reportBuildTime());
+    params.put("build_time", common.reportBuildTime());
     return params;
   }
 
