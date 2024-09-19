@@ -20,8 +20,8 @@
 					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-1.jasper" ):
-"basic-1.jasper"]]></subreportExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-1.jasper" ):
+"basico-1.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
 		<part uuid="78c657a5-3ebb-4c5c-aa7c-cc38d8f20376">
@@ -36,8 +36,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-1.jasp
 					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-2.jasper" ):
-"basic-2.jasper"]]></subreportExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-2.jasper" ):
+"basico-2.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
 		<part uuid="262e10b7-46d6-4cd8-b3cb-ddbaa20c31ba">
@@ -52,8 +52,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-2.jasp
 					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-3.jasper" ):
-"basic-3.jasper"]]></subreportExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-3.jasper" ):
+"basico-3.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
 		<part uuid="d75ee5c9-91b2-4d50-a366-00ec28fe4aea">
@@ -68,8 +68,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-3.jasp
 					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-4.jasper" ):
-"basic-4.jasper"]]></subreportExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-4.jasper" ):
+"basico-4.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
 		<part uuid="48be0eed-8f8b-4abf-a33f-76fd6490d5ac">
@@ -84,8 +84,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-4.jasp
 					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-5.jasper" ):
-"basic-5.jasper"]]></subreportExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-5.jasper" ):
+"basico-5.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
 		<part uuid="64deb421-cebd-4c53-a01d-843d4315e091">
@@ -100,8 +100,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-5.jasp
 					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-6.jasper" ):
-"basic-6.jasper"]]></subreportExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-6.jasper" ):
+"basico-6.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
 		<part uuid="99354f45-f219-425e-af1c-a01863ebdf06">
@@ -116,8 +116,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-6.jasp
 					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-7.jasper" ):
-"basic-7.jasper"]]></subreportExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-7.jasper" ):
+"basico-7.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
 		<part uuid="c6a6879b-6497-46ca-b7bc-a90fdd5b8874">
@@ -132,8 +132,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-7.jasp
 					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/basic-8.jasper" ):
-"basic-8.jasper"]]></subreportExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-8.jasper" ):
+"basico-8.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
 	</detail>

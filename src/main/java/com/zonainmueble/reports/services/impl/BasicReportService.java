@@ -27,7 +27,7 @@ public class BasicReportService implements ReportService {
   private final int ISOCHRONE_MODE_VALUE = 5;
   private final IsochroneMode ISOCHRONE_MODE = IsochroneMode.TIME;
   private final TransportType ISOCHRONE_TRANSPORT_TYPE = TransportType.WALKING;
-  private final String JASPER_REPORT_PATH = "/static/reports/basic/basic.jasper";
+  private final String JASPER_REPORT_PATH = "/static/reportes/basico/basico.jasper";
 
   private final AppConfig config;
   private final BasicReportRepository repository;
