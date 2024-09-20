@@ -35,7 +35,7 @@ public class MapboxService implements IsochroneService {
 
     try {
       ResponseEntity<FeatureCollection> response = restTemplate.getForEntity(url, FeatureCollection.class);
-      return buildResponse(response.getBody());
+      return buildResponse(response.getBody(), input);
     } catch (Exception e) {
       log.error(e.getMessage(), e);
       log.error("input: {}, url: {}", input, url);
@@ -43,26 +43,33 @@ public class MapboxService implements IsochroneService {
     }
   }
 
-  private IsochroneResponse buildResponse(FeatureCollection collection) {
+  private IsochroneResponse buildResponse(FeatureCollection collection, IsochroneRequest request) {
 
     if (collection == null) {
       throw new RuntimeException("No FeatureCollection in response");
     }
 
-    List<Polygon> isochrones = new ArrayList<>();
+    List<Isochrone> isochrones = new ArrayList<>();
     for (Feature item : collection.getFeatures()) {
-      isochrones.add(from(item));
+      isochrones.add(toIsocrhone(item, request));
     }
 
     return new IsochroneResponse(isochrones);
   }
 
-  private Polygon from(Feature feature) {
-    Polygon iso = new Polygon();
+  private Isochrone toIsocrhone(Feature feature, IsochroneRequest request) {
+    List<Coordinate> coords = new ArrayList<>();
+
     for (List<Double> lonlat : feature.getGeometry().getCoordinates().get(0)) {
-      iso.getCoordinates().add(new Coordinate(lonlat.get(1), lonlat.get(0)));
+      coords.add(new Coordinate(lonlat.get(1), lonlat.get(0)));
     }
-    return iso;
+
+    return Isochrone.builder()
+        .mode(request.getMode())
+        .modeValue(0)// TODO: Get the correct value mode
+        .transportType(request.getTransportType())
+        .polygon(new Polygon(coords))
+        .build();
   }
 
   private String buildUrl(IsochroneRequest request) {
@@ -101,9 +108,9 @@ public class MapboxService implements IsochroneService {
 
   private String isochroneModeFrom(IsochroneMode mode) {
     switch (mode) {
-      case TIME:
+      case TIME_MINUTES:
         return "contours_minutes";
-      case DISTANCE:
+      case DISTANCE_METERS:
         return "contours_meters";
       default:
         throw new NoSuchElementException("Element not exists");

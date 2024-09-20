@@ -25,6 +25,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class HereMapsService implements IsochroneService {
+  private final int SECONDS_IN_MINUTE = 60;
+
   @Value("${apis.here.maps.key}")
   private String key;
 
@@ -96,7 +98,7 @@ public class HereMapsService implements IsochroneService {
 
     try {
       ResponseEntity<IsolineResponse> response = restTemplate.getForEntity(url, IsolineResponse.class);
-      return buildIsochroneResponse(response.getBody());
+      return buildIsochroneResponse(response.getBody(), input);
     } catch (Exception e) {
       log.error(e.getMessage(), e);
       log.error("url: {}, input: {}", url, input);
@@ -104,22 +106,29 @@ public class HereMapsService implements IsochroneService {
     }
   }
 
-  private IsochroneResponse buildIsochroneResponse(IsolineResponse input) {
-    List<Polygon> polygons = new ArrayList<>();
+  private IsochroneResponse buildIsochroneResponse(IsolineResponse input, IsochroneRequest request) {
+    List<Isochrone> isochrones = new ArrayList<>();
+
     for (Isoline isoline : input.getIsolines()) {
-      polygons.add(polygonFrom(isoline));
+      isochrones.add(toIsocrhone(isoline, request));
     }
-    return new IsochroneResponse(polygons);
+    return new IsochroneResponse(isochrones);
   }
 
-  private Polygon polygonFrom(Isoline isoline) {
+  private Isochrone toIsocrhone(Isoline isoline, IsochroneRequest request) {
     List<Coordinate> coords = new ArrayList<>();
 
     List<LatLngZ> locations = PolylineEncoderDecoder.decode(isoline.getPolygons().get(0).getOuter());
     for (LatLngZ loc : locations) {
       coords.add(new Coordinate(loc.lat, loc.lng));
     }
-    return new Polygon(coords);
+
+    return Isochrone.builder()
+        .mode(request.getMode())
+        .modeValue(isoline.getRange().getValue() / SECONDS_IN_MINUTE)
+        .transportType(request.getTransportType())
+        .polygon(new Polygon(coords))
+        .build();
   }
 
   private String buildIsolineUrl(IsochroneRequest input) {
@@ -128,9 +137,10 @@ public class HereMapsService implements IsochroneService {
     String origin = String.format("%f,%f", input.getCenter().getLatitude(), input.getCenter().getLongitude());
 
     List<Integer> valuesList = input.getModeValues();
-    if (input.getMode() == IsochroneMode.TIME) {
-      int secondsInMinute = 60;
-      valuesList = input.getModeValues().stream().map(item -> item * secondsInMinute).collect(Collectors.toList());
+    if (input.getMode() == IsochroneMode.TIME_MINUTES) {
+      valuesList = input.getModeValues().stream()
+          .map(item -> item * SECONDS_IN_MINUTE)
+          .collect(Collectors.toList());
     }
 
     String values = StringUtils.collectionToCommaDelimitedString(valuesList);
@@ -162,9 +172,9 @@ public class HereMapsService implements IsochroneService {
 
   private String isochroneModeFrom(IsochroneMode mode) {
     switch (mode) {
-      case TIME:
+      case TIME_MINUTES:
         return "time";
-      case DISTANCE:
+      case DISTANCE_METERS:
         return "distance";
       default:
         throw new NoSuchElementException("Element not exists");

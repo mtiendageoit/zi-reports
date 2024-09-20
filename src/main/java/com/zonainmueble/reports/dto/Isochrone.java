@@ -1,18 +1,15 @@
 package com.zonainmueble.reports.dto;
 
-import java.util.List;
-
 import com.zonainmueble.reports.enums.*;
 
 import lombok.*;
 
 @Data
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class IsochroneRequest {
-  private Coordinate center;
+public class Isochrone {
   private IsochroneMode mode;
-  private List<Integer> modeValues;
+  private Integer modeValue;
   private TransportType transportType;
+
+  private Polygon polygon;
 }

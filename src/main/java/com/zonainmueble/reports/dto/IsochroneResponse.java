@@ -7,5 +7,5 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 public class IsochroneResponse {
-  private List<Polygon> polygons;
+  private List<Isochrone> isochrones;
 }

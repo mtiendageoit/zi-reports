@@ -1,5 +1,5 @@
 package com.zonainmueble.reports.enums;
 
 public enum IsochroneMode {
-  TIME, DISTANCE;
+  TIME_MINUTES, DISTANCE_METERS;
 }

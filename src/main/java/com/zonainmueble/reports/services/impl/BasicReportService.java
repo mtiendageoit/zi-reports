@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.zonainmueble.reports.config.AppConfig;
 import com.zonainmueble.reports.dto.*;
 import com.zonainmueble.reports.enums.*;
-import com.zonainmueble.reports.exceptions.*;
 import com.zonainmueble.reports.maps.here.*;
 import com.zonainmueble.reports.maps.here.pois.HereMapsPoisResponse;
 import com.zonainmueble.reports.maps.here.pois.Poi;
@@ -25,7 +24,7 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 @AllArgsConstructor
 public class BasicReportService implements ReportService {
   private final int ISOCHRONE_MODE_VALUE = 5;
-  private final IsochroneMode ISOCHRONE_MODE = IsochroneMode.TIME;
+  private final IsochroneMode ISOCHRONE_MODE = IsochroneMode.TIME_MINUTES;
   private final TransportType ISOCHRONE_TRANSPORT_TYPE = TransportType.WALKING;
   private final String JASPER_REPORT_PATH = "/static/reportes/basico/basico.jasper";
 
@@ -49,7 +48,7 @@ public class BasicReportService implements ReportService {
   }
 
   private Map<String, Object> reportParams(ReportRequest input, Municipio municipio) {
-    Polygon iso = geometryUtils.buffer(isochrone(input), config.getIsochroneBufferMeters());
+    Polygon iso = geometryUtils.buffer(isochrone(input).getPolygon(), config.getIsochroneBufferMeters());
     String wkt = geometryUtils.polygonToWKT(iso);
 
     Poblacion poblacion = repository.poblacion(wkt);
@@ -71,7 +70,7 @@ public class BasicReportService implements ReportService {
     return params;
   }
 
-  private Map<String, Object> conclusionParams(Map<String, Object> reportParams) {
+  public Map<String, Object> conclusionParams(Map<String, Object> reportParams) {
     String systemMessage = config.getCompletionsSystemMessage();
 
     String userMessage = aiContentMessage(reportParams);
@@ -104,7 +103,7 @@ public class BasicReportService implements ReportService {
     return message;
   }
 
-  private Map<String, Object> precioMetroCuadradoParams(Municipio municipio) {
+  public Map<String, Object> precioMetroCuadradoParams(Municipio municipio) {
     Optional<PrecioMetroCuadrado> precio = repository.precioMetroCuadrado(municipio.getClaveEdo(),
         municipio.getClaveMun());
 
@@ -119,32 +118,18 @@ public class BasicReportService implements ReportService {
     return params;
   }
 
-  private Map<String, Object> generalParams(ReportRequest input, Municipio mun) {
+  public Map<String, Object> generalParams(ReportRequest input, Municipio mun) {
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("address", input.getAddress());
     params.put("clave_edo", mun.getClaveEdo());
     params.put("nombre_edo", mun.getNombreEdo());
     params.put("isochrone_time_minutes", ISOCHRONE_MODE_VALUE);
-    params.put("isochrone_transport_type", transportType());
+    params.put("isochrone_transport_type", common.transportType(ISOCHRONE_TRANSPORT_TYPE));
     params.put("build_time", common.reportBuildTime());
     return params;
   }
 
-  private String transportType() {
-    switch (ISOCHRONE_TRANSPORT_TYPE) {
-      case WALKING:
-        return "caminando";
-      case CYCLING:
-        return "en bicicleta";
-      case DRIVING:
-      case DRIVING_TRAFFIC:
-        return "en auto";
-      default:
-        throw new BaseException("INVALID_TRANSPORT_TYPE", "The transport type no exists");
-    }
-  }
-
-  private Map<String, Object> poblacionParams(Poblacion pob) {
+  public Map<String, Object> poblacionParams(Poblacion pob) {
 
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("habitantes", NumberUtils.formatToInt(pob.getPobtot20()));
@@ -168,7 +153,7 @@ public class BasicReportService implements ReportService {
     return params;
   }
 
-  private Map<String, Object> grupoEdadParams(String isoWKT) {
+  public Map<String, Object> grupoEdadParams(String isoWKT) {
     GrupoEdad data = repository.grupoEdad(isoWKT);
 
     double total = data.getP0a2f20() + data.getP3a520() + data.getP6a1120() +
@@ -189,7 +174,7 @@ public class BasicReportService implements ReportService {
     return params;
   }
 
-  private Map<String, Object> poblacionResumenParams(Municipio mun, Poblacion pob) {
+  public Map<String, Object> poblacionResumenParams(Municipio mun, Poblacion pob) {
     PoblacionResumen data = repository.poblacionResumen(mun.getClaveEdo(), pob);
 
     Map<String, Object> params = new HashMap<String, Object>();
@@ -199,7 +184,7 @@ public class BasicReportService implements ReportService {
     return params;
   }
 
-  private Map<String, Object> poblacionPorcentajeEstudiosParams(List<PoblacionPorcentajeEstudios> pEstudios) {
+  public Map<String, Object> poblacionPorcentajeEstudiosParams(List<PoblacionPorcentajeEstudios> pEstudios) {
 
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("zona_peh_porcentaje_1", NumberUtils.formatToInt(pEstudios.get(0).getPParticipacionRango() * 100));
@@ -215,7 +200,6 @@ public class BasicReportService implements ReportService {
   }
 
   private Map<String, Object> graficaPorcentajeEstudiosParams(List<PoblacionPorcentajeEstudios> pEstudios) {
-
     List<CategoryData> data = new ArrayList<>();
 
     Double percentage;
@@ -330,7 +314,7 @@ public class BasicReportService implements ReportService {
     return params;
   }
 
-  private Polygon isochrone(ReportRequest input) {
+  private Isochrone isochrone(ReportRequest input) {
     IsochroneRequest request = IsochroneRequest.builder()
         .center(new Coordinate(input.getLatitude(), input.getLongitude()))
         .mode(ISOCHRONE_MODE)
@@ -338,7 +322,7 @@ public class BasicReportService implements ReportService {
         .transportType(ISOCHRONE_TRANSPORT_TYPE)
         .build();
 
-    return isochroneService.isochroneFrom(request).getPolygons().get(0);
+    return isochroneService.isochroneFrom(request).getIsochrones().get(0);
   }
 
   private String percentajeInt(double value, double total) {

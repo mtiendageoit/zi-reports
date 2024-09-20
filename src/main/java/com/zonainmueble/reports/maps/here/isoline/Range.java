@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class Range {
   private String type;
-  private Double value;
+  private Integer value;
 }
