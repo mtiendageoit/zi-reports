@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import org.locationtech.jts.geom.*;
+import org.locationtech.jts.simplify.TopologyPreservingSimplifier;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
@@ -68,7 +69,8 @@ public class GeometryUtils {
 
   private Geometry buffer(Geometry geometry, double distanceMeters) {
     double distance = distanceMeters / METERS_PER_DEGREE_LATITUDE;
-    return geometry.buffer(distance);
+    Geometry buffer = geometry.buffer(distance);
+    return TopologyPreservingSimplifier.simplify(buffer, 0.0000488);
   }
 
   private String toWKT(Geometry geometry) {

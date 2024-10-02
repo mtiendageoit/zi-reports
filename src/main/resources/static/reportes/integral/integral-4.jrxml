@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="integral-4" pageWidth="842" pageHeight="490" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d48c48d-d56d-4025-bb85-7dc3c4157b5b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="params" class="java.util.Map" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="450" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement mode="Transparent" x="0" y="0" width="800" height="449" isRemoveLineWhenBlank="true" uuid="18b17603-c665-4298-a1d4-86ffa4944393">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box padding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/i4.png" ):
+"i4.png"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="221" y="154" width="249" height="280" uuid="5293b11f-9329-4aa4-8757-062dac704005">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25" lineColor="#242424"/>
+				</box>
+				<imageExpression><![CDATA[$P{params}.get( "mapImage4" )]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="220" y="6" width="249" height="59" forecolor="#793F70" uuid="63a8d0aa-9636-45b1-8ea1-4f4be9fb895f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte nivel de bienestar e ingresos]]></text>
+			</staticText>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="483" y="7" width="300" height="184" forecolor="#894594" uuid="b8279ed5-bb0c-4bd1-b6ec-77693a7da617">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El análisis del nivel de bienestar, revela una notable concentración de segmentos socioeconómicos más altos en sus alrededores inmediatos. En el polígono de 5 minutos caminando, el 96% de los hogares pertenecen a los segmentos A/B y C+, y esta tendencia se mantiene en los polígonos de 10 y 15 minutos caminando, con 91% y 94% respectivamente. Comparado con la distribución promedio de la Ciudad de México, esta área muestra una mayor proporción de hogares de clase alta y media alta, indicando un entorno de alto nivel socioeconómico y destacándose por su elevado estándar de vida y calidad residencial."]]></textFieldExpression>
+			</textField>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="22" y="9" width="175" height="24" forecolor="#8A8A8A" uuid="6463cb2c-03f4-4059-b9f4-a86aff97463f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="20" y="10" width="176" height="22" uuid="57e697b9-3123-457c-8be6-351c54c128de"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ingreso Mensual Promedio]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="10" y="36" width="199" height="30" uuid="c74c1010-91bc-433e-9a25-b544bb38e3cb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$75,256.0 MXN"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="24" y="94" width="175" height="24" forecolor="#8A8A8A" uuid="0efbd88d-826e-45aa-b9e7-babef7a90ea4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="23" y="95" width="176" height="22" uuid="57aaf864-e806-476a-829d-8b9b682ee6d3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Niveles de Bienestar preponderantes]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="14" y="119" width="190" height="30" uuid="5269b872-2d53-481b-a968-c50a620a6e74">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["73.6% de las familias son:"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="282" y="66" width="120" height="24" forecolor="#8A8A8A" backcolor="#A5A5A5" uuid="f5ebe60b-c433-4e9b-b007-e67785cb6c46">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="282" y="67" width="119" height="22" forecolor="#FFFFFF" uuid="581ad01f-f0f8-452e-add3-23914f9e9dc4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ubicación de Analisis]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="226" y="93" width="240" height="48" uuid="97d4d92b-b5bb-4064-8aad-39c7686dd0c2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Manuel López Cotilla 1535-1553, Col del Valle Centro, Benito Juárez, 03104 Ciudad de México, CDMX"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="287" y="142" width="120" height="24" forecolor="#8A8A8A" backcolor="#A5A5A5" uuid="1e5a16e8-662f-4d95-a051-9135212286bc">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="287" y="143" width="119" height="22" forecolor="#FFFFFF" uuid="8045e8fc-9356-41d1-9f05-f3d1cc417065"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Zonas de analisis]]></text>
+			</staticText>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="20" y="217" width="178" height="24" forecolor="#8A8A8A" uuid="e57bf457-4888-4459-aa7a-547fd8ba7d8c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="20" y="217" width="178" height="26" uuid="feb7331d-d260-41a3-81ce-082dfd97d6d4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Precio  de bienes inmuebles por metro Cuadrado para transacciones de venta]]></text>
+			</staticText>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="17" y="338" width="184" height="24" forecolor="#8A8A8A" uuid="3397f51f-ce56-4ff3-8dc0-6bace5fee28b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="17" y="337" width="183" height="26" uuid="039b0825-6fdf-49dd-b905-9294483d5e76"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Precio  de bienes inmuebles por metro Cuadrado para transacciones de venta]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="8" y="370" width="200" height="30" uuid="e70d2007-b3ba-488d-8c8b-583037b31fb6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$4,264,470 mxn"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" hyperlinkType="Reference">
+				<reportElement mode="Opaque" x="8" y="305" width="200" height="20" uuid="8eaf350a-f5f3-4d31-be39-5018219debce"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["mas información..."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="6" y="271" width="80" height="18" uuid="91586404-bec9-4e66-934e-c5deda5296aa">
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["$" + $P{params}.get( "precio_m2_min" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="6" y="289" width="202" height="18" uuid="97da9a61-9b65-4a5f-a91a-592d7af19e0f">
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$" + $P{params}.get( "precio_m2" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="129" y="271" width="80" height="18" uuid="9b163ff0-f430-4ca2-b30c-0996d24681f0">
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["$" + $P{params}.get( "precio_m2_max" )]]></textFieldExpression>
+			</textField>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="545" y="201" width="175" height="24" forecolor="#8A8A8A" uuid="0ff7aca0-8bd1-479c-b9f2-2aaccb07145e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="545" y="202" width="175" height="22" uuid="ae151171-b638-40ff-9b68-97230ee4cb55"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Niveles de Bienestar preponderantes]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="486" y="231" width="60" height="68" backcolor="#BFBFBF" uuid="d207f894-b453-4d2f-8f91-904b77a6e7bf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6.5" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Zona"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="546" y="231" width="52" height="68" backcolor="#BFBFBF" uuid="6eb1d5cb-198d-4f33-beb0-fd6af51eb91d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6.5" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Población"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="486" y="299" width="60" height="26" backcolor="#C6E0B4" uuid="81438fd1-49d8-4a74-b636-82db27d6bba7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5 minutos"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="546" y="299" width="52" height="26" backcolor="#C6E0B4" uuid="ab18c1a3-5550-41ad-ae86-3317a3725489">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10,659"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="486" y="325" width="60" height="24" backcolor="#FFE699" uuid="5c5f3a97-8749-4d4e-b9ba-7a371c4a422b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10 minutos"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="546" y="325" width="52" height="24" backcolor="#FFE699" uuid="d6d45f3a-223f-48ed-9106-56aacd323396">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["22,384"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="486" y="349" width="60" height="25" backcolor="#BDD7EE" uuid="ccb8095f-0f8a-4ec5-9b5a-ea52b071ef47">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["15 minutos"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="546" y="349" width="52" height="25" backcolor="#BDD7EE" uuid="811d836b-f0e2-42b3-8d90-91e170b16218">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["47,372"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="598" y="231" width="59" height="32" forecolor="#FFFFFF" backcolor="#C00000" uuid="b70d1bcd-4a76-4517-8f91-db82c2307845">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Más de $75,000 mxn"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="657" y="231" width="61" height="32" forecolor="#FFFFFF" backcolor="#D24CB8" uuid="43388618-1ac9-4e65-9deb-b497d8124d53">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Entre $45,000 y $74,999 mxn"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="718" y="231" width="61" height="32" forecolor="#FFFFFF" backcolor="#305496" uuid="1ea5e674-93fb-4cb1-a5e7-e90355993ad6">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Entre $30,000 y $44,999 mxn"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="718" y="263" width="61" height="36" forecolor="#FFFFFF" backcolor="#305496" uuid="064b535f-97fd-48d6-8b72-522f5996d988">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Medio C"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="657" y="263" width="61" height="36" forecolor="#FFFFFF" backcolor="#D24CB8" uuid="f6f48bf5-9065-4018-8e0f-d356fb711df2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Medio Alto C+"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="598" y="263" width="59" height="36" forecolor="#FFFFFF" backcolor="#C00000" uuid="c2c9524f-7e07-4607-a4c9-73fc026b25d0">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Alto y Muy Alto A/B"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="598" y="299" width="59" height="13" backcolor="#FFFFFF" uuid="2e99f83a-b9d1-4540-a9f0-c07c473764f4">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4,181"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="657" y="299" width="61" height="13" backcolor="#FFFFFF" uuid="4a51dda7-ce7e-40bb-ba9f-7bceaad7dd63">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["6,061"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="718" y="299" width="61" height="13" backcolor="#FFFFFF" uuid="7d93776e-1c1a-47a0-9503-085ba3452814">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["372"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="598" y="312" width="59" height="13" backcolor="#FFFFFF" uuid="613e12de-bd5d-4ee6-a5b5-1046708b9cdb">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["39.2%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="657" y="312" width="61" height="13" backcolor="#FFFFFF" uuid="c47892e7-1e56-4725-8f56-30df911d031c">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["56.9%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="718" y="312" width="61" height="13" backcolor="#FFFFFF" uuid="c8a93cbb-65fb-4375-b8e0-d95afa586d19">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3.5%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="598" y="325" width="59" height="13" backcolor="#FFFFFF" uuid="4f0993ad-5170-4072-b474-23800fa8e4f1">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9,137"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="598" y="338" width="59" height="12" backcolor="#FFFFFF" uuid="865f4b37-5763-44cb-8e55-4b2eb6071980">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["40.8%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="657" y="325" width="61" height="13" backcolor="#FFFFFF" uuid="9c7bc6c1-697a-469a-afd9-8cf82de1c145">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["11,155"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="657" y="338" width="61" height="12" backcolor="#FFFFFF" uuid="65f41664-2635-42ce-a875-4a88109159f2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["49.8%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="718" y="325" width="61" height="13" backcolor="#FFFFFF" uuid="af172a67-477f-4b32-b095-e14837c191e4">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2,015"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="718" y="338" width="61" height="12" backcolor="#FFFFFF" uuid="0c73e102-788d-43f3-9474-209077e22844">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.0%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="598" y="349" width="59" height="13" backcolor="#FFFFFF" uuid="5f4ba2ad-33cb-40c4-bcd1-2fdccadb399c">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["16,550"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="657" y="349" width="61" height="13" backcolor="#FFFFFF" uuid="a5cd2b7d-9b73-4166-8499-b304669777f8">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["27,987"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="718" y="349" width="61" height="13" backcolor="#FFFFFF" uuid="bb252d25-86fd-4945-8e1c-ee86a8b7a47d">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2,551"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="718" y="362" width="61" height="12" backcolor="#FFFFFF" uuid="3be15810-99c6-48bc-9d7b-b095e9bbd71d">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.4%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="657" y="362" width="61" height="12" backcolor="#FFFFFF" uuid="b57b7d32-d323-4793-af73-3779d53244b4">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["59.1%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="598" y="362" width="59" height="12" backcolor="#FFFFFF" uuid="88261938-7998-447a-8931-d6638c20c8e6">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["34.9%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="19" y="154" width="78" height="24" forecolor="#FFFFFF" backcolor="#A1A1A1" uuid="c23f0f25-a3bb-43ff-b944-f42974e16961">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineColor="#050505"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nivel de Bienestar"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="97" y="154" width="94" height="24" forecolor="#FFFFFF" backcolor="#A1A1A1" uuid="24a7d9eb-83da-4dd6-81f0-da127abc1927">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineColor="#050505"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ingreso mensual Promedio (MXN)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="19" y="178" width="78" height="11" forecolor="#FFFFFF" backcolor="#B70000" uuid="2f471d84-322b-4b1d-ad44-03d617fb6dd9">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineColor="#050505"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A/B Alto y Muy Alto"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="97" y="178" width="94" height="11" forecolor="#FFFFFF" backcolor="#B70000" uuid="ebc4cafc-ddb9-4fbb-8d32-007f39dd282e">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineColor="#050505"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Más de $75,000"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="19" y="189" width="78" height="12" forecolor="#FFFFFF" backcolor="#D24CB8" uuid="7761c953-ebcf-46a1-9b21-ac244eec73d3">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineColor="#050505"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["C+ Medio Alto"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="97" y="189" width="94" height="12" forecolor="#FFFFFF" backcolor="#D24CB8" uuid="f6de2092-9e91-4dd1-8e69-a3f34d716057">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineColor="#050505"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["De $45,000 y $74,999"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

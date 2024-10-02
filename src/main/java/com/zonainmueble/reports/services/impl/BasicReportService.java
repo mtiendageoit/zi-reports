@@ -125,7 +125,8 @@ public class BasicReportService implements ReportService {
     params.put("nombre_edo", mun.getNombreEdo());
     params.put("isochrone_time_minutes", ISOCHRONE_MODE_VALUE);
     params.put("isochrone_transport_type", common.transportType(ISOCHRONE_TRANSPORT_TYPE));
-    params.put("build_time", common.reportBuildTime());
+    params.put("build_date", common.reportBuildTime().get(("date")));
+    params.put("build_time", common.reportBuildTime().get(("time")));
     return params;
   }
 
@@ -296,20 +297,20 @@ public class BasicReportService implements ReportService {
     List<Marker> markers = List.of(new Marker(new Coordinate(input.getLatitude(), input.getLongitude())));
 
     Map<String, Object> params = new HashMap<String, Object>();
-    byte[] image1 = mapImageService.image(new MapImageRequest(310, 165, "roadmap", markers, polygons));
+    byte[] image1 = mapImageService.image(new MapImageRequest(451, 246, "roadmap", markers, null));
     params.put("mapImage1", image1);
 
-    byte[] image2 = mapImageService.image(new MapImageRequest(350, 370, "roadmap", markers, polygons));
+    byte[] image2 = mapImageService.image(new MapImageRequest(231, 247, "roadmap", markers, polygons));
     params.put("mapImage2", image2);
 
-    byte[] image3 = mapImageService.image(new MapImageRequest(350, 300, "roadmap", markers, null));
+    byte[] image3 = mapImageService.image(new MapImageRequest(273, 437, "roadmap", markers, polygons));
     params.put("mapImage3", image3);
 
-    byte[] image4 = mapImageService.image(new MapImageRequest(255, 270, "roadmap", markers, polygons));
-    params.put("mapImage4", image4);
+    // byte[] image4 = mapImageService.image(new MapImageRequest(255, 270, "roadmap", markers, polygons));
+    // params.put("mapImage4", image4);
 
-    byte[] image5 = mapImageService.image(new MapImageRequest(365, 300, "hybrid", markers, polygons));
-    params.put("mapImage5", image5);
+    // byte[] image5 = mapImageService.image(new MapImageRequest(365, 300, "hybrid", markers, polygons));
+    // params.put("mapImage5", image5);
 
     return params;
   }

@@ -31,7 +31,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/i1.png" )
 "i1.png"]]></imageExpression>
 			</image>
 			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
-				<reportElement x="21" y="44" width="314" height="276" uuid="5293b11f-9329-4aa4-8757-062dac704005">
+				<reportElement x="21" y="44" width="320" height="276" uuid="5293b11f-9329-4aa4-8757-062dac704005">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>

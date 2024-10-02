@@ -23,8 +23,15 @@ public class CommonReportService {
         .orElseThrow(() -> new NoSuchElementException("Municipio not found: " + latitude + "," + longitude));
   }
 
-  public String reportBuildTime() {
-    return DateTimeUtils.format(LocalDateTime.now(), "dd/MMMM/yyyy h:mm a", new Locale("es", "ES"));
+  public Map<String, String> reportBuildTime() {
+    Locale locale = new Locale("es", "ES");
+    LocalDateTime now = LocalDateTime.now();
+    String date = DateTimeUtils.format(now, "dd MMMM'.' yyyy", locale);
+    date = date.substring(0, 3) + date.substring(3, 4).toUpperCase() + date.substring(4);
+    String time = DateTimeUtils.format(now, "HH:mm 'hrs'", locale);
+
+    return Map.of("date", date, "time", time);
+
   }
 
   public String transportType(TransportType type) {

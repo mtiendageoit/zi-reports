@@ -42,7 +42,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/i3.png" 
 				<box>
 					<pen lineWidth="0.25" lineColor="#242424"/>
 				</box>
-				<imageExpression><![CDATA[$P{params}.get( "mapImage4" )]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get( "mapImage2" )]]></imageExpression>
 			</image>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="17" y="4" width="250" height="66" uuid="d8888cfe-d328-48e7-b949-a8ec5ee1c758">

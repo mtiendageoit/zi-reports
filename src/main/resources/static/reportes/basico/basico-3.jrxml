@@ -1,116 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="basico-3" pageWidth="842" pageHeight="490" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d48c48d-d56d-4025-bb85-7dc3c4157b5b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="basico-3" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="792" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7d48c48d-d56d-4025-bb85-7dc3c4157b5b">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<property name="com.jaspersoft.studio.unit." value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="small-percentaje" hTextAlign="Left" fontName="Montserrat" fontSize="10"/>
 	<parameter name="params" class="java.util.Map" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
 	<detail>
-		<band height="450" splitType="Stretch">
-			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
-				<reportElement x="0" y="0" width="800" height="449" isRemoveLineWhenBlank="true" uuid="18b17603-c665-4298-a1d4-86ffa4944393">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		<band height="612" splitType="Stretch">
+			<image scaleImage="RealSize" hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement mode="Opaque" x="0" y="0" width="792" height="612" isRemoveLineWhenBlank="true" uuid="005f8fac-1e81-4d09-aad4-29a95c359cc8">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box padding="0">
-					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<pen lineWidth="0.0"/>
 				</box>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b3.png" ):
 "b3.png"]]></imageExpression>
 			</image>
-			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
-				<reportElement x="29" y="74" width="350" height="300" uuid="3ffafc69-356b-46a3-aed7-604566a9c83f">
+			<image scaleImage="RealSize" hAlign="Center" vAlign="Middle">
+				<reportElement x="517" y="43" width="231" height="247" uuid="3ffafc69-356b-46a3-aed7-604566a9c83f">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="0.25" lineColor="#242424"/>
+					<pen lineWidth="0.5" lineColor="#FBB700"/>
 				</box>
-				<imageExpression><![CDATA[$P{params}.get( "mapImage3" )]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get( "mapImage2" )]]></imageExpression>
 			</image>
-			<rectangle radius="6">
-				<reportElement mode="Opaque" x="76" y="56" width="233" height="24" forecolor="#8A8A8A" uuid="0acff4d9-5f1d-4d35-b10b-6604ca246ee8">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-			</rectangle>
-			<staticText>
-				<reportElement x="76" y="57" width="232" height="22" uuid="69faf826-b98e-497b-91ac-276b8ed2093c"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="11" isBold="false"/>
-				</textElement>
-				<text><![CDATA[Ubicación del análisis]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="408" y="308" width="174" height="19" uuid="ffd1653e-d39d-4b70-bbfb-b4de039102ad"/>
-				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Tiempos de Viaje Analizados]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="594" y="308" width="174" height="19" uuid="61572390-8755-4c12-bc1c-8403658a9165"/>
-				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Medios de Transporte]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="409" y="389" width="174" height="19" uuid="4154142f-7f98-47cc-beb1-3392fc76fa64"/>
-				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Fecha y hora del reporte]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="490" y="59" width="223" height="22" uuid="bfa9d6ef-f25d-46fe-ac99-ba66e4435fca"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="13" isBold="false"/>
-				</textElement>
-				<text><![CDATA[¿Qué encontraré en este reporte?]]></text>
-			</staticText>
-			<textField>
-				<reportElement mode="Opaque" x="409" y="409" width="171" height="18" uuid="f7423896-f998-4d82-be50-b2274f2a5f06">
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="28" y="57" width="449" height="40" backcolor="#FFFFFF" uuid="529ce93f-eff6-4d64-90a1-c7211756faf3">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{params}.get( "build_time" )]]></textFieldExpression>
-			</textField>
-			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement mode="Opaque" x="29" y="389" width="350" height="40" uuid="529ce93f-eff6-4d64-90a1-c7211756faf3"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{params}.get( "address" )]]></textFieldExpression>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "isochrone_time_minutes" ) + " minutos " +$P{params}.get( "isochrone_transport_type" )]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="4" width="800" height="39" forecolor="#793F70" uuid="b35ec7f0-cd42-4e45-92f8-b21d6515cd83"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="28" isBold="true"/>
+				<reportElement mode="Opaque" x="28" y="22" width="449" height="40" forecolor="#343434" backcolor="#FFFFFF" uuid="8cfe1e44-7980-44eb-a4d6-419760a1abd7"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Montserrat Medium" size="30" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Reporte básico de ubicación]]></text>
+				<text><![CDATA[Área de cobertura]]></text>
 			</staticText>
-			<textField>
-				<reportElement mode="Opaque" x="406" y="92" width="375" height="200" uuid="32568c0a-6ffe-4dd4-9115-c9142dd75b35">
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="93" y="151" width="384" height="60" forecolor="#343434" backcolor="#EBEBEB" uuid="f509a593-f251-4c5d-b929-d8b3a2c17fde">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Montserrat Medium" size="12"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "zona_habitantes" ) +"</font><br/>En comparación con los datos de " + $P{params}.get( "nombre_edo" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="33" y="343" width="54" height="62" forecolor="#FFFFFF" backcolor="#FBB700" uuid="32942bc5-7798-4024-bad4-1e6e4d8b9601">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Justified" verticalAlignment="Middle">
-					<font size="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Montserrat" size="24" isBold="true"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["El reporte básico de ubicación te entrega datos de gran valor del entorno demográfico entre otros factores de la ubicación del inmueble a partir de un área de cobertura (polígono) la cual es determinada por la distancia recorrida desde la ubicación de análisis "+$P{params}.get( "isochrone_transport_type" )+" "+$P{params}.get( "isochrone_time_minutes" )+" minutos en cualquier dirección posible."]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get( "zona_peh_porcentaje_1" ) + "<style size=\"12\">%</style>"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="31" y="434" width="52" height="26" forecolor="#FBB700" backcolor="#EBEBEB" uuid="de546c98-69bf-48de-8c72-2a8b426ec1cf">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Montserrat" size="12" isBold="true"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "zona_peh_porcentaje_2" ) + "%"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="33" y="519" width="56" height="59" forecolor="#FBB700" backcolor="#EBEBEB" uuid="e9b73cd1-1411-4fc9-9781-33bd42f383dd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Montserrat" size="20" isBold="true"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "habitantes_vivienda" )]]></textFieldExpression>
+			</textField>
+			<rectangle radius="0">
+				<reportElement mode="Transparent" x="501" y="530" width="263" height="52" forecolor="#050505" backcolor="#9F272A" uuid="1b9f8d0f-7ea9-4553-ad8e-c94892d54825">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="509" y="548" width="80" height="20" forecolor="#FFFFFF" backcolor="#F8D2D5" uuid="3678c21e-edc8-4558-b27e-9139151e24f6">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+					<font fontName="Montserrat" size="10"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$" + $P{params}.get( "precio_m2_min" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="676" y="548" width="80" height="20" forecolor="#FFFFFF" backcolor="#A62E2F" uuid="063aec8d-0084-489e-95ee-943db389c3f7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Montserrat" size="10"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$" + $P{params}.get( "precio_m2_max" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="589" y="548" width="87" height="20" forecolor="#FFFFFF" backcolor="#E599A1" uuid="5f358f32-3e66-45d4-9428-bb7c111caa76">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Montserrat Medium" size="10" isBold="true"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$" + $P{params}.get( "precio_m2" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="521" y="373" width="110" height="48" forecolor="#343434" backcolor="#EBEBEB" uuid="dfbb0d8b-c43a-45fa-bde2-d6147790696e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font fontName="Montserrat" size="12" isBold="true"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_numero_1" ) + " "+ $P{params}.get( "pois_nombre_1" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="634" y="373" width="110" height="48" forecolor="#343434" backcolor="#EBEBEB" uuid="e37ac669-a7c0-43a1-8eb4-4c28f780b0b0">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font fontName="Montserrat" size="12" isBold="true"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{params}.get( "pois_numero_2" ) + " "+ $P{params}.get( "pois_nombre_2" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="93" y="255" width="384" height="60" forecolor="#343434" backcolor="#FFFFFF" uuid="1282c8f0-a882-4abb-ae0e-ed586d6b1bca">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Montserrat Medium" size="12"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "zona_habitantes_infantil" ) +"</font><br/>En comparación con la media de "+$P{params}.get( "nombre_edo" )+ " con rangos de 0 a 11 años."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="93" y="346" width="384" height="60" forecolor="#FFFFFF" backcolor="#FBB700" uuid="397c6de0-a676-43eb-b40b-fe35b700393b">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Montserrat Medium" size="12"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>De los habitantes tienen " +$P{params}.get( "zona_peh_desc_1" ) +"</font><br/>En promedio en "+ $P{params}.get( "nombre_edo" )+" el "+$P{params}.get( "zona_peh_porcentaje_edo_1" )+"% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_1" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="93" y="421" width="384" height="60" forecolor="#343434" backcolor="#FFFFFF" uuid="1b1158d1-a5d5-421c-82ca-c22b74352076">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Montserrat Medium" size="12"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["de los habitantes tienen " + $P{params}.get( "zona_peh_desc_2" ) + "<br/>En promedio en " + $P{params}.get( "nombre_edo" ) + " el "+ $P{params}.get( "zona_peh_porcentaje_edo_2" ) + "% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_2" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="93" y="520" width="384" height="60" forecolor="#343434" backcolor="#EBEBEB" uuid="fc518769-25ec-4089-a6a0-fc15c78d9aae">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Montserrat Medium" size="12"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Habitantes por Vivienda</font><br/>" + $P{params}.get( "zona_densidad" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="502" y="462" width="268" height="60" forecolor="#343434" backcolor="#FFFFFF" uuid="444f4b07-3599-47a4-ad1c-fb6e576746d6">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Montserrat Medium" size="12"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Precio de inmuebles por m2.</font><br/>En transacciones de venta en comparación con los datos de " + $P{params}.get( "nombre_edo" )]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
