@@ -44,6 +44,7 @@ public class BasicReportService implements ReportService {
     Municipio municipio = common.municipioFrom(input.getLatitude(), input.getLongitude());
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("params", reportParams(input, municipio));
+
     return jasper.generatePdf(JASPER_REPORT_PATH, params);
   }
 
@@ -297,20 +298,14 @@ public class BasicReportService implements ReportService {
     List<Marker> markers = List.of(new Marker(new Coordinate(input.getLatitude(), input.getLongitude())));
 
     Map<String, Object> params = new HashMap<String, Object>();
-    byte[] image1 = mapImageService.image(new MapImageRequest(451, 246, "roadmap", markers, null));
+    byte[] image1 = mapImageService.image(new MapImageRequest(451, 245, "roadmap", markers, null));
     params.put("mapImage1", image1);
 
-    byte[] image2 = mapImageService.image(new MapImageRequest(231, 247, "roadmap", markers, polygons));
+    byte[] image2 = mapImageService.image(new MapImageRequest(236, 250, "roadmap", markers, polygons));
     params.put("mapImage2", image2);
 
-    byte[] image3 = mapImageService.image(new MapImageRequest(273, 437, "roadmap", markers, polygons));
+    byte[] image3 = mapImageService.image(new MapImageRequest(278, 440, "roadmap", markers, polygons));
     params.put("mapImage3", image3);
-
-    // byte[] image4 = mapImageService.image(new MapImageRequest(255, 270, "roadmap", markers, polygons));
-    // params.put("mapImage4", image4);
-
-    // byte[] image5 = mapImageService.image(new MapImageRequest(365, 300, "hybrid", markers, polygons));
-    // params.put("mapImage5", image5);
 
     return params;
   }

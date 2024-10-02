@@ -287,7 +287,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 				<textFieldExpression><![CDATA["Más de 65"]]></textFieldExpression>
 			</textField>
 			<image scaleImage="RealSize" hAlign="Center" vAlign="Middle">
-				<reportElement x="44" y="125" width="273" height="437" uuid="1ec8b3fe-cf25-428c-9737-603db6b638f4">
+				<reportElement x="41" y="123" width="278" height="440" uuid="1ec8b3fe-cf25-428c-9737-603db6b638f4">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -354,6 +354,20 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
 				</textElement>
 				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "ninos" ) + " Niños y niñas</font><br/>de 0 a 11 años"]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="390" y="43" width="38" height="18" backcolor="#EBEBEB" uuid="1db040e2-58e1-4134-95ac-b524d9d5425b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Años]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="486" y="43" width="80" height="18" backcolor="#EBEBEB" uuid="9ac9e542-dc9b-4b1c-bafc-278682ced3d7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Habitantes]]></text>
+			</staticText>
 		</band>
 	</detail>
 </jasperReport>

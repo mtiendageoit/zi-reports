@@ -108,7 +108,7 @@ EN ESTE REPORTE BÁSICO?]]></text>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 		</band>

@@ -37,13 +37,14 @@ por tu confianza!]]></text>
 				</textElement>
 				<text><![CDATA[contacto@zonainmueble.mx]]></text>
 			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="466" y="541" width="219" height="20" forecolor="#FFFFFF" backcolor="#FBB700" uuid="93ef4437-9efb-47a1-a5c3-b731cf1b5d29"/>
+			<textField textAdjust="ScaleFont" hyperlinkType="Reference" hyperlinkTarget="Blank">
+				<reportElement mode="Opaque" x="467" y="540" width="218" height="18" forecolor="#FFFFFF" backcolor="#FBB700" uuid="aef81f34-f200-41ed-be9a-abed91f4519b"/>
 				<textElement textAlignment="Right" verticalAlignment="Top">
 					<font fontName="Montserrat Medium" size="10" isBold="false"/>
 				</textElement>
-				<text><![CDATA[zonainmueble.mx]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA["zonainmueble.mx"]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["https://zonainmueble.mx"]]></hyperlinkReferenceExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>
