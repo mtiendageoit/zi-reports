@@ -18,7 +18,7 @@
 					<pen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b7.png" ):
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/b7.png" ):
 "b7.png"]]></imageExpression>
 			</image>
 			<staticText>

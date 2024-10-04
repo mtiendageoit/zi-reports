@@ -22,7 +22,7 @@
 					<pen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b4.png" ):
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/b4.png" ):
 "b4.png"]]></imageExpression>
 			</image>
 			<textField>

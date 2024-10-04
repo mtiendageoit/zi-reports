@@ -28,7 +28,7 @@
 					<pen lineWidth="0.0"/>
 				</box>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b1.png" ):
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/b1.png" ):
 "b1.png"]]></imageExpression>
 			</image>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">

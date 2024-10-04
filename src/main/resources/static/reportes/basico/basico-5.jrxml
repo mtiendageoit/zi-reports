@@ -27,7 +27,7 @@
 					<pen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/basic/b5.png" ):
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/b5.png" ):
 "b5.png"]]></imageExpression>
 			</image>
 			<rectangle radius="16">
