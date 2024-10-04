@@ -206,16 +206,25 @@ public class BasicReportService implements ReportService {
 
     Double percentage;
     for (PoblacionPorcentajeEstudios item : pEstudios) {
-      percentage = item.getPParticipacionRango() * 100;
-      if (percentage >= 1) {// No mostrar los valores menores a 1%
-        data.add(new CategoryData(item.getDescripcionCorta(), percentage));
+      percentage = item.getPParticipacionRango();
+      if (percentage >= 0.01) {// No mostrar los valores menores a 1%
+        data.add(new CategoryData(item.getDescripcion(), percentage, item.getColor()));
       }
     }
 
-    JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
+    data.sort(Comparator.comparingDouble(CategoryData::getValue).reversed());
+    data = data.subList(0, Math.min(4, data.size()));
 
     Map<String, Object> params = new HashMap<String, Object>();
+    JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
     params.put("grafica_dataset", dataSource);
+
+    for (int i = 0; i < data.size(); i++) {
+      params.put("grafica_category_" + (i + 1), data.get(i).getCategory());
+      params.put("grafica_value_" + (i + 1), data.get(i).getValue());
+      params.put("grafica_color_" + (i + 1), data.get(i).getColor());
+    }
+
     return params;
   }
 

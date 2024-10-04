@@ -8,4 +8,5 @@ import lombok.*;
 public class CategoryData {
   private String category;
   private Double value;
+  private String color;
 }

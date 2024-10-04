@@ -12,4 +12,5 @@ public class PoblacionPorcentajeEstudios {
   private Double pParticipacionRango;
   private String descripcion;
   private String descripcionCorta;
+  private String color;
 }
