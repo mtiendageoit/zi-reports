@@ -116,7 +116,7 @@
 				<imageExpression><![CDATA[$P{params}.get( "mapImage3" )]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="340" y="44" width="80" height="18" isRemoveLineWhenBlank="true" forecolor="#3C3C3B" uuid="1db040e2-58e1-4134-95ac-b524d9d5425b">
+				<reportElement x="323" y="44" width="113" height="18" isRemoveLineWhenBlank="true" forecolor="#3C3C3B" uuid="1db040e2-58e1-4134-95ac-b524d9d5425b">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -127,8 +127,9 @@
 				<text><![CDATA[Años]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="467" y="44" width="80" height="18" isRemoveLineWhenBlank="true" forecolor="#3C3C3B" uuid="9ac9e542-dc9b-4b1c-bafc-278682ced3d7">
+				<reportElement x="450" y="44" width="113" height="18" isRemoveLineWhenBlank="true" forecolor="#3C3C3B" uuid="9ac9e542-dc9b-4b1c-bafc-278682ced3d7">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -146,7 +147,7 @@
 				</graphicElement>
 			</rectangle>
 			<textField>
-				<reportElement x="340" y="82" width="80" height="15" forecolor="#3C3C3B" uuid="ac89b23f-8b7b-4620-b9eb-e0d8345dcd0d">
+				<reportElement x="323" y="82" width="113" height="15" forecolor="#3C3C3B" uuid="ac89b23f-8b7b-4620-b9eb-e0d8345dcd0d">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -159,7 +160,7 @@
 				<textFieldExpression><![CDATA["0 a 2"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="467" y="82" width="80" height="15" forecolor="#3C3C3B" uuid="033225e6-3ea6-4d67-b268-688056f31964">
+				<reportElement x="450" y="82" width="113" height="15" forecolor="#3C3C3B" uuid="033225e6-3ea6-4d67-b268-688056f31964">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -171,9 +172,10 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "habitantes_0a2" )]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="106" width="70" height="15" forecolor="#3C3C3B" uuid="4b89147d-ad08-45cf-ae7b-ee5ba76c93ec">
+				<reportElement x="323" y="106" width="113" height="15" forecolor="#3C3C3B" uuid="4b89147d-ad08-45cf-ae7b-ee5ba76c93ec">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat" size="12" isBold="false"/>
@@ -182,8 +184,9 @@
 				<textFieldExpression><![CDATA["3 a 5"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="467" y="106" width="80" height="15" forecolor="#3C3C3B" uuid="ea60ca13-95aa-49ac-9edc-9b8772442bb4">
+				<reportElement x="450" y="106" width="113" height="15" forecolor="#3C3C3B" uuid="ea60ca13-95aa-49ac-9edc-9b8772442bb4">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -193,9 +196,10 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "habitantes_3a5" )]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="130" width="70" height="15" forecolor="#3C3C3B" uuid="fae0dbf1-90d6-4460-a45e-851745ec61e7">
+				<reportElement x="323" y="130" width="113" height="15" forecolor="#3C3C3B" uuid="fae0dbf1-90d6-4460-a45e-851745ec61e7">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat" size="12" isBold="false"/>
@@ -204,8 +208,9 @@
 				<textFieldExpression><![CDATA["6 a 11"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="467" y="130" width="80" height="15" forecolor="#3C3C3B" uuid="054478ee-e5b9-46cc-9cf0-222f18a109b1">
+				<reportElement x="450" y="130" width="113" height="15" forecolor="#3C3C3B" uuid="054478ee-e5b9-46cc-9cf0-222f18a109b1">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -215,9 +220,10 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "habitantes_6a11" )]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="154" width="70" height="15" forecolor="#3C3C3B" uuid="d60d523a-1b92-4e0b-937d-842bf47aa479">
+				<reportElement x="323" y="154" width="113" height="15" forecolor="#3C3C3B" uuid="d60d523a-1b92-4e0b-937d-842bf47aa479">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat" size="12" isBold="false"/>
@@ -226,8 +232,9 @@
 				<textFieldExpression><![CDATA["12 a 14"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="467" y="154" width="80" height="15" forecolor="#3C3C3B" uuid="9f75c7e1-adb0-4947-add3-a6f20f1fe9b5">
+				<reportElement x="450" y="154" width="113" height="15" forecolor="#3C3C3B" uuid="9f75c7e1-adb0-4947-add3-a6f20f1fe9b5">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -237,9 +244,10 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "habitantes_12a14" )]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="178" width="70" height="15" forecolor="#3C3C3B" uuid="18c642e8-15cc-4b8f-8605-ab054d2cc859">
+				<reportElement x="323" y="178" width="113" height="15" forecolor="#3C3C3B" uuid="18c642e8-15cc-4b8f-8605-ab054d2cc859">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat" size="12" isBold="false"/>
@@ -248,8 +256,9 @@
 				<textFieldExpression><![CDATA["15 a 17"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="467" y="178" width="80" height="15" forecolor="#3C3C3B" uuid="0a6c6df2-4371-4e21-8afb-57a0dac01724">
+				<reportElement x="450" y="178" width="113" height="15" forecolor="#3C3C3B" uuid="0a6c6df2-4371-4e21-8afb-57a0dac01724">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -259,9 +268,10 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "habitantes_15a17" )]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="202" width="70" height="15" forecolor="#3C3C3B" uuid="9b7a16aa-ef5c-48f0-b846-6406d5e57094">
+				<reportElement x="323" y="202" width="113" height="15" forecolor="#3C3C3B" uuid="9b7a16aa-ef5c-48f0-b846-6406d5e57094">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat" size="12" isBold="false"/>
@@ -270,8 +280,9 @@
 				<textFieldExpression><![CDATA["18 a 24"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="467" y="202" width="80" height="15" forecolor="#3C3C3B" uuid="e370bd5f-faaa-4b49-a1c6-101ecbaf97ca">
+				<reportElement x="450" y="202" width="113" height="15" forecolor="#3C3C3B" uuid="e370bd5f-faaa-4b49-a1c6-101ecbaf97ca">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -281,9 +292,10 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "habitantes_18a24" )]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="226" width="70" height="15" forecolor="#3C3C3B" uuid="e181c285-d6b4-4df8-bb9d-f54848b8b06d">
+				<reportElement x="323" y="226" width="113" height="15" forecolor="#3C3C3B" uuid="e181c285-d6b4-4df8-bb9d-f54848b8b06d">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat" size="12" isBold="false"/>
@@ -292,8 +304,9 @@
 				<textFieldExpression><![CDATA["15 a 64"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="467" y="226" width="80" height="15" forecolor="#3C3C3B" uuid="5bc8a06d-fb9a-4b8b-8a78-0ee9e1894a7a">
+				<reportElement x="450" y="226" width="113" height="15" forecolor="#3C3C3B" uuid="5bc8a06d-fb9a-4b8b-8a78-0ee9e1894a7a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -303,9 +316,10 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "habitantes_15a64" )]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="250" width="70" height="15" forecolor="#3C3C3B" uuid="157993c1-fca7-4c15-a55f-452d69776ca6">
+				<reportElement x="323" y="250" width="113" height="15" forecolor="#3C3C3B" uuid="157993c1-fca7-4c15-a55f-452d69776ca6">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat" size="12" isBold="false"/>
@@ -314,8 +328,9 @@
 				<textFieldExpression><![CDATA["+ de 60"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="467" y="250" width="80" height="15" forecolor="#3C3C3B" uuid="70050bbe-c288-43be-9fe6-25ec8793c1be">
+				<reportElement x="450" y="250" width="113" height="15" forecolor="#3C3C3B" uuid="70050bbe-c288-43be-9fe6-25ec8793c1be">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -325,9 +340,10 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "habitantes_mas60" )]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="275" width="70" height="15" forecolor="#3C3C3B" uuid="9dce3822-f801-405e-b9e4-8c22aa3e06df">
+				<reportElement x="323" y="275" width="113" height="15" forecolor="#3C3C3B" uuid="9dce3822-f801-405e-b9e4-8c22aa3e06df">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat" size="12" isBold="false"/>
@@ -336,8 +352,9 @@
 				<textFieldExpression><![CDATA["+ de 65"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="467" y="275" width="80" height="15" forecolor="#3C3C3B" uuid="4c0deb1a-2c61-4392-a2ee-fc954f40b1e8">
+				<reportElement x="450" y="275" width="113" height="15" forecolor="#3C3C3B" uuid="4c0deb1a-2c61-4392-a2ee-fc954f40b1e8">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
