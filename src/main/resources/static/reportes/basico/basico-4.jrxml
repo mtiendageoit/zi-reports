@@ -434,8 +434,8 @@
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-hombres.svg" ):
-"icon-hombres.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-hombres.svg" ):
+"images/icon-hombres.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="193" y="449" width="56" height="56" uuid="9061addd-9553-4f92-9262-8cb109c1c4d2">
@@ -445,8 +445,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-hombr
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-mujeres.svg" ):
-"icon-mujeres.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-mujeres.svg" ):
+"images/icon-mujeres.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="342" y="348" width="42" height="36" uuid="383badd4-ceb9-4389-af42-2a2156c280d6">
@@ -456,8 +456,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-mujer
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-familias.svg" ):
-"icon-familias.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-familias.svg" ):
+"images/icon-familias.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="342" y="443" width="42" height="30" uuid="fa82a6d0-3b41-4bf4-84c9-57d3f1b7f3d1">
@@ -467,8 +467,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-famil
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-poblacion-infantil.svg" ):
-"icon-poblacion-infantil.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-poblacion-infantil.svg" ):
+"images/icon-poblacion-infantil.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="342" y="532" width="42" height="37" uuid="83de0724-69db-4981-a6ad-7bce5615b928">
@@ -478,8 +478,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-pobla
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-escolaridad-birrete.svg" ):
-"icon-escolaridad-birrete.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-escolaridad-birrete.svg" ):
+"images/icon-escolaridad-birrete.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="596" y="28" width="168" height="556" uuid="6300f2d5-ee8d-4874-8027-288fa215cca8">
@@ -489,8 +489,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-escol
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/publicidad-celular.png" ):
-"publicidad-celular.png"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/publicidad-celular.png" ):
+"images/publicidad-celular.png"]]></imageExpression>
 			</image>
 			<line>
 				<reportElement x="442" y="28" width="1" height="267" uuid="ad189c17-674f-4775-a65f-b1b0d07aea34">

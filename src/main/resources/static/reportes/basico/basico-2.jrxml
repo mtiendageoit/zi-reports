@@ -148,8 +148,8 @@ EN ESTE REPORTE BÁSICO?]]></text>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-fecha.svg" ):
-"icon-fecha.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-fecha.svg" ):
+"images/icon-fecha.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="55" y="236" width="52" height="52" uuid="956572e2-579d-44b5-8fba-e864d3e6ec36">
@@ -159,8 +159,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-fecha
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-caminando.svg" ):
-"icon-caminando.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-caminando.svg" ):
+"images/icon-caminando.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="567" y="80" width="132" height="114" uuid="2178f408-1acf-445b-ab11-22f400b09645">
@@ -169,8 +169,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-camin
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-zi-full-banco.svg" ):
-"icon-zi-full-banco.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-zi-full-banco.svg" ):
+"images/icon-zi-full-banco.svg"]]></imageExpression>
 			</image>
 		</band>
 	</detail>

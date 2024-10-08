@@ -41,9 +41,9 @@ public class IntegralReportService implements ReportService {
     List<Isochrone> walkIsochrones = bufferToIsochrones(walkIsochronesFrom(input));
 
     Map<String, Object> params = new HashMap<String, Object>();
-    // params.putAll(basicReportParams(input, municipio, walkIsochrones));
+    params.putAll(basicReportParams(input, municipio, walkIsochrones));
 
-    params.putAll(reportMapParams(input, walkIsochrones));
+    // params.putAll(reportMapParams(input, walkIsochrones));
 
     return params;
   }

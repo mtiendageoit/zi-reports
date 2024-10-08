@@ -346,8 +346,8 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-habitantes-familia.svg" ):
-"icon-habitantes-familia.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-habitantes-familia.svg" ):
+"images/icon-habitantes-familia.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="60" y="132" width="37" height="36" uuid="1ad1b917-b45a-45c5-86fa-c470f109b201">
@@ -357,8 +357,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-habit
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-viviendas.svg" ):
-"icon-viviendas.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-viviendas.svg" ):
+"images/icon-viviendas.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="61" y="220" width="36" height="36" uuid="523f6c48-b3a8-4263-9fa7-47ede422514b">
@@ -368,8 +368,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-vivie
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-habitantes-viviendas.svg" ):
-"icon-habitantes-viviendas.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-habitantes-viviendas.svg" ):
+"images/icon-habitantes-viviendas.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="61" y="313" width="36" height="36" uuid="5b1e4dab-9f8c-4470-9545-421fce03bb64">
@@ -379,8 +379,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-habit
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-viviendas-habitadas.svg" ):
-"icon-viviendas-habitadas.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-viviendas-habitadas.svg" ):
+"images/icon-viviendas-habitadas.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="401" y="28" width="56" height="56" uuid="80994476-7179-4b28-9ef7-b06941c9bcae">
@@ -390,8 +390,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-vivie
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/" + $P{params}.get( "pois_icono_1" ) ):
-"icon-tienda.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/" + $P{params}.get( "pois_icono_1" ) ):
+"images/icon-tienda.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="401" y="184" width="56" height="56" uuid="04361a64-008e-4d76-afc1-3690b1c4e4ea">
@@ -401,8 +401,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/" + $P{par
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/" + $P{params}.get( "pois_icono_2" ) ):
-"icon-tienda.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/" + $P{params}.get( "pois_icono_2" ) ):
+"images/icon-tienda.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="28" y="380" width="448" height="112" uuid="b37b313c-fe34-44c8-acc4-3cb5c74d2976">
@@ -412,8 +412,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/" + $P{par
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/publicidad-zi.png" ):
-"publicidad-zi.png"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/publicidad-zi.png" ):
+"images/publicidad-zi.png"]]></imageExpression>
 			</image>
 		</band>
 	</detail>

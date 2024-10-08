@@ -16,8 +16,8 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/fondo-amarillo.png" ):
-"fondo-amarillo.png"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/fondo-amarillo.png" ):
+"images/fondo-amarillo.png"]]></imageExpression>
 			</image>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="55" y="46" width="354" height="20" forecolor="#FFFFFF" uuid="980a3a48-9dc2-4a2c-892a-1465529b0b90">
@@ -59,8 +59,8 @@ confianza!]]></text>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-zi-blanco.svg" ):
-"icon-zi-blanco.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-zi-blanco.svg" ):
+"images/icon-zi-blanco.svg"]]></imageExpression>
 			</image>
 			<textField textAdjust="ScaleFont" hyperlinkType="Reference" hyperlinkTarget="Blank">
 				<reportElement mode="Transparent" x="463" y="503" width="220" height="22" forecolor="#FFFFFF" uuid="a7878df0-2d14-48a8-97bb-ec3da98a4d5f">

@@ -25,8 +25,8 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/fondo-amarillo.png" ):
-"fondo-amarillo.png"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/fondo-amarillo.png" ):
+"images/fondo-amarillo.png"]]></imageExpression>
 			</image>
 			<rectangle radius="10">
 				<reportElement mode="Opaque" x="99" y="485" width="594" height="69" forecolor="#FFFFFF" uuid="b8672259-480b-48b4-9632-bb2b3e3196f4">
@@ -76,8 +76,8 @@ ubicación.]]></text>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-zi-amarillo.svg" ):
-"icon-zi-amarillo.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-zi-amarillo.svg" ):
+"images/icon-zi-amarillo.svg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement mode="Transparent" x="189" y="497" width="194" height="13" forecolor="#3C3C3B" uuid="ba054373-5247-49bd-bcf9-dc3420c5f958">

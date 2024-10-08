@@ -255,8 +255,8 @@
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/img-preciom2-rojo.png" ):
-"img-preciom2-rojo.png"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/img-preciom2-rojo.png" ):
+"images/img-preciom2-rojo.png"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement mode="Transparent" x="622" y="109" width="22" height="18" uuid="f2c4b469-9dbc-4ffd-a0a6-e599a4b126a1">
@@ -266,8 +266,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/img-precio
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/img-indicador-preciom2.svg" ):
-"img-indicador-preciom2.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/img-indicador-preciom2.svg" ):
+"images/img-indicador-preciom2.svg"]]></imageExpression>
 			</image>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="507" y="92" width="80" height="18" forecolor="#FFFFFF" uuid="3678c21e-edc8-4558-b27e-9139151e24f6">
@@ -318,8 +318,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/img-indica
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-habitantes.svg" ):
-"icon-habitantes.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-habitantes.svg" ):
+"images/icon-habitantes.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="55" y="244" width="49" height="36" uuid="e1984047-ab01-4279-93d7-0391b471fe02">
@@ -329,8 +329,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-habit
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-poblacion-infantil.svg" ):
-"icon-poblacion-infantil.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/icon-poblacion-infantil.svg" ):
+"images/icon-poblacion-infantil.svg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="503" y="29" width="237" height="20" forecolor="#FBB700" uuid="dc33a0b7-8ff0-4e96-9a41-d618d265d10e">
@@ -352,8 +352,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-pobla
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/" + $P{params}.get( "pois_icono_2" ) ):
-"icon-tienda.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/" + $P{params}.get( "pois_icono_2" ) ):
+"images/icon-tienda.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="547" y="458" width="56" height="56" uuid="147fc152-1deb-4360-adaa-f289ac0f1dba">
@@ -363,8 +363,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/" + $P{par
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/" + $P{params}.get( "pois_icono_1" ) ):
-"icon-tienda.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/" + $P{params}.get( "pois_icono_1" ) ):
+"images/icon-tienda.svg"]]></imageExpression>
 			</image>
 		</band>
 	</detail>
