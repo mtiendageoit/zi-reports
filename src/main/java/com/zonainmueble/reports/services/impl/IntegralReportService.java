@@ -43,7 +43,7 @@ public class IntegralReportService implements ReportService {
     Map<String, Object> params = new HashMap<String, Object>();
     params.putAll(basicReportParams(input, municipio, walkIsochrones));
 
-    // params.putAll(reportMapParams(input, walkIsochrones));
+    params.putAll(reportMapParams(input, walkIsochrones));
 
     return params;
   }
@@ -52,23 +52,23 @@ public class IntegralReportService implements ReportService {
     List<Marker> markers = List.of(new Marker(new Coordinate(input.getLatitude(), input.getLongitude())));
 
     Map<String, Object> params = new HashMap<String, Object>();
-    byte[] image1 = mapImageService.image(new MapImageRequest(320, 276, "roadmap", markers, null));
+    byte[] image1 = mapImageService.image(new MapImageRequest(447, 263, "roadmap", markers, null));
     params.put("mapImage1", image1);
 
     Isochrone fiveMinIso = findIsochrone(IsochroneTime.FIVE_MINUTES, walkIsochrones);
     byte[] image2 = mapImageService
-        .image(new MapImageRequest(350, 370, "roadmap", markers, List.of(fiveMinIso.getPolygon())));
+        .image(new MapImageRequest(232, 280, "roadmap", markers, List.of(fiveMinIso.getPolygon())));
     params.put("mapImage2", image2);
 
     byte[] image3 = mapImageService
-        .image(new MapImageRequest(255, 270, "roadmap", markers, List.of(fiveMinIso.getPolygon())));
+        .image(new MapImageRequest(232, 434, "roadmap", markers, List.of(fiveMinIso.getPolygon())));
     params.put("mapImage3", image3);
 
-    Isochrone tenMinIso = findIsochrone(IsochroneTime.TEN_MINUTES, walkIsochrones);
-    Isochrone fifMinIso = findIsochrone(IsochroneTime.FIFTEEN_MINUTES, walkIsochrones);
-    byte[] image4 = mapImageService.image(new MapImageRequest(255, 270,
-        "roadmap", markers, List.of(fiveMinIso.getPolygon(), tenMinIso.getPolygon(), fifMinIso.getPolygon())));
-    params.put("mapImage4", image4);
+    // Isochrone tenMinIso = findIsochrone(IsochroneTime.TEN_MINUTES, walkIsochrones);
+    // Isochrone fifMinIso = findIsochrone(IsochroneTime.FIFTEEN_MINUTES, walkIsochrones);
+    // byte[] image4 = mapImageService.image(new MapImageRequest(255, 270,
+    //     "roadmap", markers, List.of(fiveMinIso.getPolygon(), tenMinIso.getPolygon(), fifMinIso.getPolygon())));
+    // params.put("mapImage4", image4);
 
     // byte[] image5 = mapImageService.image(new MapImageRequest(365, 300, "hybrid",
     // markers, polygons));
