@@ -27,7 +27,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/estilos.jr
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["fondo-p1.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/fondo-p1.png" ):
+"fondo-p1.png"]]></imageExpression>
 			</image>
 			<rectangle>
 				<reportElement style="RectanguloBlanco" x="99" y="485" width="594" height="69" uuid="b8672259-480b-48b4-9632-bb2b3e3196f4">
