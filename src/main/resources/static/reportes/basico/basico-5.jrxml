@@ -192,7 +192,7 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "grafica_category_1" )]]></textFieldExpression>
 			</textField>
 			<ellipse>
-				<reportElement x="523" y="353" width="12" height="12" uuid="6f07ae23-93cd-407a-974f-edc5118aab66">
+				<reportElement x="523" y="354" width="12" height="12" uuid="6f07ae23-93cd-407a-974f-edc5118aab66">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "grafica_color_2" )]]></propertyExpression>
@@ -229,7 +229,7 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "grafica_category_2" )]]></textFieldExpression>
 			</textField>
 			<ellipse>
-				<reportElement x="523" y="394" width="12" height="12" uuid="33b3949d-b04a-472d-b4be-a989cc39e514">
+				<reportElement x="523" y="395" width="12" height="12" uuid="33b3949d-b04a-472d-b4be-a989cc39e514">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "grafica_color_3" )]]></propertyExpression>
@@ -266,7 +266,7 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "grafica_category_3" )]]></textFieldExpression>
 			</textField>
 			<ellipse>
-				<reportElement x="523" y="434" width="12" height="12" uuid="1744e0b4-f80d-4842-a2fe-b3a194b7b1cf">
+				<reportElement x="523" y="435" width="12" height="12" uuid="1744e0b4-f80d-4842-a2fe-b3a194b7b1cf">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "grafica_color_4" )]]></propertyExpression>
