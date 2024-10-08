@@ -45,13 +45,6 @@ por tu
 confianza!]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="463" y="503" width="220" height="22" forecolor="#FFFFFF" uuid="fe463bd4-8d38-43ce-92eb-0b669b3b538d"/>
-				<textElement textAlignment="Right" verticalAlignment="Bottom">
-					<font fontName="Montserrat Medium" size="12"/>
-				</textElement>
-				<text><![CDATA[zonainmueble.mx]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="463" y="525" width="220" height="22" forecolor="#FFFFFF" uuid="23d7b829-6497-40a4-8650-babc6248e5fe"/>
 				<textElement textAlignment="Right" verticalAlignment="Top">
 					<font fontName="Montserrat Medium" size="12"/>
@@ -69,6 +62,19 @@ confianza!]]></text>
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-zi-blanco.svg" ):
 "icon-zi-blanco.svg"]]></imageExpression>
 			</image>
+			<textField textAdjust="ScaleFont" hyperlinkType="Reference" hyperlinkTarget="Blank">
+				<reportElement mode="Transparent" x="463" y="503" width="220" height="22" forecolor="#FFFFFF" uuid="a7878df0-2d14-48a8-97bb-ec3da98a4d5f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["zonainmueble.mx"]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["https://zonainmueble.mx"]]></hyperlinkReferenceExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>
