@@ -29,6 +29,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-1.j
 				<subreportParameter name="REPORT_DATA_SOURCE">
 					<subreportParameterExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></subreportParameterExpression>
 				</subreportParameter>
+				<subreportParameter name="REPORT_CLASS_LOADER">
+					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
 				<subreportParameter name="params">
 					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
