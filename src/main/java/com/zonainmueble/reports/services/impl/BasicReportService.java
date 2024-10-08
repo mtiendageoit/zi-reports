@@ -64,9 +64,9 @@ public class BasicReportService implements ReportService {
     params.putAll(graficaPorcentajeEstudiosParams(pEstudios));
     params.putAll(precioMetroCuadradoParams(municipio));
 
-    // params.putAll(reportPoisParams(input, iso));
-    // params.putAll(reportMapParams(input, iso));
-    // params.putAll(conclusionParams(params));
+    params.putAll(reportPoisParams(input, iso));
+    params.putAll(reportMapParams(input, iso));
+    params.putAll(conclusionParams(params));
 
     return params;
   }

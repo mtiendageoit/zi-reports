@@ -2,7 +2,6 @@
 <!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="basico-5" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="792" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7d48c48d-d56d-4025-bb85-7dc3c4157b5b">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<template><![CDATA["estilos.jrtx"]]></template>
 	<subDataset name="grafica_dataset" uuid="267a6a6d-06c5-4107-8c7a-ba45a09b2244">
 		<queryString>
 			<![CDATA[]]>
@@ -17,40 +16,52 @@
 	</queryString>
 	<detail>
 		<band height="612" splitType="Stretch">
-			<rectangle radius="12">
-				<reportElement style="RectanguloGris" x="28" y="28" width="327" height="68" uuid="a41b9201-19c7-4643-adc4-5e3443d0fbcf">
+			<rectangle radius="10">
+				<reportElement x="28" y="28" width="327" height="68" backcolor="#F8F8F8" uuid="a41b9201-19c7-4643-adc4-5e3443d0fbcf">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="28" y="204" width="327" height="68" backcolor="#F8F8F8" uuid="c26ca183-a88e-4e42-99ab-eaf537d9a9a6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
 			</rectangle>
 			<rectangle radius="12">
-				<reportElement style="RectanguloGris" x="28" y="204" width="327" height="68" uuid="c26ca183-a88e-4e42-99ab-eaf537d9a9a6">
+				<reportElement mode="Opaque" x="28" y="516" width="736" height="68" backcolor="#FBB700" uuid="fed31804-accc-4800-be82-6d7c320bc6b1">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
 			</rectangle>
-			<rectangle radius="12">
-				<reportElement style="RectanguloAmarillo" mode="Opaque" x="28" y="516" width="736" height="68" uuid="fed31804-accc-4800-be82-6d7c320bc6b1">
+			<rectangle radius="20">
+				<reportElement x="502" y="28" width="262" height="464" backcolor="#F8F8F8" uuid="ba0e828c-ba2d-4a13-b074-42453d0fbe63">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-			</rectangle>
-			<rectangle radius="18">
-				<reportElement style="RectanguloGris" x="502" y="28" width="262" height="464" uuid="ba0e828c-ba2d-4a13-b074-42453d0fbe63">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
 			</rectangle>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement style="ColorNegro" x="118" y="35" width="230" height="54" uuid="430bb8aa-22d8-4e28-a1ab-f397936969ae">
+				<reportElement x="118" y="35" width="230" height="54" forecolor="#3C3C3B" uuid="430bb8aa-22d8-4e28-a1ab-f397936969ae">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -63,7 +74,7 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "familias" ) + " Familias "]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement style="ColorNegro" x="118" y="123" width="230" height="54" uuid="e9b6724c-f3da-4124-b780-9b9d37df6ee9">
+				<reportElement x="118" y="123" width="230" height="54" forecolor="#3C3C3B" uuid="e9b6724c-f3da-4124-b780-9b9d37df6ee9">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -75,7 +86,7 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "viviendas" ) + " Viviendas "]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement style="ColorNegro" x="118" y="211" width="230" height="54" uuid="12cccbd1-af82-4a2c-80b0-50a193e71b7c">
+				<reportElement x="118" y="211" width="230" height="54" forecolor="#3C3C3B" uuid="12cccbd1-af82-4a2c-80b0-50a193e71b7c">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -86,19 +97,19 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "habitantes_vivienda" ) + " Habitantes por vivienda"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement style="ColorNegro" x="118" y="302" width="230" height="57" uuid="3ebbd14e-7005-497f-993f-32757f55f42d">
+				<reportElement x="118" y="302" width="230" height="57" forecolor="#3C3C3B" uuid="3ebbd14e-7005-497f-993f-32757f55f42d">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
 					<font fontName="Montserrat Medium" size="12"/>
-					<paragraph lineSpacing="1_1_2" lineSpacingSize="15.0"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
 				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Hay " + $P{params}.get("viviendas") + " Viviendas habitadas</font>, de las cuales, " + $P{params}.get("viviendas_1_dormitorio") + " tienen 1 dormitorio y " + $P{params}.get("viviendas_2mas_dormitorios") + " tienen 2 o más dormitorios."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement style="ColorNegro" x="379" y="92" width="99" height="45" uuid="0b3814cd-7580-4926-937e-0ff1bf94b1ba">
+				<reportElement x="379" y="92" width="99" height="45" forecolor="#3C3C3B" uuid="0b3814cd-7580-4926-937e-0ff1bf94b1ba">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -109,7 +120,7 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "pois_numero_1" ) + " "+ $P{params}.get( "pois_nombre_1" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement style="ColorNegro" x="379" y="247" width="99" height="45" uuid="e4ac8f94-b78f-489e-8988-e423ed9714d2">
+				<reportElement x="379" y="247" width="99" height="45" forecolor="#3C3C3B" uuid="e4ac8f94-b78f-489e-8988-e423ed9714d2">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -292,7 +303,7 @@
 				<textFieldExpression><![CDATA[$P{params}.get( "grafica_category_4" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement style="ColorBlanco" x="37" y="519" width="78" height="62" uuid="1d885794-3738-417a-8c06-4cfa49049f93">
+				<reportElement x="37" y="519" width="78" height="62" forecolor="#FFFFFF" uuid="1d885794-3738-417a-8c06-4cfa49049f93">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -300,10 +311,10 @@
 					<font fontName="Montserrat Black" size="30"/>
 					<paragraph lineSpacing="Single" lineSpacingSize="17.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{params}.get( "gentrificacion" ) + "%"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get( "gentrificacion" ) + "<style size=\"12\">%</style>"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement style="ColorBlanco" x="118" y="523" width="130" height="16" uuid="6fd7d8cf-aea3-47fe-939b-96d4b31099cc">
+				<reportElement x="118" y="523" width="130" height="16" forecolor="#FFFFFF" uuid="6fd7d8cf-aea3-47fe-939b-96d4b31099cc">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -315,7 +326,7 @@
 				<textFieldExpression><![CDATA["GENTRIFICACIÓN"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement style="ColorBlanco" x="118" y="543" width="630" height="38" uuid="da5e3b6d-19b1-4753-8d1d-cdcf4a18bcf4">
+				<reportElement x="118" y="543" width="630" height="38" forecolor="#FFFFFF" uuid="da5e3b6d-19b1-4753-8d1d-cdcf4a18bcf4">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -334,7 +345,9 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["icon-habitantes-familia.svg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-habitantes-familia.svg" ):
+"icon-habitantes-familia.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="60" y="132" width="37" height="36" uuid="1ad1b917-b45a-45c5-86fa-c470f109b201">
@@ -343,7 +356,9 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["icon-viviendas.svg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-viviendas.svg" ):
+"icon-viviendas.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="61" y="220" width="36" height="36" uuid="523f6c48-b3a8-4263-9fa7-47ede422514b">
@@ -352,7 +367,9 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["icon-habitantes-viviendas.svg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-habitantes-viviendas.svg" ):
+"icon-habitantes-viviendas.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="61" y="313" width="36" height="36" uuid="5b1e4dab-9f8c-4470-9545-421fce03bb64">
@@ -361,7 +378,9 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["icon-viviendas-habitadas.svg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-viviendas-habitadas.svg" ):
+"icon-viviendas-habitadas.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="401" y="28" width="56" height="56" uuid="80994476-7179-4b28-9ef7-b06941c9bcae">
@@ -370,7 +389,7 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA[ $P{params}.get( "pois_icono_1" )]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get( "pois_icono_1" )]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="401" y="184" width="56" height="56" uuid="04361a64-008e-4d76-afc1-3690b1c4e4ea">
@@ -379,7 +398,7 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA[ $P{params}.get( "pois_icono_2" )]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get( "pois_icono_2" )]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="28" y="380" width="448" height="112" uuid="b37b313c-fe34-44c8-acc4-3cb5c74d2976">
@@ -388,7 +407,9 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["publicidad-zi.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/publicidad-zi.png" ):
+"publicidad-zi.png"]]></imageExpression>
 			</image>
 		</band>
 	</detail>
