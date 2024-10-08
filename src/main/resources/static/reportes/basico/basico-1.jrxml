@@ -11,9 +11,6 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<template><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/estilos.jrtx" ):
-"estilos.jrtx"]]></template>
 	<parameter name="params" class="java.util.Map" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[]]>
@@ -31,16 +28,19 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/estilos.jr
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/fondo-p1.png" ):
 "fondo-p1.png"]]></imageExpression>
 			</image>
-			<rectangle>
-				<reportElement style="RectanguloBlanco" x="99" y="485" width="594" height="69" uuid="b8672259-480b-48b4-9632-bb2b3e3196f4">
+			<rectangle radius="10">
+				<reportElement mode="Opaque" x="99" y="485" width="594" height="69" forecolor="#FFFFFF" uuid="b8672259-480b-48b4-9632-bb2b3e3196f4">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
 			</rectangle>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement style="ColorBlanco" mode="Transparent" x="55" y="46" width="354" height="20" uuid="f93ec458-dea6-45c2-8b58-764b45d0ae6f">
+				<reportElement mode="Transparent" x="55" y="46" width="354" height="20" forecolor="#FFFFFF" uuid="f93ec458-dea6-45c2-8b58-764b45d0ae6f">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
@@ -50,7 +50,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/fondo-p1.p
 				<textFieldExpression><![CDATA[$P{params}.get( "build_date" ) + " | " +  $P{params}.get( "build_time" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" hyperlinkType="Reference" hyperlinkTarget="Blank">
-				<reportElement style="ColorBlanco" mode="Transparent" x="562" y="46" width="174" height="20" uuid="6bcb6ecf-03ca-4854-bb42-d4872b240696">
+				<reportElement mode="Transparent" x="562" y="46" width="174" height="20" forecolor="#FFFFFF" uuid="6bcb6ecf-03ca-4854-bb42-d4872b240696">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
@@ -60,7 +60,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/fondo-p1.p
 				<hyperlinkReferenceExpression><![CDATA["https://zonainmueble.mx"]]></hyperlinkReferenceExpression>
 			</textField>
 			<staticText>
-				<reportElement style="ColorBlanco" mode="Transparent" x="55" y="72" width="484" height="301" uuid="da68b3d4-2c4d-47d0-8e5e-dbd924775ea4"/>
+				<reportElement mode="Transparent" x="55" y="72" width="484" height="301" forecolor="#FFFFFF" uuid="da68b3d4-2c4d-47d0-8e5e-dbd924775ea4"/>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Montserrat Black" size="80"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="51.0"/>
@@ -75,10 +75,12 @@ ubicación.]]></text>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["icon-zi-amarillo.svg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-zi-amarillo.svg" ):
+"icon-zi-amarillo.svg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement style="ColorNegro" mode="Transparent" x="189" y="497" width="194" height="13" uuid="ba054373-5247-49bd-bcf9-dc3420c5f958">
+				<reportElement mode="Transparent" x="189" y="497" width="194" height="13" forecolor="#3C3C3B" uuid="ba054373-5247-49bd-bcf9-dc3420c5f958">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -89,7 +91,7 @@ ubicación.]]></text>
 				<text><![CDATA[UBICACIÓN DE ANÁLISIS]]></text>
 			</staticText>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement style="ColorNegro" mode="Transparent" x="189" y="513" width="486" height="35" uuid="b8279ed5-bb0c-4bd1-b6ec-77693a7da617">
+				<reportElement mode="Transparent" x="189" y="513" width="486" height="35" forecolor="#3C3C3B" uuid="b8279ed5-bb0c-4bd1-b6ec-77693a7da617">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
