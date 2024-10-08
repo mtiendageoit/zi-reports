@@ -51,7 +51,25 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-2.j
 				<subreportParameter name="params">
 					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportExpression><![CDATA["basico-3.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-3.jasper" ):
+"basico-3.jasper"]]></subreportExpression>
+			</p:subreportPart>
+		</part>
+		<part uuid="e34c1068-d24e-4780-81a4-707aad1db46d">
+			<p:subreportPart xmlns:p="http://jasperreports.sourceforge.net/jasperreports/parts" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/parts http://jasperreports.sourceforge.net/xsd/parts.xsd">
+				<subreportParameter name="REPORT_DATA_SOURCE">
+					<subreportParameterExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_CLASS_LOADER">
+					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/basico-4.jasper" ):
+"basico-4.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
 	</detail>
