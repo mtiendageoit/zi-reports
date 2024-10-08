@@ -16,8 +16,8 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/fondo-p1.png" ):
-"fondo-p1.png"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/fondo-amarillo.png" ):
+"fondo-amarillo.png"]]></imageExpression>
 			</image>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="55" y="46" width="354" height="20" forecolor="#FFFFFF" uuid="980a3a48-9dc2-4a2c-892a-1465529b0b90">
