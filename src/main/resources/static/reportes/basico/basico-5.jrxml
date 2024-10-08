@@ -389,7 +389,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-vivie
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA[$P{params}.get( "pois_icono_1" )]]></imageExpression>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/" + $P{params}.get( "pois_icono_1" ) ):
+"icon-tienda.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="401" y="184" width="56" height="56" uuid="04361a64-008e-4d76-afc1-3690b1c4e4ea">
@@ -398,7 +400,9 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-vivie
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA[$P{params}.get( "pois_icono_2" )]]></imageExpression>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/" + $P{params}.get( "pois_icono_2" ) ):
+"icon-tienda.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="28" y="380" width="448" height="112" uuid="b37b313c-fe34-44c8-acc4-3cb5c74d2976">
