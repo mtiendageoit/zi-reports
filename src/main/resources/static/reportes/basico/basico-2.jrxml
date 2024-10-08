@@ -148,8 +148,8 @@ EN ESTE REPORTE BÁSICO?]]></text>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-fecha.svg" ):
-"icon-fecha.svg"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/icon-zi-amarillo.svg" ):
+"icon-zi-amarillo.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="55" y="236" width="52" height="52" uuid="956572e2-579d-44b5-8fba-e864d3e6ec36">
