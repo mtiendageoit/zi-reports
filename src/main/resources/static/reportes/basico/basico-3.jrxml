@@ -353,7 +353,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/ico
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/" + $P{params}.get( "pois_icono_2" ) ):
-"images/icon-tienda.svg"]]></imageExpression>
+"images/icon-pois-tiendas.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="547" y="458" width="56" height="56" uuid="147fc152-1deb-4360-adaa-f289ac0f1dba">
@@ -364,7 +364,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/" +
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/" + $P{params}.get( "pois_icono_1" ) ):
-"images/icon-tienda.svg"]]></imageExpression>
+"images/icon-pois-tiendas.svg"]]></imageExpression>
 			</image>
 		</band>
 	</detail>

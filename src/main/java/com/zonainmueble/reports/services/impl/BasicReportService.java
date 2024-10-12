@@ -233,7 +233,7 @@ public class BasicReportService implements ReportService {
 
     Map<String, Object> params = new HashMap<String, Object>();
 
-    // Mostrar top 3 de pois
+    // Mostrar top de pois
     if (!pois.isEmpty()) {
       params.put("pois_nombre_1", pois.get(0).getName());
       params.put("pois_numero_1", NumberUtils.formatToInt(pois.get(0).getCount()));
@@ -242,13 +242,7 @@ public class BasicReportService implements ReportService {
       if (pois.size() > 1) {
         params.put("pois_nombre_2", pois.get(1).getName());
         params.put("pois_numero_2", NumberUtils.formatToInt(pois.get(1).getCount()));
-        params.put("pois_icono_2", pois.get(0).getIcon());
-      }
-
-      if (pois.size() > 2) {
-        params.put("pois_nombre_3", pois.get(2).getName());
-        params.put("pois_numero_3", NumberUtils.formatToInt(pois.get(2).getCount()));
-        params.put("pois_icono_3", pois.get(0).getIcon());
+        params.put("pois_icono_2", pois.get(1).getIcon());
       }
     }
 

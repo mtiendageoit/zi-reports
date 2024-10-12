@@ -391,7 +391,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/ico
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/" + $P{params}.get( "pois_icono_1" ) ):
-"images/icon-tienda.svg"]]></imageExpression>
+"images/icon-pois-tiendas.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="401" y="184" width="56" height="56" uuid="04361a64-008e-4d76-afc1-3690b1c4e4ea">
@@ -402,7 +402,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/" +
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/" + $P{params}.get( "pois_icono_2" ) ):
-"images/icon-tienda.svg"]]></imageExpression>
+"images/icon-pois-tiendas.svg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="28" y="380" width="448" height="112" uuid="b37b313c-fe34-44c8-acc4-3cb5c74d2976">
@@ -415,6 +415,10 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/" +
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/publicidad-zi.png" ):
 "images/publicidad-zi.png"]]></imageExpression>
 			</image>
+			<textField>
+				<reportElement x="379" y="337" width="100" height="30" uuid="ecf4df21-3012-49eb-a92b-7c82ea05b815"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>
