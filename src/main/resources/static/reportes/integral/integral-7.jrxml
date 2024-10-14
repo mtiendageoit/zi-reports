@@ -1,35 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="integral-7" pageWidth="842" pageHeight="490" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d48c48d-d56d-4025-bb85-7dc3c4157b5b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="integral-7" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="792" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7d48c48d-d56d-4025-bb85-7dc3c4157b5b">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<property name="com.jaspersoft.studio.unit." value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
 	<parameter name="params" class="java.util.Map" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
 	<detail>
-		<band height="450" splitType="Stretch">
+		<band height="612" splitType="Stretch">
 			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
-				<reportElement mode="Transparent" x="0" y="0" width="800" height="449" isRemoveLineWhenBlank="true" uuid="18b17603-c665-4298-a1d4-86ffa4944393">
+				<reportElement mode="Transparent" x="0" y="0" width="792" height="612" isRemoveLineWhenBlank="true" uuid="18b17603-c665-4298-a1d4-86ffa4944393">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box padding="0">
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7.png" ):
+"images/i7.png"]]></imageExpression>
+			</image>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="315" y="458" width="448" height="130" uuid="bf6b6d87-1b0c-4038-a1e6-cc9670cae3c7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="28" y="21" width="461" height="40" uuid="6c15aa5b-fc3b-4e40-81a4-2e94b8984c96"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Montserrat" size="30"/>
+				</textElement>
+				<text><![CDATA[Reporte
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="55" width="461" height="40" uuid="1a2df4ca-d363-430a-8f36-028ffba58256"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Montserrat Medium" size="30"/>
+				</textElement>
+				<text><![CDATA[Nivel del bienestar e ingresos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="97" width="254" height="20" uuid="32b1e707-a6db-4538-ad25-0a45f76fa84b"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Montserrat SemiBold" size="12"/>
+				</textElement>
+				<text><![CDATA[INGRESO MENSUAL PROMEDIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="41" width="254" height="53" forecolor="#F49700" uuid="c84c2a42-a0eb-4225-9552-d4893fa42ffc"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Montserrat SemiBold" size="40"/>
+				</textElement>
+				<text><![CDATA[$75,256.]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="28" y="136" width="262" height="448" backcolor="#F8F8F8" uuid="0f93fe45-f5f1-430b-a9ab-a9ebdf98da11">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<image scaleImage="FillFrame">
+				<reportElement x="43" y="154" width="232" height="416" uuid="fba82a80-220b-4e72-af89-85b7126707e5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+				</box>
+				<imageExpression><![CDATA["/basico/images/publicidad-zi.png"]]></imageExpression>
+			</image>
+			<rectangle radius="12">
+				<reportElement mode="Transparent" x="40" y="151" width="238" height="422" backcolor="#F8F8F8" uuid="d6869f32-e4dd-47a5-a63c-933db9364662">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="7.0" lineColor="#F8F8F8"/>
+				</graphicElement>
+			</rectangle>
+			<line>
+				<reportElement x="28" y="112" width="451" height="1" forecolor="#3C3C3B" uuid="a8b5fab5-a6d4-4af1-a67f-2e0c611ab48d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="320" y="426" width="279" height="21" forecolor="#F49700" uuid="f5ad3d06-4a92-4590-94b8-db7cbc1f1535">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
-				<box padding="0">
-					<pen lineWidth="1.0" lineStyle="Solid"/>
-				</box>
-				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/i7.png" ):
-"i7.png"]]></imageExpression>
-			</image>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat SemiBold" size="12"/>
+				</textElement>
+				<text><![CDATA[NIVELES DE BIENESTAR PREPONDERANTES]]></text>
+			</staticText>
+			<rectangle radius="20">
+				<reportElement mode="Transparent" x="316" y="136" width="448" height="275" backcolor="#F49700" uuid="a6343d88-708b-42d0-8606-f2175536d5b4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="348" y="165" width="234" height="16" forecolor="#FFFFFF" uuid="0cda4d0c-0d17-4dad-a1d0-4b544f6e79c9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat SemiBold" size="12"/>
+				</textElement>
+				<text><![CDATA[POLÍGONO AZUL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="468" width="38" height="19" forecolor="#3C3C3B" uuid="e0b9df91-ab82-4736-aa80-6ced588a891c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Zona]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="468" width="69" height="19" forecolor="#3C3C3B" uuid="24905fa4-3151-4e6a-ac03-365cdb760308"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Población]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="502" width="46" height="19" forecolor="#3C3C3B" uuid="7a399e90-240e-4248-a718-fd1eb247b632">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[5 min.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="532" width="46" height="19" forecolor="#3C3C3B" uuid="3a056cfb-fa4a-45e2-b053-a379b4efe50b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[10 min.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="562" width="46" height="19" forecolor="#3C3C3B" uuid="28848222-0cc7-4990-98f6-a846ddc3d8d6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[15 min.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="198" width="391" height="201" forecolor="#FFFFFF" uuid="e0419e51-fd54-48e3-b945-2159adc2c6b1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Montserrat Medium" size="12"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="15.0"/>
+				</textElement>
+				<text><![CDATA[Revela una notable concentración de segmentos socioeconómicos más altos en sus alrededores inmediatos. En el polígono de 5 minutos caminando, el 96% de los hogares pertenecen a los segmentos A/B y C+, y esta tendencia se mantiene en los polígonos de 10 y 15 minutos caminando, con 91% y 94% respectivamente. Comparado con la
+distribución promedio de la Ciudad de México, esta área muestra una mayor proporción de hogares de clase alta y media alta, indicando un entorno de alto nivel socioeconómico y destacándose por su elevado estándar de vida y calidad residencial.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="502" width="55" height="19" forecolor="#3C3C3B" uuid="77faccf8-f669-4234-84d7-5fe1efdb8ce8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12"/>
+				</textElement>
+				<text><![CDATA[10,659]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="532" width="55" height="19" forecolor="#3C3C3B" uuid="28a7924f-6648-400b-9939-f726d1e64fc6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12"/>
+				</textElement>
+				<text><![CDATA[22,384]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="562" width="55" height="19" forecolor="#3C3C3B" uuid="323ae48d-a026-4276-a63a-7125c368ee59">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12"/>
+				</textElement>
+				<text><![CDATA[47, 372]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="458" width="85" height="21" forecolor="#FFFFFF" uuid="05e8dc15-e1eb-4322-8ada-9025a2193052">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat SemiBold" size="8"/>
+				</textElement>
+				<text><![CDATA[+ $75,000 MXN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="533" y="458" width="85" height="21" forecolor="#FFFFFF" uuid="49fde954-20c9-4c3f-98e5-79c64a364d4e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat SemiBold" size="8"/>
+				</textElement>
+				<text><![CDATA[+ $75,000 MXN]]></text>
+			</staticText>
 		</band>
 	</detail>
 </jasperReport>
