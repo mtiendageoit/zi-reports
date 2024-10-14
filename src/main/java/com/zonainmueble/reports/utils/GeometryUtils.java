@@ -49,7 +49,7 @@ public class GeometryUtils {
   private com.zonainmueble.reports.dto.Polygon toPolygon(Polygon polygon) {
     List<com.zonainmueble.reports.dto.Coordinate> coords = new ArrayList<>();
 
-    for (Coordinate coord : polygon.getCoordinates()) {
+    for (Coordinate coord : polygon.getExteriorRing().getCoordinates()) {
       coords.add(new com.zonainmueble.reports.dto.Coordinate(coord.getY(), coord.getX()));
     }
 
@@ -70,7 +70,8 @@ public class GeometryUtils {
   private Geometry buffer(Geometry geometry, double distanceMeters) {
     double distance = distanceMeters / METERS_PER_DEGREE_LATITUDE;
     Geometry buffer = geometry.buffer(distance);
-    return TopologyPreservingSimplifier.simplify(buffer, 0.0000488);
+    Geometry simplify = TopologyPreservingSimplifier.simplify(buffer, 0.0000488);
+    return simplify;
   }
 
   private String toWKT(Geometry geometry) {
