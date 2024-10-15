@@ -104,5 +104,101 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/integral
 "integral-6.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
+		<part uuid="d40650c1-7672-4884-8484-606df535e9eb">
+			<p:subreportPart xmlns:p="http://jasperreports.sourceforge.net/jasperreports/parts" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/parts http://jasperreports.sourceforge.net/xsd/parts.xsd">
+				<subreportParameter name="REPORT_DATA_SOURCE">
+					<subreportParameterExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_CLASS_LOADER">
+					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/integral-7.jasper" ):
+"integral-7.jasper"]]></subreportExpression>
+			</p:subreportPart>
+		</part>
+		<part uuid="30c1868f-4080-4d4d-a647-2605c1f968d3">
+			<p:subreportPart xmlns:p="http://jasperreports.sourceforge.net/jasperreports/parts" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/parts http://jasperreports.sourceforge.net/xsd/parts.xsd">
+				<subreportParameter name="REPORT_DATA_SOURCE">
+					<subreportParameterExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_CLASS_LOADER">
+					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/integral-8.jasper" ):
+"integral-8.jasper"]]></subreportExpression>
+			</p:subreportPart>
+		</part>
+		<part uuid="e7e07187-a0fe-4f58-946d-4499fa464d03">
+			<p:subreportPart xmlns:p="http://jasperreports.sourceforge.net/jasperreports/parts" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/parts http://jasperreports.sourceforge.net/xsd/parts.xsd">
+				<subreportParameter name="REPORT_DATA_SOURCE">
+					<subreportParameterExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_CLASS_LOADER">
+					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/integral-10.jasper" ):
+"integral-10.jasper"]]></subreportExpression>
+			</p:subreportPart>
+		</part>
+		<part uuid="7cbb321a-474d-4fbf-8e37-36efd4dcd40e">
+			<p:subreportPart xmlns:p="http://jasperreports.sourceforge.net/jasperreports/parts" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/parts http://jasperreports.sourceforge.net/xsd/parts.xsd">
+				<subreportParameter name="REPORT_DATA_SOURCE">
+					<subreportParameterExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_CLASS_LOADER">
+					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/integral-11.jasper" ):
+"integral-11.jasper"]]></subreportExpression>
+			</p:subreportPart>
+		</part>
+		<part uuid="583c26c4-8130-45eb-b0c5-0b86f8c1a6ea">
+			<p:subreportPart xmlns:p="http://jasperreports.sourceforge.net/jasperreports/parts" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/parts http://jasperreports.sourceforge.net/xsd/parts.xsd">
+				<subreportParameter name="REPORT_DATA_SOURCE">
+					<subreportParameterExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_CLASS_LOADER">
+					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/integral-12.jasper" ):
+"integral-12.jasper"]]></subreportExpression>
+			</p:subreportPart>
+		</part>
+		<part uuid="78232928-aa95-4185-a3e5-6813ea3df63a">
+			<p:subreportPart xmlns:p="http://jasperreports.sourceforge.net/jasperreports/parts" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/parts http://jasperreports.sourceforge.net/xsd/parts.xsd">
+				<subreportParameter name="REPORT_DATA_SOURCE">
+					<subreportParameterExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="params">
+					<subreportParameterExpression><![CDATA[$P{params}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_CLASS_LOADER">
+					<subreportParameterExpression><![CDATA[$P{REPORT_CLASS_LOADER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/integral-13.jasper" ):
+"integral-13.jasper"]]></subreportExpression>
+			</p:subreportPart>
+		</part>
 	</detail>
 </jasperReport>

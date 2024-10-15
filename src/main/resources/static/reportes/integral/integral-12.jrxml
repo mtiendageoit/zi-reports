@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="integral-9" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="792" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7d48c48d-d56d-4025-bb85-7dc3c4157b5b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="params" class="java.util.Map" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="612" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement mode="Transparent" x="0" y="0" width="792" height="612" isRemoveLineWhenBlank="true" uuid="18b17603-c665-4298-a1d4-86ffa4944393">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box padding="0">
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i12.png" ):
+"images/i12.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="28" y="22" width="736" height="40" forecolor="#3C3C3B" uuid="15c64adf-613a-498c-9079-1dada241c9f9"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Montserrat" size="30"/>
+				</textElement>
+				<text><![CDATA[Análisis de Movilidad, automovil.]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="28" y="84" width="356" height="500" backcolor="#F8F8F8" uuid="57c225d7-5e96-4284-84c6-13eaa2d743f8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<image>
+				<reportElement x="71" y="112" width="52" height="52" uuid="00d10cc2-f2a0-4ca9-a24a-d3bd105e28e8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/icon-automovil.svg" ):
+"images/icon-automovil.svg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="134" y="122" width="240" height="39" forecolor="#3C3C3B" uuid="bee045b4-dc08-43c9-84bb-2c420beec065"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Zona de Influencia 60 minutos en automóvil. (Domingo 07:00hrs.)]]></text>
+			</staticText>
+			<image>
+				<reportElement x="451" y="112" width="52" height="52" uuid="f2cbcc50-e32f-4137-9ff0-57b6280d8e5e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/icon-automovil.svg" ):
+"images/icon-automovil.svg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="514" y="122" width="240" height="39" forecolor="#3C3C3B" uuid="d865860d-9b92-4d92-a990-40f684fd5c73">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Zona de Influencia 60 minutos en automóvil. (Domingo 07:00hrs.)]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="44" y="186" width="12" height="12" forecolor="#A3DA91" backcolor="#A3DA91" uuid="31b585a4-85d5-4410-942d-ab27e0689aca">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<printWhenExpression><![CDATA[$P{params}.get("grafica_category_1") != null]]></printWhenExpression>
+				</reportElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="162" y="186" width="12" height="12" forecolor="#E3E367" backcolor="#E3E367" uuid="0230a3f9-f736-4e08-b5b5-f43dce17857a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<printWhenExpression><![CDATA[$P{params}.get("grafica_category_1") != null]]></printWhenExpression>
+				</reportElement>
+			</ellipse>
+			<ellipse>
+				<reportElement x="282" y="186" width="12" height="12" forecolor="#9BC1DB" backcolor="#9BC1DB" uuid="649e35ab-33e3-4c77-8f6a-45e9bc201337">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<printWhenExpression><![CDATA[$P{params}.get("grafica_category_1") != null]]></printWhenExpression>
+				</reportElement>
+			</ellipse>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="408" y="84" width="356" height="500" backcolor="#F8F8F8" uuid="695935f3-9595-45b6-a1ff-4455f86793a6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="65" y="183" width="84" height="18" forecolor="#3C3C3B" uuid="9e588e72-47df-4ca2-ac03-550ab7d59735"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[5 minutos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="183" width="84" height="18" forecolor="#3C3C3B" uuid="7beb9f33-0f10-4225-b222-350be9bbc7e0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[10 minutos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="183" width="80" height="18" forecolor="#3C3C3B" uuid="6aa30dc2-c70c-42e9-a7e8-da3a633dcd67"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[15 minutos]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="424" y="186" width="12" height="12" forecolor="#A3DA91" backcolor="#A3DA91" uuid="d0cde60e-aa38-404e-82d9-907a8245aa56">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<printWhenExpression><![CDATA[$P{params}.get("grafica_category_1") != null]]></printWhenExpression>
+				</reportElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="445" y="183" width="84" height="18" forecolor="#3C3C3B" uuid="5ecb0dc2-c952-4dbb-99d8-c1c9c05cfa06"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[5 minutos]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="542" y="186" width="12" height="12" forecolor="#E3E367" backcolor="#E3E367" uuid="9787c0fb-e3c9-458d-b4a0-c4da3a40cd01">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<printWhenExpression><![CDATA[$P{params}.get("grafica_category_1") != null]]></printWhenExpression>
+				</reportElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="563" y="183" width="84" height="18" forecolor="#3C3C3B" uuid="52931ba9-47d4-4a44-9511-dfe12c7d0ec9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[10 minutos]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="662" y="186" width="12" height="12" forecolor="#9BC1DB" backcolor="#9BC1DB" uuid="d0b9cb37-59ad-40b7-9c83-4b8fe5030c51">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "grafica_color_1" )]]></propertyExpression>
+					<printWhenExpression><![CDATA[$P{params}.get("grafica_category_1") != null]]></printWhenExpression>
+				</reportElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="683" y="183" width="80" height="18" forecolor="#3C3C3B" uuid="a8f5d575-a7b6-4089-8184-166490eb5a5d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[15 minutos]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement mode="Opaque" x="43" y="220" width="326" height="350" uuid="84755050-2a1e-45b0-99bd-03aebf71fade">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.radius" type="simpleText"><![CDATA[10]]></propertyExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineColor="#F49700"/>
+				</box>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/mapa-osm.png" ):
+"images/mapa-osm.png"]]></imageExpression>
+			</image>
+			<rectangle radius="15">
+				<reportElement mode="Transparent" x="37" y="214" width="338" height="362" uuid="55219e36-3ce2-4ad2-a598-9855d08d2143">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="12.0" lineColor="#F8F8F8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="43" y="220" width="326" height="350" uuid="8176597d-3189-4b5c-aa71-183cc65251b9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#F49700"/>
+				</graphicElement>
+			</rectangle>
+			<image scaleImage="FillFrame">
+				<reportElement mode="Opaque" x="423" y="220" width="326" height="350" uuid="74afc2ae-161c-448b-a0bf-51c4067c2856">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.radius" type="simpleText"><![CDATA[10]]></propertyExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineColor="#F49700"/>
+				</box>
+				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/mapa-osm.png" ):
+"images/mapa-osm.png"]]></imageExpression>
+			</image>
+			<rectangle radius="15">
+				<reportElement mode="Transparent" x="417" y="214" width="338" height="362" uuid="d633e952-6c1b-421a-a39d-880d414c16b2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="12.0" lineColor="#F8F8F8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="423" y="220" width="326" height="350" uuid="4cd1fcdd-46cd-4710-8d38-67720c63d17f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#F49700"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</detail>
+</jasperReport>
