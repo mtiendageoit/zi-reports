@@ -150,7 +150,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				</graphicElement>
 			</rectangle>
 			<textField>
-				<reportElement x="323" y="82" width="113" height="15" forecolor="#3C3C3B" uuid="ac89b23f-8b7b-4620-b9eb-e0d8345dcd0d">
+				<reportElement x="323" y="81" width="113" height="15" forecolor="#3C3C3B" uuid="ac89b23f-8b7b-4620-b9eb-e0d8345dcd0d">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -163,7 +163,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<textFieldExpression><![CDATA["0 a 2"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="450" y="82" width="113" height="15" forecolor="#3C3C3B" uuid="033225e6-3ea6-4d67-b268-688056f31964">
+				<reportElement x="450" y="81" width="113" height="15" forecolor="#3C3C3B" uuid="033225e6-3ea6-4d67-b268-688056f31964">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>

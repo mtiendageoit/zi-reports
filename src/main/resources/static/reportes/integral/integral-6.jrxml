@@ -109,7 +109,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i6
 			</line>
 			<staticText>
 				<reportElement x="106" y="137" width="370" height="30" forecolor="#3C3C3B" uuid="a1a118bf-ac4e-46dc-89ef-cb5d56628a6e"/>
-				<textElement textAlignment="Left" verticalAlignment="Top">
+				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12"/>
 				</textElement>
 				<text><![CDATA[De la población tienen esta preponderancia de nivel de bienestar]]></text>
@@ -135,7 +135,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i6
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
 					<font fontName="Montserrat SemiBold" size="40"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{params}.get( "nse_top1_poblacion_porcentaje" ) + "%"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_top1_poblacion_porcentaje" ) + "<font size='20'>%</font>"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="252" y="180" width="180" height="56" forecolor="#FFFFFF" uuid="3d114894-d90d-4c9b-a277-db9561611031">
@@ -175,7 +175,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i6
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
 					<font fontName="Montserrat SemiBold" size="40"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{params}.get( "nse_top2_poblacion_porcentaje" ) + "%"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_top2_poblacion_porcentaje" ) + "<font size='20'>%</font>"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="252" y="263" width="180" height="56" forecolor="#FFFFFF" uuid="f03c9ec5-ee25-4bda-b14a-e194b3d3c5c8">

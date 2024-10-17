@@ -2,6 +2,7 @@ package com.zonainmueble.reports.services;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.time.ZoneId;
 
 import org.springframework.stereotype.Service;
 
@@ -24,8 +25,9 @@ public class CommonReportService {
   }
 
   public Map<String, String> reportBuildTime() {
-    Locale locale = new Locale("es", "ES");
-    LocalDateTime now = LocalDateTime.now();
+    Locale locale = new Locale("es", "MX");
+    ZoneId zoneId = ZoneId.of("America/Mexico_City");
+    LocalDateTime now = LocalDateTime.now(zoneId);
     String date = DateTimeUtils.format(now, "dd MMMM'.' yyyy", locale);
     date = date.substring(0, 3) + date.substring(3, 4).toUpperCase() + date.substring(4);
     String time = DateTimeUtils.format(now, "HH:mm 'hrs'", locale);

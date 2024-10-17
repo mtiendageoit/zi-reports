@@ -89,7 +89,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<textFieldExpression><![CDATA[$P{params}.get( "familias" ) + " Familias "]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="406" y="342" width="350" height="54" forecolor="#3C3C3B" uuid="e9b6724c-f3da-4124-b780-9b9d37df6ee9">
+				<reportElement x="406" y="343" width="350" height="54" forecolor="#3C3C3B" uuid="e9b6724c-f3da-4124-b780-9b9d37df6ee9">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -123,7 +123,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Hay " + $P{params}.get("viviendas") + " Viviendas habitadas</font>, de las cuales, " + $P{params}.get("viviendas_1_dormitorio") + " tienen 1 dormitorio y " + $P{params}.get("viviendas_2mas_dormitorios") + " tienen 2 o más dormitorios."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Hay " + $P{params}.get("viviendas") + " Viviendas habitadas</font><br/>De las cuales, " + $P{params}.get("viviendas_1_dormitorio") + " tienen 1 dormitorio y " + $P{params}.get("viviendas_2mas_dormitorios") + " tienen 2 o más dormitorios"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="349" y="142" width="382" height="68" forecolor="#FFFFFF" uuid="da5e3b6d-19b1-4753-8d1d-cdcf4a18bcf4">
