@@ -9,10 +9,10 @@ public class NumberUtils {
   }
 
   public static String formatToDecimal(Object number) {
-    return new DecimalFormat("#,###.0").format(number);
+    return new DecimalFormat("#,##0.0").format(number);
   }
 
   public static String formatToDecimal(Object number, int decimals) {
-    return new DecimalFormat("#,###." + "0".repeat(decimals)).format(number);
+    return new DecimalFormat("#,##0." + "0".repeat(decimals)).format(number);
   }
 }

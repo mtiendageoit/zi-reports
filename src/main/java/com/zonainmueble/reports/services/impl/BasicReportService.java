@@ -114,6 +114,7 @@ public class BasicReportService implements ReportService {
       params.put("precio_m2_min", NumberUtils.formatToDecimal(precio.get().getPrecioMinimo(), 1));
       params.put("precio_m2_max", NumberUtils.formatToDecimal(precio.get().getPrecioMaximo(), 1));
       params.put("precio_m2", NumberUtils.formatToDecimal(precio.get().getPrecio(), 1));
+      params.put("precio_m2_90", NumberUtils.formatToInt(precio.get().getPrecio() * 90));
     }
 
     return params;

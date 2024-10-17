@@ -13,6 +13,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[0==1]]></printWhenExpression>
 				</reportElement>
 				<box padding="0">
 					<pen lineWidth="0.0" lineStyle="Solid"/>

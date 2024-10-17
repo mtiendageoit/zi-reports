@@ -10,13 +10,14 @@
 	<detail>
 		<band height="612" splitType="Stretch">
 			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
-				<reportElement mode="Transparent" x="0" y="0" width="792" height="612" isRemoveLineWhenBlank="true" uuid="18b17603-c665-4298-a1d4-86ffa4944393">
+				<reportElement mode="Transparent" x="0" y="0" width="792" height="612" isRemoveLineWhenBlank="true" forecolor="#3C3C3B" uuid="18b17603-c665-4298-a1d4-86ffa4944393">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[0==1]]></printWhenExpression>
 				</reportElement>
 				<box padding="0">
-					<pen lineWidth="0.0" lineStyle="Solid"/>
+					<pen lineWidth="0.0" lineStyle="Solid" lineColor="#4D3A6D"/>
 				</box>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7.png" ):
@@ -44,15 +45,15 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 				</textElement>
 				<text><![CDATA[INGRESO MENSUAL PROMEDIO]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="510" y="41" width="254" height="53" forecolor="#F49700" uuid="c84c2a42-a0eb-4225-9552-d4893fa42ffc"/>
-				<textElement textAlignment="Right" verticalAlignment="Bottom">
+			<textField textAdjust="ScaleFont">
+				<reportElement x="489" y="41" width="275" height="53" forecolor="#F49700" uuid="c84c2a42-a0eb-4225-9552-d4893fa42ffc"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom" markup="styled">
 					<font fontName="Montserrat SemiBold" size="40"/>
 				</textElement>
-				<text><![CDATA[$75,256.]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA["$" + $P{params}.get( "nse_ingreso_promedio" ) + ". <font size='20'>MXN.</font>"]]></textFieldExpression>
+			</textField>
 			<rectangle radius="10">
-				<reportElement mode="Transparent" x="28" y="136" width="262" height="448" backcolor="#F8F8F8" uuid="0f93fe45-f5f1-430b-a9ab-a9ebdf98da11">
+				<reportElement mode="Opaque" x="28" y="136" width="262" height="451" backcolor="#F8F8F8" uuid="0f93fe45-f5f1-430b-a9ab-a9ebdf98da11">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -70,27 +71,41 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 					<pen lineWidth="1.0" lineColor="#FFFFFF"/>
 				</box>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/publicidad-celular.png" ):
-"images/publicidad-celular.png"]]></imageExpression>
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/mapa-osm.png" ):
+"images/mapa-osm.png"]]></imageExpression>
 			</image>
 			<rectangle radius="12">
-				<reportElement mode="Transparent" x="40" y="151" width="238" height="422" backcolor="#F8F8F8" uuid="d6869f32-e4dd-47a5-a63c-933db9364662">
+				<reportElement mode="Transparent" x="38" y="149" width="242" height="426" backcolor="#F8F8F8" uuid="d6869f32-e4dd-47a5-a63c-933db9364662">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="11.11" lineColor="#F8F8F8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="43" y="154" width="232" height="416" backcolor="#F8F8F8" uuid="76f8031e-678b-4861-b646-fbefb15b3c81">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<graphicElement>
-					<pen lineWidth="7.0" lineColor="#F8F8F8"/>
+					<pen lineWidth="1.0" lineColor="#5EE02B"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle radius="20">
-				<reportElement mode="Transparent" x="316" y="136" width="448" height="275" backcolor="#F49700" uuid="a6343d88-708b-42d0-8606-f2175536d5b4">
+				<reportElement mode="Opaque" x="316" y="136" width="448" height="275" backcolor="#F49700" uuid="a6343d88-708b-42d0-8606-f2175536d5b4">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
 			</rectangle>
 			<line>
 				<reportElement x="28" y="112" width="451" height="1" forecolor="#3C3C3B" uuid="a8b5fab5-a6d4-4af1-a67f-2e0c611ab48d">
@@ -127,7 +142,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/p
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat" size="12" isBold="true"/>
@@ -139,7 +154,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/p
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat" size="12" isBold="true"/>
@@ -151,7 +166,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/p
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12" isBold="false"/>
@@ -161,7 +176,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/p
 			<staticText>
 				<reportElement mode="Opaque" x="316" y="527" width="60" height="30" forecolor="#3C3C3B" backcolor="#E3E367" uuid="3a056cfb-fa4a-45e2-b053-a379b4efe50b"/>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12" isBold="false"/>
@@ -171,7 +186,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/p
 			<staticText>
 				<reportElement mode="Opaque" x="316" y="557" width="60" height="30" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="28848222-0cc7-4990-98f6-a846ddc3d8d6"/>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12" isBold="false"/>
@@ -192,49 +207,50 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/p
 				<text><![CDATA[Revela una notable concentración de segmentos socioeconómicos más altos en sus alrededores inmediatos. En el polígono de 5 minutos caminando, el 96% de los hogares pertenecen a los segmentos A/B y C+, y esta tendencia se mantiene en los polígonos de 10 y 15 minutos caminando, con 91% y 94% respectivamente. Comparado con la
 distribución promedio de la Ciudad de México, esta área muestra una mayor proporción de hogares de clase alta y media alta, indicando un entorno de alto nivel socioeconómico y destacándose por su elevado estándar de vida y calidad residencial.]]></text>
 			</staticText>
-			<staticText>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="376" y="497" width="72" height="30" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="77faccf8-f669-4234-84d7-5fe1efdb8ce8">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12"/>
 				</textElement>
-				<text><![CDATA[10,659]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="376" y="527" width="72" height="30" forecolor="#3C3C3B" backcolor="#E3E367" uuid="28a7924f-6648-400b-9939-f726d1e64fc6">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12"/>
 				</textElement>
-				<text><![CDATA[22,384]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="376" y="557" width="72" height="30" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="323ae48d-a026-4276-a63a-7125c368ee59">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12"/>
 				</textElement>
-				<text><![CDATA[47, 372]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="448" y="458" width="105" height="21" forecolor="#FFFFFF" backcolor="#D1819E" uuid="05e8dc15-e1eb-4322-8ada-9025a2193052">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "nse_top_1_color" )]]></propertyExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
@@ -242,25 +258,26 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat SemiBold" size="8"/>
 				</textElement>
-				<text><![CDATA[+ $75,000 MXN]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_1_desc" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="448" y="497" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="5a49e254-65c7-4912-9e5a-a14bdeb57432">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[4,181]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_1_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="553" y="458" width="105" height="21" forecolor="#FFFFFF" backcolor="#8198D1" uuid="12485512-d9ab-4c0e-acdd-543444fb3714">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "nse_top_2_color" )]]></propertyExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
@@ -268,12 +285,13 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat SemiBold" size="8"/>
 				</textElement>
-				<text><![CDATA[+ $75,000 MXN]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_2_desc" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="658" y="458" width="105" height="21" forecolor="#FFFFFF" backcolor="#62C6BC" uuid="84c0bcc3-24ad-4f3c-b3f5-e32d17032081">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "nse_top_3_color" )]]></propertyExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
@@ -281,12 +299,13 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat SemiBold" size="8"/>
 				</textElement>
-				<text><![CDATA[+ $75,000 MXN]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_3_desc" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="448" y="479" width="105" height="18" forecolor="#D1819E" backcolor="#FFFFFF" uuid="3fafab19-7cf3-42d3-a793-c68e37ca07aa">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "nse_top_1_color" )]]></propertyExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
@@ -294,12 +313,13 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat SemiBold" size="8"/>
 				</textElement>
-				<text><![CDATA[Alto | Muy alto]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_1_nombre" ) + " " + $P{params}.get( "nse_top_1_nse" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="553" y="479" width="105" height="18" forecolor="#8198D1" backcolor="#FFFFFF" uuid="a54d2f24-8717-48a5-b4a5-939cf3b3fc8a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "nse_top_2_color" )]]></propertyExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
@@ -307,12 +327,13 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat SemiBold" size="8"/>
 				</textElement>
-				<text><![CDATA[Medio Alto C+]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_2_nombre" ) + " " + $P{params}.get( "nse_top_2_nse" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="658" y="479" width="105" height="18" forecolor="#8198D1" backcolor="#FFFFFF" uuid="66882f4e-45ba-467f-8d49-a4e458cb9562">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "nse_top_3_color" )]]></propertyExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
@@ -320,239 +341,244 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat SemiBold" size="8"/>
 				</textElement>
-				<text><![CDATA[Medio C]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_3_nombre" ) + " " + $P{params}.get( "nse_top_3_nse" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="448" y="512" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="3181ab3a-d7dc-4765-8428-c597605fac1d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[39.2%]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_1_porcentaje" ) + "%"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="448" y="527" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="090a8640-aa78-42b6-bb10-c47415b7cb1d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[9,137]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_1_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="448" y="542" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="804b9d7f-751e-4e92-a58d-3f0a9493ec0a">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[40.8%]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_1_porcentaje" ) + "%"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="448" y="557" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="bd5a7337-b21b-48ad-862d-c71171f80d28">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[16,550]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_1_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="448" y="572" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="24c47378-091e-4333-bfcc-21b726d7d800">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[34.9%]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_1_porcentaje" ) + "%"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="553" y="497" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="434aa2db-e69a-440d-aaa7-6aab8f02529e">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[6,061]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_2_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="553" y="512" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="46327a69-a4a5-4740-8af5-dfc77977e13f">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[56.9%]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_2_porcentaje" ) + "%"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="553" y="527" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="e936037e-6204-41ce-a3ff-298c75136c16">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[11,155]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_2_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="553" y="542" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="02d854bf-b384-4f0e-a321-eef74ae4d5aa">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[49.8%]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_2_porcentaje" ) + "%"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="553" y="557" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="22a533a1-f1c7-4009-9294-b7ca63f558c4">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[27,987]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_2_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="553" y="572" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="671959e1-ed98-4f3f-83c5-97a68157a59b">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[59.1%]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_2_porcentaje" ) + "%"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="658" y="497" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="bcf2378a-28e0-4842-816d-c032895de289">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[372]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_3_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="658" y="512" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="b1d6b410-47ae-443b-a492-4970b4e6416b">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[3.5%]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_3_porcentaje" ) + "%"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="658" y="527" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="51a64646-ba6b-4c12-868f-9eb3afcb164d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[9,137]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_3_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="658" y="542" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="02a5d18c-f6cd-4fb2-9148-cfad178e9838">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[40.8%]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_3_porcentaje" ) + "%"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="658" y="557" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="c478dd47-313a-459c-99fe-535c7b8667c9">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[2,551]]></text>
-			</staticText>
-			<staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_3_poblacion" )]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement mode="Opaque" x="658" y="572" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="d0332b93-85c6-4ae1-8c2f-1a1021df29ba">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box>
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="10"/>
 				</textElement>
-				<text><![CDATA[5.4%]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_3_porcentaje" ) + "%"]]></textFieldExpression>
+			</textField>
 			<rectangle radius="10">
 				<reportElement mode="Transparent" x="316" y="458" width="447" height="129" uuid="bf6b6d87-1b0c-4038-a1e6-cc9670cae3c7">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
+				<graphicElement>
+					<pen lineColor="#4D3A6D"/>
+				</graphicElement>
 			</rectangle>
 			<rectangle radius="14">
 				<reportElement mode="Transparent" x="312" y="454" width="455" height="137" uuid="d2c4269c-6991-4192-9b27-0c4944947023">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<graphicElement>
 					<pen lineWidth="7.0" lineColor="#FFFFFF"/>

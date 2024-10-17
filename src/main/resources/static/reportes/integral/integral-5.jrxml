@@ -22,7 +22,7 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<printWhenExpression><![CDATA[$P{REPORT_CLASS_LOADER}.equals( null )]]></printWhenExpression>
+					<printWhenExpression><![CDATA[0==1]]></printWhenExpression>
 				</reportElement>
 				<box padding="0">
 					<pen lineWidth="0.0" lineStyle="Solid"/>

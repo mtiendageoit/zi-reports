@@ -79,4 +79,13 @@ public class ReportRepository {
         BeanPropertyRowMapper.newInstance(PoisCategory.class));
     return data;
   }
+
+  public List<NsePoblacion> nsePoblacion(String wktIso5, String wktIso10, String wktIso15) {
+    String sql = "SELECT * FROM public.___zi_nivel_bienestar_ingresos_isocronas(?, ?, ?)";
+
+    List<NsePoblacion> data = jdbcTemplate.query(sql,
+        BeanPropertyRowMapper.newInstance(NsePoblacion.class),
+        wktIso5, wktIso10, wktIso15);
+    return data;
+  }
 }

@@ -14,6 +14,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[0==1]]></printWhenExpression>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/i13.png" ):

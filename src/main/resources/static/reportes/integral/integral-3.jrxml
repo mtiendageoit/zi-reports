@@ -14,7 +14,7 @@
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<printWhenExpression><![CDATA[$P{REPORT_CLASS_LOADER}.equals( null )]]></printWhenExpression>
+					<printWhenExpression><![CDATA[0==1]]></printWhenExpression>
 				</reportElement>
 				<box padding="0">
 					<pen lineWidth="0.0" lineStyle="Solid"/>
@@ -157,7 +157,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>De los habitantes tienen " +$P{params}.get( "zona_peh_desc_1" ) +"</font><br/>En promedio en "+ $P{params}.get( "nombre_edo" )+" el "+$P{params}.get( "zona_peh_porcentaje_edo_1" )+"% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_1" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>De los habitantes tienen " +$P{params}.get( "zona_peh_desc_1" ) +"</font><br/>. En promedio en "+ $P{params}.get( "nombre_edo" )+" el "+$P{params}.get( "zona_peh_porcentaje_edo_1" )+"% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_1" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="55" y="438" width="52" height="26" forecolor="#FFFFFF" uuid="de546c98-69bf-48de-8c72-2a8b426ec1cf">
@@ -183,7 +183,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["De los habitantes tienen " + $P{params}.get( "zona_peh_desc_2" ) + "<br/>En promedio en " + $P{params}.get( "nombre_edo" ) + " el "+ $P{params}.get( "zona_peh_porcentaje_edo_2" ) + "% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_2" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>De los habitantes tienen " + $P{params}.get( "zona_peh_desc_2" ) + "</font><br/>. En promedio en " + $P{params}.get( "nombre_edo" ) + " el "+ $P{params}.get( "zona_peh_porcentaje_edo_2" ) + "% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_2" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="38" y="522" width="64" height="55" forecolor="#F49700" uuid="e9b73cd1-1411-4fc9-9781-33bd42f383dd">
@@ -290,7 +290,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
 					<font fontName="Montserrat" size="10"/>
@@ -304,7 +304,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
 					<font fontName="Montserrat Medium" size="10" isBold="true"/>
@@ -318,7 +318,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null && !$P{params}.get("precio_m2").toString().isEmpty()]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$P{params}.get("precio_m2") != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
 					<font fontName="Montserrat" size="10"/>

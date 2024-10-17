@@ -1,12 +1,12 @@
 package com.zonainmueble.reports.models;
 
-import jakarta.persistence.*;
+// import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
-@Entity
+// @Entity
 public class GrupoEdad {
-  @Id
+  // @Id
   private int id;
   private Double p0a2f20;
   private Double p3a520;

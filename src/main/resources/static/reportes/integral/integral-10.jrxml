@@ -13,6 +13,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[0==1]]></printWhenExpression>
 				</reportElement>
 				<box padding="0">
 					<pen lineWidth="0.0" lineStyle="Solid"/>
@@ -44,7 +45,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i1
 				<text><![CDATA[Mapa de Movilidad, caminando]]></text>
 			</staticText>
 			<rectangle radius="20">
-				<reportElement mode="Transparent" x="502" y="136" width="262" height="448" backcolor="#F49700" uuid="340e8fa8-a298-40b5-b2fd-717ba1c6e176">
+				<reportElement mode="Opaque" x="502" y="136" width="262" height="448" backcolor="#F49700" uuid="340e8fa8-a298-40b5-b2fd-717ba1c6e176">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -89,7 +90,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/ma
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Montserrat SemiBold" size="12" isBold="false"/>
-					<paragraph lineSpacing="Fixed" lineSpacingSize="16.0"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="15.0"/>
 				</textElement>
 				<text><![CDATA[Para cualquier persona que esté considerando comprar o rentar una propiedad, proporcionando una evaluación de la accesibilidad y la dinámica vial de la zona, ayudando a tomar decisiones informadas y mejorar la planificación diaria. 
 
