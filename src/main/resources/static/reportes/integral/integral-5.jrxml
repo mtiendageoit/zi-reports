@@ -123,7 +123,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Hay " + $P{params}.get("viviendas") + " Viviendas habitadas</font><br/>De las cuales, " + $P{params}.get("viviendas_1_dormitorio") + " tienen 1 dormitorio y " + $P{params}.get("viviendas_2mas_dormitorios") + " tienen 2 o más dormitorios"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Hay " + $P{params}.get("viviendas") + " Viviendas habitadas</font><br/>De las cuales, " + $P{params}.get("viviendas_1_dormitorio") + " tienen 1 dormitorio y " + $P{params}.get("viviendas_2mas_dormitorios") + " tienen 2 o más dormitorios."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="349" y="142" width="382" height="68" forecolor="#FFFFFF" uuid="da5e3b6d-19b1-4753-8d1d-cdcf4a18bcf4">
@@ -216,7 +216,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat" size="12"/>
 					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Medio de transporte <br/><font face='Montserrat SemiBold'>" + $P{params}.get("isochrone_time_minutes") + " minutos " + $P{params}.get( "isochrone_transport_type" ) +"</font>"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Medio de transporte <br/><font face='Montserrat SemiBold'>" + $P{params}.get("isochrone_time_minutes") + " minutos " + $P{params}.get( "isochrone_transport_type" ) +".</font>"]]></textFieldExpression>
 			</textField>
 			<image>
 				<reportElement x="43" y="55" width="52" height="52" uuid="3758855d-f799-4d52-bd15-3c32a62e68a2">

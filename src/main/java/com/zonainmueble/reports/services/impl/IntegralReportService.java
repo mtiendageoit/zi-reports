@@ -49,13 +49,16 @@ public class IntegralReportService implements ReportService {
 
   private Map<String, Object> reportParams(ReportRequest input, Municipio municipio) {
     List<Isochrone> walkIsochrones = bufferToIsochrones(walkIsochronesFrom(input));
-    String wktIso5 = geometryUtils.polygonToWKT(findIsochrone(IsochroneTime.FIVE_MINUTES, walkIsochrones).getPolygon());
+
+    Isochrone iso5 = findIsochrone(IsochroneTime.FIVE_MINUTES, walkIsochrones);
+
+    String wktIso5 = geometryUtils.polygonToWKT(iso5.getPolygon());
     String wktIso10 = geometryUtils.polygonToWKT(findIsochrone(IsochroneTime.TEN_MINUTES, walkIsochrones).getPolygon());
     String wktIso15 = geometryUtils
         .polygonToWKT(findIsochrone(IsochroneTime.FIFTEEN_MINUTES, walkIsochrones).getPolygon());
 
     Map<String, Object> params = new HashMap<String, Object>();
-    params.putAll(basicReportParams(input, municipio, wktIso5));
+    params.putAll(basicReportParams(input, municipio, wktIso5, iso5));
     params.putAll(nseReportParams(wktIso5, wktIso10, wktIso15));
 
     params.putAll(reportBasicMapParams(input, walkIsochrones));
@@ -266,7 +269,8 @@ public class IntegralReportService implements ReportService {
     return isochrone;
   }
 
-  private Map<String, Object> basicReportParams(ReportRequest input, Municipio municipio, String wktIso5) {
+  private Map<String, Object> basicReportParams(ReportRequest input, Municipio municipio, String wktIso5,
+      Isochrone iso5) {
     Poblacion poblacion = repository.poblacion(wktIso5);
     List<PoblacionPorcentajeEstudios> pEstudios = repository.poblacionPorcentajeEstudios(wktIso5,
         municipio.getClaveEdo());
@@ -278,6 +282,7 @@ public class IntegralReportService implements ReportService {
     params.putAll(basicReportService.poblacionResumenParams(municipio, poblacion));
     params.putAll(basicReportService.poblacionPorcentajeEstudiosParams(pEstudios));
     params.putAll(basicReportService.precioMetroCuadradoParams(municipio));
+    params.putAll(basicReportService.reportPoisParams(input, iso5.getPolygon()));
     // params.putAll(basicReportService.conclusionParams(params));
 
     return params;

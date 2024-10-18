@@ -377,7 +377,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "habitantes" ) + " Habitantes</font><br/>En 2010 habían " + $P{params}.get( "habitantes2010" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "habitantes" ) + " Habitantes</font><br/>En 2010 habían " + $P{params}.get( "habitantes2010" ) + "."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="405" y="433" width="157" height="52" forecolor="#3C3C3B" uuid="dfa4cd5a-0aff-4e06-8742-cac734d3372d">
@@ -389,7 +389,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "ninos" ) + " Niños y niñas</font><br/>de 0 a 11 años"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "ninos" ) + " Niños y niñas</font><br/>de 0 a 11 años."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="405" y="523" width="157" height="52" forecolor="#3C3C3B" uuid="19fdc052-b694-49aa-97c6-e5f99f533474">
@@ -401,7 +401,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Escolaridad Promedio</font><br/>" + $P{params}.get( "zona_peh_desc_1" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Escolaridad Promedio</font><br/>" + $P{params}.get( "zona_peh_desc_1" ) + "."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="619" y="374" width="120" height="40" forecolor="#FFFFFF" uuid="5b61c7eb-1964-4ac0-979c-e4c837dfaa3e">

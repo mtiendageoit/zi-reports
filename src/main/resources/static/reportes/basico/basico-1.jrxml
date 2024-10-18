@@ -101,7 +101,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/basico/images/ico
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.63"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{params}.get( "address" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA[TRIM($P{params}.get( "address" ).toString())  + ((RIGHT(TRIM($P{params}.get( "address" ).toString()),1 ).equals("."))  ? "" : ".")]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

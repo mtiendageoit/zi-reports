@@ -112,7 +112,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i6
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12"/>
 				</textElement>
-				<text><![CDATA[De la población tienen esta preponderancia de nivel de bienestar]]></text>
+				<text><![CDATA[De la población tienen esta preponderancia de nivel de bienestar.]]></text>
 			</staticText>
 			<rectangle radius="10">
 				<reportElement mode="Opaque" x="28" y="178" width="448" height="60" backcolor="#D1819E" uuid="32620e05-e351-47e1-ad7c-ead1446ba0ac">

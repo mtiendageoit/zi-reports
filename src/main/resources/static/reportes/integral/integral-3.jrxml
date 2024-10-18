@@ -119,7 +119,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="16.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "zona_habitantes" ) +"</font><br/>En comparación con los datos de " + $P{params}.get( "nombre_edo" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "zona_habitantes" ) +"</font><br/>En comparación con los datos de " + $P{params}.get( "nombre_edo" ) + "."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="118" y="232" width="350" height="60" forecolor="#3C3C3B" uuid="1282c8f0-a882-4abb-ae0e-ed586d6b1bca">
@@ -132,7 +132,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="13.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "zona_habitantes_infantil" ) +"</font><br/>En comparación con la media de "+$P{params}.get( "nombre_edo" )+ " con rangos de 0 a 11 años"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "zona_habitantes_infantil" ) +"</font><br/>En comparación con la media de "+$P{params}.get( "nombre_edo" )+ " con rangos de 0 a 11 años."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="38" y="324" width="65" height="60" forecolor="#FFFFFF" uuid="32942bc5-7798-4024-bad4-1e6e4d8b9601">
@@ -157,7 +157,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>De los habitantes tienen " +$P{params}.get( "zona_peh_desc_1" ) +".</font> En promedio en "+ $P{params}.get( "nombre_edo" )+" el "+$P{params}.get( "zona_peh_porcentaje_edo_1" )+"% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_1" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>De los habitantes tienen " +$P{params}.get( "zona_peh_desc_1" ) +".</font> En promedio en "+ $P{params}.get( "nombre_edo" )+" el "+$P{params}.get( "zona_peh_porcentaje_edo_1" )+"% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_1" ) + "."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="55" y="438" width="52" height="26" forecolor="#FFFFFF" uuid="de546c98-69bf-48de-8c72-2a8b426ec1cf">
@@ -183,7 +183,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>De los habitantes tienen " + $P{params}.get( "zona_peh_desc_2" ) + ".</font> En promedio en " + $P{params}.get( "nombre_edo" ) + " el "+ $P{params}.get( "zona_peh_porcentaje_edo_2" ) + "% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_2" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>De los habitantes tienen " + $P{params}.get( "zona_peh_desc_2" ) + ".</font> En promedio en " + $P{params}.get( "nombre_edo" ) + " el "+ $P{params}.get( "zona_peh_porcentaje_edo_2" ) + "% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_2" ) + "."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="38" y="522" width="64" height="55" forecolor="#F49700" uuid="e9b73cd1-1411-4fc9-9781-33bd42f383dd">
@@ -209,7 +209,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Habitantes por Vivienda</font><br/>" + $P{params}.get( "zona_densidad" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Habitantes por Vivienda</font><br/>" + $P{params}.get( "zona_densidad" ) + "."]]></textFieldExpression>
 			</textField>
 			<image scaleImage="RealSize" hAlign="Center" vAlign="Middle">
 				<reportElement x="517" y="154" width="232" height="280" uuid="3ffafc69-356b-46a3-aed7-604566a9c83f">
@@ -221,7 +221,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<box>
 					<pen lineWidth="1.0" lineColor="#F49700"/>
 				</box>
-				<imageExpression><![CDATA[$P{params}.get( mapImage2)]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get("mapImage2")]]></imageExpression>
 			</image>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="520" y="522" width="110" height="48" forecolor="#3C3C3B" uuid="dfbb0d8b-c43a-45fa-bde2-d6147790696e">
@@ -260,7 +260,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["En transacciones de venta en comparación con los datos de " + $P{params}.get( "nombre_edo" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["En transacciones de venta en comparación con los datos de " + $P{params}.get( "nombre_edo" ) + "."]]></textFieldExpression>
 			</textField>
 			<image>
 				<reportElement x="502" y="90" width="262" height="22" uuid="98045654-a5fd-440a-b86a-d27bf9d7358a">

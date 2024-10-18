@@ -119,7 +119,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<textElement textAlignment="Left" verticalAlignment="Bottom">
 					<font fontName="Montserrat" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[PRECIO DE INMUEBLES POR m2.]]></text>
+				<text><![CDATA[PRECIO DE INMUEBLES POR m2]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="28" y="509" width="446" height="35" forecolor="#3C3C3B" uuid="23ae5daf-b43b-40a1-b275-909a24ee323c">
@@ -128,7 +128,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Montserrat SemiBold" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA["En transacciones de venta en comparación con los datos de " + $P{params}.get( "nombre_edo" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["En transacciones de venta en comparación con los datos de " + $P{params}.get( "nombre_edo" ) + "."]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Transparent" x="36" y="557" width="100" height="20" forecolor="#FFFFFF" uuid="66081163-f19b-460f-b37d-6cca1cbae031">
@@ -264,7 +264,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Montserrat SemiBold" size="12"/>
 				</textElement>
-				<text><![CDATA[Ingreso mensual Promedio MXN.]]></text>
+				<text><![CDATA[Ingreso mensual Promedio MXN]]></text>
 			</staticText>
 			<rectangle radius="13">
 				<reportElement mode="Transparent" x="45" y="94" width="413" height="104" backcolor="#F49700" uuid="93454ace-2e55-49f8-b34d-95731d71a409">

@@ -193,12 +193,14 @@ public class BasicReportService implements ReportService {
     params.put("zona_peh_porcentaje_1", NumberUtils.formatToInt(pEstudios.get(0).getPParticipacionRango() * 100));
     params.put("zona_peh_desc_1", pEstudios.get(0).getDescripcion());
     params.put("zona_peh_porcentaje_edo_1", NumberUtils.formatToInt(pEstudios.get(0).getPParticipacionEdo() * 100));
-
-    params.put("zona_peh_porcentaje_2", NumberUtils.formatToInt(pEstudios.get(1).getPParticipacionRango() * 100));
-    params.put("zona_peh_desc_2", pEstudios.get(1).getDescripcion());
-    params.put("zona_peh_porcentaje_edo_2", NumberUtils.formatToInt(pEstudios.get(1).getPParticipacionEdo() * 100));
-
     params.put("zona_peh_grado_promedio_1", NumberUtils.formatToInt(pEstudios.get(0).getGrpesc20Isocrona()));
+
+    if (pEstudios.size() > 1) {
+      params.put("zona_peh_porcentaje_2", NumberUtils.formatToInt(pEstudios.get(1).getPParticipacionRango() * 100));
+      params.put("zona_peh_desc_2", pEstudios.get(1).getDescripcion());
+      params.put("zona_peh_porcentaje_edo_2", NumberUtils.formatToInt(pEstudios.get(1).getPParticipacionEdo() * 100));
+    }
+
     return params;
   }
 
@@ -229,7 +231,7 @@ public class BasicReportService implements ReportService {
     return params;
   }
 
-  private Map<String, Object> reportPoisParams(ReportRequest input, Polygon isochrone) {
+  public Map<String, Object> reportPoisParams(ReportRequest input, Polygon isochrone) {
     List<PoisCategory> pois = getPois(input, isochrone);
 
     Map<String, Object> params = new HashMap<String, Object>();

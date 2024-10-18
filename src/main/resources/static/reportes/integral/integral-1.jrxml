@@ -96,7 +96,7 @@ Integral de ubicación.]]></text>
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.63"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{params}.get( "address" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA[TRIM($P{params}.get( "address" ).toString())  + ((RIGHT(TRIM($P{params}.get( "address" ).toString()),1 ).equals("."))  ? "" : ".")]]></textFieldExpression>
 			</textField>
 			<image scaleImage="FillFrame">
 				<reportElement mode="Opaque" x="126" y="500" width="39" height="39" uuid="5a4f752f-b375-4b2a-960c-c97eee86b71f">

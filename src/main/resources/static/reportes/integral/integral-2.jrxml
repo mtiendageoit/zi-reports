@@ -67,7 +67,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i2
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="Montserrat Medium" size="30" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Básico de ubicación.]]></text>
+				<text><![CDATA[Básico de ubicación]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="118" y="146" width="350" height="23" forecolor="#3C3C3B" uuid="18d5672e-8330-4d99-802f-b7c1d7a681e5"/>
@@ -82,7 +82,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i2
 					<font fontName="Montserrat SemiBold" size="12"/>
 					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["El " + $P{params}.get( "build_date" ) + " a las " +  $P{params}.get( "build_time" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["El " + $P{params}.get( "build_date" ) + " a las " +  $P{params}.get( "build_time" ) + "."]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="118" y="238" width="350" height="23" forecolor="#3C3C3B" uuid="df38cc29-1606-461e-b2dd-62ddd8695801"/>
@@ -99,7 +99,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i2
 					<font fontName="Montserrat SemiBold" size="12"/>
 					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{params}.get( "isochrone_time_minutes" ) + " minutos " +  $P{params}.get( "isochrone_transport_type" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get( "isochrone_time_minutes" ) + " minutos " +  $P{params}.get( "isochrone_transport_type" )+ "."]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="516" y="260" width="228" height="34" forecolor="#FFFFFF" uuid="c82b7bce-222e-4bbc-99bc-7fb8138926b4">

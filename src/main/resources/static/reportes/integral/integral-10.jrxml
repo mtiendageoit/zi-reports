@@ -35,7 +35,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i1
 				<textElement verticalAlignment="Top">
 					<font fontName="Montserrat Medium" size="30"/>
 				</textElement>
-				<text><![CDATA[Estaciones y paradas de transporte público.]]></text>
+				<text><![CDATA[Estaciones y paradas de transporte público]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="28" y="21" width="736" height="40" forecolor="#3C3C3B" uuid="15c64adf-613a-498c-9079-1dada241c9f9"/>

@@ -104,7 +104,7 @@
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="16.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "zona_habitantes" ) +"</font><br/>En comparación con los datos de " + $P{params}.get( "nombre_edo" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>"+$P{params}.get( "zona_habitantes" ) +"</font><br/>En comparación con los datos de " + $P{params}.get( "nombre_edo" ) + "."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="118" y="232" width="350" height="60" forecolor="#3C3C3B" uuid="1282c8f0-a882-4abb-ae0e-ed586d6b1bca">
@@ -142,7 +142,7 @@
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>De los habitantes tienen " +$P{params}.get( "zona_peh_desc_1" ) +"</font><br/>En promedio en "+ $P{params}.get( "nombre_edo" )+" el "+$P{params}.get( "zona_peh_porcentaje_edo_1" )+"% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_1" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>De los habitantes tienen " +$P{params}.get( "zona_peh_desc_1" ) +"</font><br/>En promedio en "+ $P{params}.get( "nombre_edo" )+" el "+$P{params}.get( "zona_peh_porcentaje_edo_1" )+"% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_1" ) + "."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="55" y="438" width="52" height="26" forecolor="#FFFFFF" uuid="de546c98-69bf-48de-8c72-2a8b426ec1cf">
@@ -168,7 +168,7 @@
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["De los habitantes tienen " + $P{params}.get( "zona_peh_desc_2" ) + "<br/>En promedio en " + $P{params}.get( "nombre_edo" ) + " el "+ $P{params}.get( "zona_peh_porcentaje_edo_2" ) + "% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_2" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["De los habitantes tienen " + $P{params}.get( "zona_peh_desc_2" ) + "<br/>En promedio en " + $P{params}.get( "nombre_edo" ) + " el "+ $P{params}.get( "zona_peh_porcentaje_edo_2" ) + "% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_2" ) + "."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="38" y="522" width="64" height="55" forecolor="#FBB700" uuid="e9b73cd1-1411-4fc9-9781-33bd42f383dd">
@@ -194,7 +194,7 @@
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Habitantes por Vivienda</font><br/>" + $P{params}.get( "zona_densidad" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Habitantes por Vivienda</font><br/>" + $P{params}.get( "zona_densidad" ) + "."]]></textFieldExpression>
 			</textField>
 			<image scaleImage="RealSize" hAlign="Center" vAlign="Middle">
 				<reportElement x="517" y="154" width="232" height="280" uuid="3ffafc69-356b-46a3-aed7-604566a9c83f">
@@ -245,7 +245,7 @@
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["En transacciones de venta en comparación con los datos de " + $P{params}.get( "nombre_edo" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["En transacciones de venta en comparación con los datos de " + $P{params}.get( "nombre_edo" ) + "."]]></textFieldExpression>
 			</textField>
 			<image>
 				<reportElement x="502" y="90" width="262" height="22" uuid="98045654-a5fd-440a-b86a-d27bf9d7358a">

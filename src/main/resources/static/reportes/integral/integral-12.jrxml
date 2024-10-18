@@ -45,11 +45,11 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i1
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="28" y="22" width="736" height="40" forecolor="#3C3C3B" uuid="15c64adf-613a-498c-9079-1dada241c9f9"/>
+				<reportElement x="26" y="22" width="736" height="40" forecolor="#3C3C3B" uuid="15c64adf-613a-498c-9079-1dada241c9f9"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Montserrat" size="30"/>
 				</textElement>
-				<text><![CDATA[Análisis de Movilidad, automovil.]]></text>
+				<text><![CDATA[Análisis de Movilidad, automovil]]></text>
 			</staticText>
 			<image>
 				<reportElement x="71" y="112" width="52" height="52" uuid="00d10cc2-f2a0-4ca9-a24a-d3bd105e28e8">

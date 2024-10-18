@@ -37,7 +37,7 @@
 					<paragraph lineSpacing="Fixed" lineSpacingSize="16.0"/>
 				</textElement>
 				<text><![CDATA[del Reporte básico de
-ubicación.]]></text>
+ubicación]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="28" y="22" width="452" height="40" forecolor="#3C3C3B" uuid="49524925-0bce-4204-9b36-62472c5b36b8"/>
@@ -75,7 +75,7 @@ ubicación.]]></text>
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["El " + $P{params}.get( "build_date" ) + " a las " +  $P{params}.get( "build_time" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA["El " + $P{params}.get( "build_date" ) + " a las " +  $P{params}.get( "build_time" ) + "."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement isPrintRepeatedValues="false" x="119" y="551" width="358" height="23" forecolor="#3C3C3B" uuid="4c4235ca-fa3c-464c-b0c6-916fc108d06d">
@@ -85,7 +85,7 @@ ubicación.]]></text>
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{params}.get( "isochrone_time_minutes" ) + " minutos " +  $P{params}.get( "isochrone_transport_type" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get( "isochrone_time_minutes" ) + " minutos " +  $P{params}.get( "isochrone_transport_type" ) + "."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="516" y="202" width="230" height="16" forecolor="#FFFFFF" uuid="66b4e8ec-106e-49fd-9fdc-fd173645aaf8">

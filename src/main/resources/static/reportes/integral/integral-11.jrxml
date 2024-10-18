@@ -49,14 +49,14 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/p
 				<textElement verticalAlignment="Top">
 					<font fontName="Montserrat Medium" size="30"/>
 				</textElement>
-				<text><![CDATA[Gasolineras cercanas y confiables.]]></text>
+				<text><![CDATA[Gasolineras cercanas y confiables]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="28" y="21" width="736" height="40" forecolor="#3C3C3B" uuid="15c64adf-613a-498c-9079-1dada241c9f9"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Montserrat" size="30"/>
 				</textElement>
-				<text><![CDATA[Mapa de Movilidad, automóvil.
+				<text><![CDATA[Mapa de Movilidad, automóvil
 ]]></text>
 			</staticText>
 			<rectangle radius="20">
