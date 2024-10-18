@@ -19,6 +19,7 @@ import com.zonainmueble.reports.maps.here.pois.Poi;
 import com.zonainmueble.reports.services.IsochroneService;
 import com.zonainmueble.reports.utils.DateTimeUtils;
 
+import io.github.resilience4j.retry.annotation.Retry;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -43,6 +44,7 @@ public class HereMapsService implements IsochroneService {
     this.restTemplate = restTemplate;
   }
 
+  @Retry(name = "hereMapsPoisRequest", fallbackMethod = "poisFallback")
   public HereMapsPoisResponse pois(PoisRequest input) {
     String url = buildPoisUrl(input);
 
@@ -60,6 +62,11 @@ public class HereMapsService implements IsochroneService {
       log.error("url: {}, input: {}", url, input);
       throw new RuntimeException("Failed to fetch pois from HereMaps");
     }
+  }
+
+  public HereMapsPoisResponse poisFallback(PoisRequest input, RuntimeException e) {
+    log.error("poisFallback:", e);
+    return new HereMapsPoisResponse(List.of());
   }
 
   private String buildPoisUrl(PoisRequest input) {
@@ -94,6 +101,7 @@ public class HereMapsService implements IsochroneService {
   }
 
   @Override
+  @Retry(name = "hereMapsIsolineRequest", fallbackMethod = "isolineFallback")
   public IsochroneResponse isochroneFrom(IsochroneRequest input) {
     String url = buildIsolineUrl(input);
 
@@ -105,6 +113,11 @@ public class HereMapsService implements IsochroneService {
       log.error("url: {}, input: {}", url, input);
       throw new RuntimeException("Failed to fetch isoline from HereMaps");
     }
+  }
+
+  public IsochroneResponse isolineFallback(IsochroneRequest input, RuntimeException e) {
+    log.error("isolineFallback:", e);
+    return new IsochroneResponse(List.of());
   }
 
   private IsochroneResponse buildIsochroneResponse(IsolineResponse input, IsochroneRequest request) {
@@ -191,4 +204,5 @@ public class HereMapsService implements IsochroneService {
         throw new NoSuchElementException("Element not exists");
     }
   }
+
 }
