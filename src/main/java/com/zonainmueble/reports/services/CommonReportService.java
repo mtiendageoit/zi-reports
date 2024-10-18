@@ -1,8 +1,7 @@
 package com.zonainmueble.reports.services;
 
-import java.time.LocalDateTime;
 import java.util.*;
-import java.time.ZoneId;
+import java.time.*;
 
 import org.springframework.stereotype.Service;
 
@@ -24,16 +23,18 @@ public class CommonReportService {
         .orElseThrow(() -> new NoSuchElementException("Municipio not found: " + latitude + "," + longitude));
   }
 
+  public LocalDateTime getPreviousFromNowPlus(DayOfWeek dayOfWeek, long hours) {
+    LocalDate today = DateTimeUtils.getPreviousFromNow(dayOfWeek).toLocalDate();
+    return today.atStartOfDay().plusHours(hours);
+  }
+
   public Map<String, String> reportBuildTime() {
-    Locale locale = new Locale("es", "MX");
-    ZoneId zoneId = ZoneId.of("America/Mexico_City");
-    LocalDateTime now = LocalDateTime.now(zoneId);
-    String date = DateTimeUtils.format(now, "dd MMMM'.' yyyy", locale);
+    LocalDateTime now = DateTimeUtils.now();
+    String date = DateTimeUtils.format(now, "dd MMMM'.' yyyy");
     date = date.substring(0, 3) + date.substring(3, 4).toUpperCase() + date.substring(4);
-    String time = DateTimeUtils.format(now, "HH:mm 'hrs'", locale);
+    String time = DateTimeUtils.format(now, "HH:mm 'hrs'");
 
     return Map.of("date", date, "time", time);
-
   }
 
   public String transportType(TransportType type) {

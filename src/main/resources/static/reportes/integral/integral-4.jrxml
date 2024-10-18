@@ -526,7 +526,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/p
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="16.0"/>
 				</textElement>
-				<text><![CDATA[Te muestra información de valor que de acuerdo a tus expectativas que ayudará a tomar mejores decisiones si estás considerando rentar, comprar o invertir en un inmueble.]]></text>
+				<text><![CDATA[Te muestra información de valor que de acuerdo a tus expectativas te ayudará a tomar mejores decisiones si estás considerando rentar, comprar o invertir en un inmueble.]]></text>
 			</staticText>
 		</band>
 	</detail>

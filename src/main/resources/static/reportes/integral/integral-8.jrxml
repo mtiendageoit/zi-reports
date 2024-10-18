@@ -90,9 +90,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/pu
 				<box>
 					<pen lineWidth="1.0" lineColor="#FFFFFF"/>
 				</box>
-				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/publicidad-celular.png" ):
-"images/publicidad-celular.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get( "mapImage4")]]></imageExpression>
 			</image>
 			<rectangle radius="12">
 				<reportElement mode="Transparent" x="514" y="151" width="238" height="422" backcolor="#F8F8F8" uuid="538353dd-94de-478c-a21d-94d1349e8686">
@@ -288,6 +286,17 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				</reportElement>
 				<graphicElement>
 					<pen lineColor="#4D3A6D"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="517" y="154" width="232" height="416" backcolor="#F8F8F8" uuid="c6658cc7-edcb-4575-a094-8eb15e84bc9a">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#5EE02B"/>
 				</graphicElement>
 			</rectangle>
 		</band>

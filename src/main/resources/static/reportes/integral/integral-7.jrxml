@@ -64,15 +64,11 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 				</graphicElement>
 			</rectangle>
 			<image scaleImage="FillFrame">
-				<reportElement x="43" y="154" width="232" height="416" uuid="fba82a80-220b-4e72-af89-85b7126707e5">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
+				<reportElement x="43" y="154" width="232" height="416" uuid="fba82a80-220b-4e72-af89-85b7126707e5"/>
 				<box>
 					<pen lineWidth="1.0" lineColor="#FFFFFF"/>
 				</box>
-				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/mapa-osm.png" ):
-"images/mapa-osm.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get( "mapImage4")]]></imageExpression>
 			</image>
 			<rectangle radius="12">
 				<reportElement mode="Transparent" x="38" y="149" width="242" height="426" backcolor="#F8F8F8" uuid="d6869f32-e4dd-47a5-a63c-933db9364662">

@@ -17,6 +17,7 @@ import com.zonainmueble.reports.maps.here.isoline.IsolineResponse;
 import com.zonainmueble.reports.maps.here.pois.HereMapsPoisResponse;
 import com.zonainmueble.reports.maps.here.pois.Poi;
 import com.zonainmueble.reports.services.IsochroneService;
+import com.zonainmueble.reports.utils.DateTimeUtils;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -148,9 +149,19 @@ public class HereMapsService implements IsochroneService {
     StringBuilder urlBuilder = new StringBuilder(isolineUrl);
     urlBuilder.append("?transportMode=").append(isochroneTypeFrom(input.getTransportType()));
     urlBuilder.append("&origin=").append(origin);
+
+    if (input.getDepartureTime() != null) {
+      urlBuilder.append("&departureTime=")
+          .append(DateTimeUtils.format(input.getDepartureTime(), "yyyy-MM-dd HH:mm:ss").replace(" ", "T"));
+    }
+
     urlBuilder.append("&range[type]=").append(isochroneModeFrom(input.getMode()));
     urlBuilder.append("&range[values]=").append(values);
-    urlBuilder.append("&optimizeFor=quality");
+
+    if (input.getMaxPoints() != null) {
+      urlBuilder.append("&shape[maxPoints]=").append(input.getMaxPoints());
+    }
+    urlBuilder.append("&optimizeFor=performance");
     urlBuilder.append("&apiKey=").append(key);
 
     return urlBuilder.toString();

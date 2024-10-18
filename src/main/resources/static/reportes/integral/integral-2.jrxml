@@ -124,7 +124,7 @@ EN ESTE REPORTE INTEGRAL?]]></text>
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="16.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["FALTA CONTENIDO"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Encontrarás un análisis detallado de la zona, como las personas que viven a cinco minutos caminando, la presencia infantil, el nivel educativo y la composición de familias. Además, incluye información sobre el nivel socioeconómico y el ingreso mensual promedio. También verás puntos de interés organizados según la Pirámide de Maslow, que reflejan cómo la ubicación satisface diversas necesidades humanas. Y por último, datos sobre transporte público, gasolineras y la accesibilidad en coche, mostrando tiempos de viaje con y sin tráfico."]]></textFieldExpression>
 			</textField>
 			<image scaleImage="RealSize" hAlign="Center" vAlign="Middle">
 				<reportElement x="28" y="320" width="447" height="263" uuid="72922b70-5165-40a3-bbdd-bfec063d3d9b">

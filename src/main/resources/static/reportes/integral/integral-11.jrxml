@@ -80,9 +80,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/pu
 				<box>
 					<pen lineWidth="1.0" lineColor="#F49700"/>
 				</box>
-				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/mapa-osm.png" ):
-"images/mapa-osm.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get( "mapImageMovGasolineras")]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="516" y="164" width="228" height="20" forecolor="#FFFFFF" uuid="22787ac2-083b-4836-96f7-d105dca97f22">

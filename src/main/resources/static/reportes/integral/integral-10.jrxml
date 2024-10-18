@@ -66,9 +66,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i1
 				<box>
 					<pen lineWidth="1.0" lineColor="#F49700"/>
 				</box>
-				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/mapa-osm.png" ):
-"images/mapa-osm.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get( "mapImageMovCaminando")]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="516" y="180" width="228" height="20" forecolor="#FFFFFF" uuid="22787ac2-083b-4836-96f7-d105dca97f22">
@@ -80,7 +78,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/ma
 					<font fontName="Montserrat SemiBold" size="12" isBold="false"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="16.0"/>
 				</textElement>
-				<text><![CDATA[INFORME ES ESENCIAL]]></text>
+				<text><![CDATA[ESTE INFORME ES ESENCIAL]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="516" y="222" width="234" height="348" forecolor="#FFFFFF" uuid="0738d36e-0253-42fa-b38e-ca390145e5cb">
@@ -92,11 +90,11 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/ma
 					<font fontName="Montserrat SemiBold" size="12" isBold="false"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="15.0"/>
 				</textElement>
-				<text><![CDATA[Para cualquier persona que esté considerando comprar o rentar una propiedad, proporcionando una evaluación de la accesibilidad y la dinámica vial de la zona, ayudando a tomar decisiones informadas y mejorar la planificación diaria. 
+				<text><![CDATA[Para cualquier persona que esté considerando comprar, rentar o invertir en una propiedad, proporcionando una evaluación de la accesibilidad y la dinámica vial de la zona, ayudando a tomar decisiones informadas y mejorar la planificación diaria. 
 
-El mapa te muestra un vistazo rapido de la mayoría de estaciones publicas y privadas de transporte publico de pasajeros cercanos a la ubicación del analisis.
+El mapa te muestra un vistazo rápido de la mayoría de estaciones públicas y privadas de transporte público de pasajeros cercanos a la ubicación del análisis.
 
-Esto te permitirá conocer cuales son las opciones para desplazarte por la red de transporte publico de la zona de analisis.]]></text>
+Esto te permitirá conocer cuales son las opciones para desplazarte por la red de transporte público de la zona.]]></text>
 			</staticText>
 			<rectangle radius="15">
 				<reportElement mode="Transparent" x="20" y="129" width="464" height="464" uuid="55219e36-3ce2-4ad2-a598-9855d08d2143">

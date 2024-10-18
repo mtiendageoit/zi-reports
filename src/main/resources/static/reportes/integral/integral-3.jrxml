@@ -221,7 +221,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<box>
 					<pen lineWidth="1.0" lineColor="#F49700"/>
 				</box>
-				<imageExpression><![CDATA[$P{params}.get( "mapImage2" )]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get( mapImage2)]]></imageExpression>
 			</image>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="520" y="522" width="110" height="48" forecolor="#3C3C3B" uuid="dfbb0d8b-c43a-45fa-bde2-d6147790696e">

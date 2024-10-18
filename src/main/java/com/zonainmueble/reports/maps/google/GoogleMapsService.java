@@ -75,7 +75,19 @@ public class GoogleMapsService implements MapImageService {
         .map(coord -> String.format("%f,%f", coord.getLatitude(), coord.getLongitude()))
         .collect(Collectors.joining("|"));
 
-    return new StringBuilder("path=color:0x0000ff77|weight:2|fillcolor:0x0000ff33|")
+    PolygonStyle style = polygon.getStyle();
+    if (style == null) {
+      style = new PolygonStyle(); // Default style
+    }
+
+    String color = style.getColor().replace("#", "0x");
+    String fillColor = style.getFillColor().replace("#", "0x");
+    Integer weight = style.getWeight();
+
+    return new StringBuilder("path=")
+        .append("color:").append(color).append("|")
+        .append("weight:").append(weight).append("|")
+        .append("fillcolor:").append(fillColor).append("|")
         .append(coords).toString();
   }
 
@@ -85,9 +97,23 @@ public class GoogleMapsService implements MapImageService {
 
   private String markerToStr(Marker marker) {
     Coordinate coord = marker.getCoordinate();
-    return new StringBuilder("markers=")
-        .append(coord.getLatitude()).append(",").append(coord.getLongitude())
-        .toString();
+    StringBuilder builder = new StringBuilder("markers=");
+
+    if (marker.getColor() != null) {
+      builder.append("color:").append(marker.getColor().replace("#", "0x")).append("|");
+    }
+
+    if (marker.getLabel() != null) {
+      builder.append("label:").append(marker.getLabel()).append("|");
+    }
+
+    if (marker.getSize() != null) {
+      builder.append("size:").append(marker.getSize().name()).append("|");
+    }
+
+    builder.append(coord.getLatitude()).append(",").append(coord.getLongitude());
+
+    return builder.toString();
   }
 
 }

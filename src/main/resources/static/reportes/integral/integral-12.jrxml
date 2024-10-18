@@ -112,21 +112,21 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12" isBold="false"/>
 				</textElement>
-				<text><![CDATA[5 minutos]]></text>
+				<text><![CDATA[10 minutos]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="183" y="183" width="84" height="18" forecolor="#3C3C3B" uuid="7beb9f33-0f10-4225-b222-350be9bbc7e0"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12" isBold="false"/>
 				</textElement>
-				<text><![CDATA[10 minutos]]></text>
+				<text><![CDATA[30 minutos]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="303" y="183" width="80" height="18" forecolor="#3C3C3B" uuid="6aa30dc2-c70c-42e9-a7e8-da3a633dcd67"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12" isBold="false"/>
 				</textElement>
-				<text><![CDATA[15 minutos]]></text>
+				<text><![CDATA[60 minutos]]></text>
 			</staticText>
 			<ellipse>
 				<reportElement mode="Opaque" x="424" y="186" width="12" height="12" forecolor="#FFFFFF" backcolor="#A3DA91" uuid="d0cde60e-aa38-404e-82d9-907a8245aa56">
@@ -139,7 +139,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12" isBold="false"/>
 				</textElement>
-				<text><![CDATA[5 minutos]]></text>
+				<text><![CDATA[10 minutos]]></text>
 			</staticText>
 			<ellipse>
 				<reportElement mode="Opaque" x="542" y="186" width="12" height="12" forecolor="#FFFFFF" backcolor="#E3E367" uuid="9787c0fb-e3c9-458d-b4a0-c4da3a40cd01">
@@ -152,7 +152,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12" isBold="false"/>
 				</textElement>
-				<text><![CDATA[10 minutos]]></text>
+				<text><![CDATA[30 minutos]]></text>
 			</staticText>
 			<ellipse>
 				<reportElement mode="Opaque" x="662" y="186" width="12" height="12" forecolor="#FFFFFF" backcolor="#9BC1DB" uuid="d0b9cb37-59ad-40b7-9c83-4b8fe5030c51">
@@ -165,7 +165,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Montserrat Medium" size="12" isBold="false"/>
 				</textElement>
-				<text><![CDATA[15 minutos]]></text>
+				<text><![CDATA[60 minutos]]></text>
 			</staticText>
 			<image scaleImage="FillFrame">
 				<reportElement mode="Opaque" x="43" y="220" width="326" height="350" uuid="84755050-2a1e-45b0-99bd-03aebf71fade">
@@ -178,9 +178,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<box>
 					<pen lineWidth="1.0" lineColor="#F49700"/>
 				</box>
-				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/mapa-osm.png" ):
-"images/mapa-osm.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get( "mapImageMovAutoDom7AM")]]></imageExpression>
 			</image>
 			<rectangle radius="15">
 				<reportElement mode="Transparent" x="37" y="214" width="338" height="362" uuid="55219e36-3ce2-4ad2-a598-9855d08d2143">
@@ -211,9 +209,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/ma
 				<box>
 					<pen lineWidth="1.0" lineColor="#F49700"/>
 				</box>
-				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/mapa-osm.png" ):
-"images/mapa-osm.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get( "mapImageMovAutoLun2PM")]]></imageExpression>
 			</image>
 			<rectangle radius="15">
 				<reportElement mode="Transparent" x="417" y="214" width="338" height="362" uuid="d633e952-6c1b-421a-a39d-880d414c16b2">

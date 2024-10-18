@@ -75,8 +75,21 @@ public class ReportRepository {
         WHERE basico_gratuito=true
         """;
 
-    List<PoisCategory> data = jdbcTemplate.query(sql,
-        BeanPropertyRowMapper.newInstance(PoisCategory.class));
+    List<PoisCategory> data = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(PoisCategory.class));
+    return data;
+  }
+
+  public List<PoisCategory> poisMovilidadCaminando() {
+    String sql = "SELECT * FROM public.___zi_puntos_interes_integral_movilidad_caminando()";
+
+    List<PoisCategory> data = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(PoisCategory.class));
+    return data;
+  }
+
+  public List<PoisCategory> poisMovilidadAutomovil() {
+    String sql = "SELECT * FROM public.___zi_puntos_interes_integral_movilidad_automovil()";
+
+    List<PoisCategory> data = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(PoisCategory.class));
     return data;
   }
 

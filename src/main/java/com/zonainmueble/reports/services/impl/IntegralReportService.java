@@ -1,12 +1,20 @@
 package com.zonainmueble.reports.services.impl;
 
+import static com.zonainmueble.reports.enums.IsochroneTime.*;
+
 import java.util.*;
+import java.time.DayOfWeek;
+import java.time.LocalDateTime;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
 import com.zonainmueble.reports.config.AppConfig;
 import com.zonainmueble.reports.dto.*;
+import com.zonainmueble.reports.dto.Marker.MarkerSize;
 import com.zonainmueble.reports.enums.*;
+import com.zonainmueble.reports.maps.here.HereMapsService;
+import com.zonainmueble.reports.maps.here.pois.HereMapsPoisResponse;
 import com.zonainmueble.reports.models.*;
 import com.zonainmueble.reports.repositories.*;
 import com.zonainmueble.reports.services.*;
@@ -26,6 +34,7 @@ public class IntegralReportService implements ReportService {
   private final CommonReportService common;
   private final JasperReportService jasper;
   private final GeometryUtils geometryUtils;
+  private final HereMapsService hereMapsService;
   private final MapImageService mapImageService;
   private final IsochroneService isochroneService;
   private final BasicReportService basicReportService;
@@ -49,7 +58,107 @@ public class IntegralReportService implements ReportService {
     params.putAll(basicReportParams(input, municipio, wktIso5));
     params.putAll(nseReportParams(wktIso5, wktIso10, wktIso15));
 
-    // params.putAll(reportMapParams(input, walkIsochrones));
+    params.putAll(reportBasicMapParams(input, walkIsochrones));
+
+    params.putAll(poisMovCaminandoParams(input, walkIsochrones));
+
+    params.putAll(poisMovAutomovilParams(input));
+
+    return params;
+  }
+
+  private Map<String, Object> poisMovAutomovilParams(ReportRequest input) {
+    Map<String, Object> params = new HashMap<String, Object>();
+
+    Coordinate center = new Coordinate(input.getLatitude(), input.getLongitude());
+
+    LocalDateTime domingo7am = common.getPreviousFromNowPlus(DayOfWeek.SUNDAY, 7);
+    List<Isochrone> isos7am = isochronesAutomovil(center, domingo7am);
+    LocalDateTime lunes2pm = common.getPreviousFromNowPlus(DayOfWeek.MONDAY, 14);
+    List<Isochrone> isos2pm = isochronesAutomovil(center, lunes2pm);
+
+    List<Marker> markers = List.of(new Marker(center));
+
+    List<Polygon> polys = isos7am.stream().map(i -> i.getPolygon()).collect(Collectors.toList());
+    byte[] image1 = mapImageService.image(new MapImageRequest(326, 350, "roadmap", markers, polys));
+    params.put("mapImageMovAutoDom7AM", image1);
+
+    polys = isos2pm.stream().map(i -> i.getPolygon()).collect(Collectors.toList());
+    byte[] image2 = mapImageService.image(new MapImageRequest(326, 350, "roadmap", markers, polys));
+    params.put("mapImageMovAutoLun2PM", image2);
+
+    List<PoisCategory> categories = repository.poisMovilidadAutomovil();
+    PoisRequest request = new PoisRequest();
+    request.setCenter(center);
+    request.setBoundingBox(geometryUtils.boundingBox(findIsochrone(TEN_MINUTES, isos7am).getPolygon()));
+    request.setCategories(categories.stream().map(i -> i.getKey()).collect(Collectors.toList()));
+    request.setLimit(100);
+    HereMapsPoisResponse response = hereMapsService.pois(request);
+    List<Marker> gasolineras = response.getItems().stream().map(
+        i -> new Marker(new Coordinate(i.getPosition().getLat(),
+            i.getPosition().getLng()), "#FBB700", MarkerSize.small))
+        .collect(Collectors.toList());
+
+    gasolineras.addAll(markers);
+
+    byte[] image3 = mapImageService.image(new MapImageRequest(448, 448, "roadmap", gasolineras, null));
+    params.put("mapImageMovGasolineras", image3);
+
+    return params;
+  }
+
+  private List<Isochrone> isochronesAutomovil(Coordinate center, LocalDateTime departureTime) {
+    List<Isochrone> isos = isochronesFrom(center,
+        List.of(TEN_MINUTES.getValue(), THIRTY_MINUTES.getValue(), SIXTY_MINUTES.getValue()),
+        TransportType.DRIVING, departureTime);
+
+    Isochrone iso1 = findIsochrone(TEN_MINUTES, isos);
+    iso1.getPolygon().setStyle(new PolygonStyle("#A3DA91FF", "#A3DA9144"));
+
+    Isochrone iso2 = findIsochrone(THIRTY_MINUTES, isos);
+    iso2.getPolygon().setStyle(new PolygonStyle("#E3E367FF", "#E3E36744"));
+
+    Isochrone iso3 = findIsochrone(SIXTY_MINUTES, isos);
+    iso3.getPolygon().setStyle(new PolygonStyle("#9BC1DBFF", "#9BC1DB44"));
+
+    return isos;
+  }
+
+  private List<Isochrone> isochronesFrom(Coordinate center, List<Integer> modeValues,
+      TransportType transportType, LocalDateTime departureTime) {
+    IsochroneRequest request = IsochroneRequest.builder()
+        .center(center)
+        .modeValues(modeValues)
+        .departureTime(departureTime)
+        .transportType(transportType)
+        .maxPoints(350)
+        .mode(IsochroneMode.TIME_MINUTES)
+        .build();
+
+    return isochroneService.isochroneFrom(request).getIsochrones();
+  }
+
+  private Map<String, Object> poisMovCaminandoParams(ReportRequest input, List<Isochrone> walkIsochrones) {
+    Map<String, Object> params = new HashMap<String, Object>();
+    List<PoisCategory> categories = repository.poisMovilidadCaminando();
+
+    PoisRequest request = new PoisRequest();
+    request.setCenter(new Coordinate(input.getLatitude(), input.getLongitude()));
+    request.setBoundingBox(geometryUtils.boundingBox(findIsochrone(FIFTEEN_MINUTES, walkIsochrones).getPolygon()));
+    request.setCategories(categories.stream().map(i -> i.getKey()).collect(Collectors.toList()));
+    request.setLimit(100);
+
+    HereMapsPoisResponse response = hereMapsService.pois(request);
+
+    List<Marker> markers = response.getItems().stream().map(
+        i -> new Marker(new Coordinate(i.getPosition().getLat(),
+            i.getPosition().getLng()), "#FBB700", MarkerSize.small))
+        .collect(Collectors.toList());
+
+    markers.add(new Marker(request.getCenter()));
+
+    byte[] image = mapImageService.image(new MapImageRequest(448, 448, "roadmap", markers, null));
+    params.put("mapImageMovCaminando", image);
 
     return params;
   }
@@ -116,14 +225,14 @@ public class IntegralReportService implements ReportService {
     return params;
   }
 
-  private Map<String, Object> reportMapParams(ReportRequest input, List<Isochrone> walkIsochrones) {
+  private Map<String, Object> reportBasicMapParams(ReportRequest input, List<Isochrone> walkIsochrones) {
     List<Marker> markers = List.of(new Marker(new Coordinate(input.getLatitude(), input.getLongitude())));
 
     Map<String, Object> params = new HashMap<String, Object>();
     byte[] image1 = mapImageService.image(new MapImageRequest(447, 263, "roadmap", markers, null));
     params.put("mapImage1", image1);
 
-    Isochrone fiveMinIso = findIsochrone(IsochroneTime.FIVE_MINUTES, walkIsochrones);
+    Isochrone fiveMinIso = findIsochrone(FIVE_MINUTES, walkIsochrones);
     byte[] image2 = mapImageService
         .image(new MapImageRequest(232, 280, "roadmap", markers, List.of(fiveMinIso.getPolygon())));
     params.put("mapImage2", image2);
@@ -132,20 +241,29 @@ public class IntegralReportService implements ReportService {
         .image(new MapImageRequest(232, 434, "roadmap", markers, List.of(fiveMinIso.getPolygon())));
     params.put("mapImage3", image3);
 
-    // Isochrone tenMinIso = findIsochrone(IsochroneTime.TEN_MINUTES,
-    // walkIsochrones);
-    // Isochrone fifMinIso = findIsochrone(IsochroneTime.FIFTEEN_MINUTES,
-    // walkIsochrones);
-    // byte[] image4 = mapImageService.image(new MapImageRequest(255, 270,
-    // "roadmap", markers, List.of(fiveMinIso.getPolygon(), tenMinIso.getPolygon(),
-    // fifMinIso.getPolygon())));
-    // params.put("mapImage4", image4);
+    fiveMinIso = setStyle(fiveMinIso, FIVE_MINUTES);
+    Isochrone tenMinIso = setStyle(findIsochrone(TEN_MINUTES, walkIsochrones), TEN_MINUTES);
+    Isochrone fifMinIso = setStyle(findIsochrone(FIFTEEN_MINUTES, walkIsochrones), FIFTEEN_MINUTES);
 
-    // byte[] image5 = mapImageService.image(new MapImageRequest(365, 300, "hybrid",
-    // markers, polygons));
-    // params.put("mapImage5", image5);
+    byte[] image4 = mapImageService.image(
+        new MapImageRequest(232, 416, "roadmap", markers, List.of(fifMinIso.getPolygon(), tenMinIso.getPolygon(),
+            fiveMinIso.getPolygon())));
+    params.put("mapImage4", image4);
 
     return params;
+  }
+
+  private Isochrone setStyle(Isochrone isochrone, IsochroneTime time) {
+    if (time == IsochroneTime.FIVE_MINUTES) {
+      isochrone.getPolygon().setStyle(new PolygonStyle("#A3DA91FF", "#A3DA9144"));
+    } else if (time == IsochroneTime.TEN_MINUTES) {
+      isochrone.getPolygon().setStyle(new PolygonStyle("#E3E367FF", "#E3E36744"));
+    } else if (time == IsochroneTime.FIFTEEN_MINUTES) {
+      isochrone.getPolygon().setStyle(new PolygonStyle("#9BC1DBFF", "#9BC1DB44"));
+    } else {
+      throw new NoSuchElementException("Element not found");
+    }
+    return isochrone;
   }
 
   private Map<String, Object> basicReportParams(ReportRequest input, Municipio municipio, String wktIso5) {
@@ -182,7 +300,7 @@ public class IntegralReportService implements ReportService {
     IsochroneRequest request = IsochroneRequest.builder()
         .center(new Coordinate(input.getLatitude(), input.getLongitude()))
         .mode(IsochroneMode.TIME_MINUTES)
-        .modeValues(List.of(5, 10, 15))
+        .modeValues(List.of(FIVE_MINUTES.getValue(), TEN_MINUTES.getValue(), FIFTEEN_MINUTES.getValue()))
         .transportType(TransportType.WALKING)
         .build();
 
