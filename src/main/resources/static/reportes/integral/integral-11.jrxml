@@ -31,7 +31,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i1
 				</reportElement>
 			</line>
 			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
-				<reportElement mode="Transparent" x="502" y="447" width="262" height="137" isRemoveLineWhenBlank="true" uuid="b000f545-4a72-4fb8-8637-53478d893997">
+				<reportElement mode="Opaque" x="502" y="447" width="262" height="137" isRemoveLineWhenBlank="true" uuid="b000f545-4a72-4fb8-8637-53478d893997">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -41,7 +41,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i1
 					<pen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/publicidad-zona-inmueble.png" ):
+$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/publicidad-zona-inmueble.png" ):
 "images/publicidad-zona-inmueble.png"]]></imageExpression>
 			</image>
 			<staticText>
