@@ -48,7 +48,6 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<printWhenExpression><![CDATA[$P{params}.get("zona_peh_porcentaje_1") != null]]></printWhenExpression>
 				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
@@ -206,13 +205,13 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<printWhenExpression><![CDATA[$P{params}.get("zona_peh_porcentaje_1") != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>De los habitantes tienen " +$P{params}.get( "zona_peh_desc_1" ) +".</font> En promedio en "+ $P{params}.get( "nombre_edo" )+" el "+$P{params}.get( "zona_peh_porcentaje_edo_1" )+"% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_1" ) + "."]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{params}.get("zona_peh_porcentaje_1") != null?(
+"<font face='Montserrat SemiBold'>De los habitantes tienen " +$P{params}.get( "zona_peh_desc_1" ) +".</font> En promedio en "+ $P{params}.get( "nombre_edo" )+" el "+$P{params}.get( "zona_peh_porcentaje_edo_1" )+"% de sus habitantes tiene " + $P{params}.get( "zona_peh_desc_1" ) + "."):"Grado promedio de estudios no disponible para la zona."]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="46" y="438" width="52" height="26" forecolor="#FFFFFF" uuid="de546c98-69bf-48de-8c72-2a8b426ec1cf">

@@ -11,4 +11,9 @@ public class GlobalExceptionHandler {
   public ResponseEntity<ErrorResponse> handleReportException(ReportException ex) {
     return new ResponseEntity<ErrorResponse>(new ErrorResponse(ex.getCode(), ex.getMessage()), HttpStatus.BAD_REQUEST);
   }
+
+  @ExceptionHandler(LocationDataUnavailableException.class)
+  public ResponseEntity<ErrorResponse> handleReportException(LocationDataUnavailableException ex) {
+    return new ResponseEntity<ErrorResponse>(new ErrorResponse(ex.getCode(), ex.getMessage()), HttpStatus.NOT_FOUND);
+  }
 }

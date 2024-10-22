@@ -6,7 +6,7 @@ import java.time.*;
 import org.springframework.stereotype.Service;
 
 import com.zonainmueble.reports.enums.TransportType;
-import com.zonainmueble.reports.exceptions.BaseException;
+import com.zonainmueble.reports.exceptions.*;
 import com.zonainmueble.reports.models.Municipio;
 import com.zonainmueble.reports.repositories.ReportRepository;
 import com.zonainmueble.reports.utils.DateTimeUtils;
@@ -20,7 +20,9 @@ public class CommonReportService {
 
   public Municipio municipioFrom(double latitude, double longitude) {
     return repository.municipio(latitude, longitude)
-        .orElseThrow(() -> new NoSuchElementException("Municipio not found: " + latitude + "," + longitude));
+        .orElseThrow(() -> new LocationDataUnavailableException("LOCATION_DATA_UNAVAILABLE",
+            "No se puede generar el reporte para la ubicación enviada. latitude: " + latitude + ", longitude: "
+                + longitude));
   }
 
   public LocalDateTime getPreviousFromNowPlus(DayOfWeek dayOfWeek, long hours) {
