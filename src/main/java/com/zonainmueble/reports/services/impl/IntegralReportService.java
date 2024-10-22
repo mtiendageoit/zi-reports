@@ -61,11 +61,11 @@ public class IntegralReportService implements ReportService {
     params.putAll(basicReportParams(input, municipio, wktIso5, iso5));
     params.putAll(nseReportParams(wktIso5, wktIso10, wktIso15));
 
-    params.putAll(reportBasicMapParams(input, walkIsochrones));
+    params.putAll(reportBasicMapParams(input, walkIsochrones, params));
 
-    params.putAll(poisMovCaminandoParams(input, walkIsochrones));
+    // params.putAll(poisMovCaminandoParams(input, walkIsochrones));
 
-    params.putAll(poisMovAutomovilParams(input));
+    // params.putAll(poisMovAutomovilParams(input));
 
     return params;
   }
@@ -228,7 +228,8 @@ public class IntegralReportService implements ReportService {
     return params;
   }
 
-  private Map<String, Object> reportBasicMapParams(ReportRequest input, List<Isochrone> walkIsochrones) {
+  private Map<String, Object> reportBasicMapParams(ReportRequest input, List<Isochrone> walkIsochrones,
+      Map<String, Object> rp) {
     List<Marker> markers = List.of(new Marker(new Coordinate(input.getLatitude(), input.getLongitude())));
 
     Map<String, Object> params = new HashMap<String, Object>();
@@ -236,22 +237,28 @@ public class IntegralReportService implements ReportService {
     params.put("mapImage1", image1);
 
     Isochrone fiveMinIso = findIsochrone(FIVE_MINUTES, walkIsochrones);
+
+    boolean hayPrecioM2 = rp.get("precio_m2") != null;
+
+    int hight = hayPrecioM2 ? 280 : 388;
     byte[] image2 = mapImageService
-        .image(new MapImageRequest(232, 280, "roadmap", markers, List.of(fiveMinIso.getPolygon())));
+        .image(new MapImageRequest(232, hight, "roadmap", markers, List.of(fiveMinIso.getPolygon())));
     params.put("mapImage2", image2);
 
     byte[] image3 = mapImageService
         .image(new MapImageRequest(232, 434, "roadmap", markers, List.of(fiveMinIso.getPolygon())));
     params.put("mapImage3", image3);
 
-    fiveMinIso = setStyle(fiveMinIso, FIVE_MINUTES);
-    Isochrone tenMinIso = setStyle(findIsochrone(TEN_MINUTES, walkIsochrones), TEN_MINUTES);
-    Isochrone fifMinIso = setStyle(findIsochrone(FIFTEEN_MINUTES, walkIsochrones), FIFTEEN_MINUTES);
+    if (hayPrecioM2) {
+      fiveMinIso = setStyle(fiveMinIso, FIVE_MINUTES);
+      Isochrone tenMinIso = setStyle(findIsochrone(TEN_MINUTES, walkIsochrones), TEN_MINUTES);
+      Isochrone fifMinIso = setStyle(findIsochrone(FIFTEEN_MINUTES, walkIsochrones), FIFTEEN_MINUTES);
 
-    byte[] image4 = mapImageService.image(
-        new MapImageRequest(232, 416, "roadmap", markers, List.of(fifMinIso.getPolygon(), tenMinIso.getPolygon(),
-            fiveMinIso.getPolygon())));
-    params.put("mapImage4", image4);
+      byte[] image4 = mapImageService.image(
+          new MapImageRequest(232, 416, "roadmap", markers, List.of(fifMinIso.getPolygon(), tenMinIso.getPolygon(),
+              fiveMinIso.getPolygon())));
+      params.put("mapImage4", image4);
+    }
 
     return params;
   }
@@ -276,13 +283,13 @@ public class IntegralReportService implements ReportService {
         municipio.getClaveEdo());
 
     Map<String, Object> params = new HashMap<String, Object>();
-    params.putAll(basicReportService.generalParams(input, municipio));
+    params.putAll(basicReportService.generalParams(input, IsochroneTime.FIVE_MINUTES, municipio));
     params.putAll(basicReportService.poblacionParams(poblacion));
     params.putAll(basicReportService.grupoEdadParams(wktIso5));
     params.putAll(basicReportService.poblacionResumenParams(municipio, poblacion));
     params.putAll(basicReportService.poblacionPorcentajeEstudiosParams(pEstudios));
     params.putAll(basicReportService.precioMetroCuadradoParams(municipio));
-    params.putAll(basicReportService.reportPoisParams(input, iso5.getPolygon()));
+    // params.putAll(basicReportService.reportPoisParams(input, iso5.getPolygon()));
     // params.putAll(basicReportService.conclusionParams(params));
 
     return params;

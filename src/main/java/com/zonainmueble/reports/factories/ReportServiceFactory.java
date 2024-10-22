@@ -12,8 +12,11 @@ import com.zonainmueble.reports.services.impl.*;
 public class ReportServiceFactory {
   private final Map<ReportType, ReportService> items;
 
-  private ReportServiceFactory(BasicReportService basic, IntegralReportService integral) {
+  private ReportServiceFactory(
+      BasicReportService basic,
+      IntegralReportService integral) {
     items = new HashMap<>();
+    items.put(ReportType.GRATUITO, basic);
     items.put(ReportType.BASICO, basic);
     items.put(ReportType.INTEGRAL, integral);
   }

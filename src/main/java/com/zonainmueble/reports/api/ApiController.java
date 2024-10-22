@@ -22,6 +22,7 @@ public class ApiController {
   @PostMapping
   public ResponseEntity<byte[]> report(@RequestParam ReportType type, @Valid @RequestBody ReportRequest input) {
     log.info("Processing report type: {}, input: {}", type, input);
+    input.setType(type);
 
     ReportService service = serviceFactory.serviceOf(type);
     byte[] report = service.generateReport(input);

@@ -1,5 +1,6 @@
 package com.zonainmueble.reports.dto;
 
+import com.zonainmueble.reports.enums.ReportType;
 import com.zonainmueble.reports.validations.ValidCoordinates;
 
 import jakarta.validation.constraints.NotBlank;
@@ -13,4 +14,6 @@ public class ReportRequest {
 
   private double longitude;
   private double latitude;
+
+  private ReportType type;
 }

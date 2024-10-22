@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.zonainmueble.reports.config.AppConfig;
 import com.zonainmueble.reports.dto.*;
 import com.zonainmueble.reports.enums.*;
+import com.zonainmueble.reports.exceptions.ReportException;
 import com.zonainmueble.reports.maps.here.*;
 import com.zonainmueble.reports.maps.here.pois.HereMapsPoisResponse;
 import com.zonainmueble.reports.maps.here.pois.Poi;
@@ -17,19 +18,21 @@ import com.zonainmueble.reports.repositories.*;
 import com.zonainmueble.reports.services.*;
 import com.zonainmueble.reports.utils.*;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BasicReportService implements ReportService {
-  private final int ISOCHRONE_MODE_VALUE = 5;
+  private final IsochroneTime REPORTE_GRATUITO_ISO_MINUTOS = IsochroneTime.FIVE_MINUTES;
+  public static final IsochroneTime REPORTE_BASICO_ISO_MINUTOS = IsochroneTime.FIFTEEN_MINUTES;
+
   private final IsochroneMode ISOCHRONE_MODE = IsochroneMode.TIME_MINUTES;
   private final TransportType ISOCHRONE_TRANSPORT_TYPE = TransportType.WALKING;
   private final String JASPER_REPORT_PATH = "/static/reportes/basico/basico.jasper";
 
   private final AppConfig config;
-  private ReportRepository repository;
+  private final ReportRepository repository;
 
   private final JasperReportService jasper;
   private final CommonReportService common;
@@ -41,6 +44,7 @@ public class BasicReportService implements ReportService {
 
   @Override
   public byte[] generateReport(ReportRequest input) {
+
     Municipio municipio = common.municipioFrom(input.getLatitude(), input.getLongitude());
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("params", reportParams(input, municipio));
@@ -49,14 +53,17 @@ public class BasicReportService implements ReportService {
   }
 
   private Map<String, Object> reportParams(ReportRequest input, Municipio municipio) {
-    Polygon iso = geometryUtils.buffer(isochrone(input).getPolygon(), config.getIsochroneBufferMeters());
+    IsochroneTime time = byReportType(input.getType());
+
+    Polygon iso = geometryUtils.buffer(isochrone(input, time).getPolygon(),
+        config.getIsochroneBufferMeters());
     String wkt = geometryUtils.polygonToWKT(iso);
 
     Poblacion poblacion = repository.poblacion(wkt);
     List<PoblacionPorcentajeEstudios> pEstudios = repository.poblacionPorcentajeEstudios(wkt, municipio.getClaveEdo());
 
     Map<String, Object> params = new HashMap<String, Object>();
-    params.putAll(generalParams(input, municipio));
+    params.putAll(generalParams(input, time, municipio));
     params.putAll(poblacionParams(poblacion));
     params.putAll(grupoEdadParams(wkt));
     params.putAll(poblacionResumenParams(municipio, poblacion));
@@ -120,12 +127,12 @@ public class BasicReportService implements ReportService {
     return params;
   }
 
-  public Map<String, Object> generalParams(ReportRequest input, Municipio mun) {
+  public Map<String, Object> generalParams(ReportRequest input, IsochroneTime time, Municipio mun) {
     Map<String, Object> params = new HashMap<String, Object>();
     params.put("address", input.getAddress());
     params.put("clave_edo", mun.getClaveEdo());
     params.put("nombre_edo", mun.getNombreEdo());
-    params.put("isochrone_time_minutes", ISOCHRONE_MODE_VALUE);
+    params.put("isochrone_time_minutes", time.getValue());
     params.put("isochrone_transport_type", common.transportType(ISOCHRONE_TRANSPORT_TYPE));
     params.put("build_date", common.reportBuildTime().get(("date")));
     params.put("build_time", common.reportBuildTime().get(("time")));
@@ -190,10 +197,13 @@ public class BasicReportService implements ReportService {
   public Map<String, Object> poblacionPorcentajeEstudiosParams(List<PoblacionPorcentajeEstudios> pEstudios) {
 
     Map<String, Object> params = new HashMap<String, Object>();
-    params.put("zona_peh_porcentaje_1", NumberUtils.formatToInt(pEstudios.get(0).getPParticipacionRango() * 100));
-    params.put("zona_peh_desc_1", pEstudios.get(0).getDescripcion());
-    params.put("zona_peh_porcentaje_edo_1", NumberUtils.formatToInt(pEstudios.get(0).getPParticipacionEdo() * 100));
-    params.put("zona_peh_grado_promedio_1", NumberUtils.formatToInt(pEstudios.get(0).getGrpesc20Isocrona()));
+
+    if (pEstudios.size() > 0) {
+      params.put("zona_peh_porcentaje_1", NumberUtils.formatToInt(pEstudios.get(0).getPParticipacionRango() * 100));
+      params.put("zona_peh_desc_1", pEstudios.get(0).getDescripcion());
+      params.put("zona_peh_porcentaje_edo_1", NumberUtils.formatToInt(pEstudios.get(0).getPParticipacionEdo() * 100));
+      params.put("zona_peh_grado_promedio_1", NumberUtils.formatToInt(pEstudios.get(0).getGrpesc20Isocrona()));
+    }
 
     if (pEstudios.size() > 1) {
       params.put("zona_peh_porcentaje_2", NumberUtils.formatToInt(pEstudios.get(1).getPParticipacionRango() * 100));
@@ -316,11 +326,11 @@ public class BasicReportService implements ReportService {
     return params;
   }
 
-  private Isochrone isochrone(ReportRequest input) {
+  private Isochrone isochrone(ReportRequest input, IsochroneTime time) {
     IsochroneRequest request = IsochroneRequest.builder()
         .center(new Coordinate(input.getLatitude(), input.getLongitude()))
         .mode(ISOCHRONE_MODE)
-        .modeValues(List.of(ISOCHRONE_MODE_VALUE))
+        .modeValues(List.of(time.getValue()))
         .transportType(ISOCHRONE_TRANSPORT_TYPE)
         .build();
 
@@ -335,4 +345,12 @@ public class BasicReportService implements ReportService {
     return NumberUtils.formatToInt(value) + " (" + NumberUtils.formatToInt(percent) + "%)";
   }
 
+  private IsochroneTime byReportType(ReportType type) {
+    if (type == ReportType.GRATUITO)
+      return REPORTE_GRATUITO_ISO_MINUTOS;
+    else if (type == ReportType.BASICO)
+      return REPORTE_BASICO_ISO_MINUTOS;
+    else
+      throw new ReportException("BASIC_REPORT_TYPE_UNIMPLEMENTED", "Basic report type unimplemented");
+  }
 }
