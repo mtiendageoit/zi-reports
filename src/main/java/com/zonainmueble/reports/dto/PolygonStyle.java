@@ -10,13 +10,21 @@ public class PolygonStyle {
 
   public PolygonStyle() {
     this.color = "#0000FF77";
-    this.weight = 2;
-    this.fillColor = "#0000FF33";
+    this.weight = 3;
+  }
+
+  public PolygonStyle(String color) {
+    this();
+    this.color = color;
+  }
+
+  public PolygonStyle(String color, int weight) {
+    this(color);
+    this.weight = weight;
   }
 
   public PolygonStyle(String color, String fillColor) {
-    this();
-    this.color = color;
+    this(color);
     this.fillColor = fillColor;
   }
 

@@ -12,12 +12,33 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Component
 public class GeometryUtils {
-  private static final double METERS_PER_DEGREE_LATITUDE = 111320.0; // Aproximadamente 111.32 km
+  private static final double METERS_PER_DEGREE_LATITUDE = 111_320.0; // Aproximadamente 111.32 km
 
   private final GeometryFactory geometryFactory;
 
   private GeometryUtils() {
     this.geometryFactory = new GeometryFactory();
+  }
+
+  public double farthestPointDistanceKM(com.zonainmueble.reports.dto.Polygon polygon,
+      com.zonainmueble.reports.dto.Coordinate center) {
+    Point from = point(center.getLatitude(), center.getLongitude());
+    Polygon poly = fromPolygon(polygon);
+
+    return farthestPointsKM(poly, from);
+  }
+
+  private static double farthestPointsKM(Polygon polygon, Point center) {
+    double maxDistance = 0;
+
+    for (Coordinate vertex : polygon.getCoordinates()) {
+      double distance = center.getCoordinate().distance(vertex); // Distancia euclidiana entre el punto y el vértice
+
+      if (distance > maxDistance) {
+        maxDistance = distance;
+      }
+    }
+    return (maxDistance * METERS_PER_DEGREE_LATITUDE) / 1000;
   }
 
   public com.zonainmueble.reports.dto.Extent boundingBox(com.zonainmueble.reports.dto.Polygon polygon) {

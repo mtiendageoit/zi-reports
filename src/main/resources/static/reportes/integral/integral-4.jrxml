@@ -502,9 +502,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
-$P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/publicidad-celular.png" ):
-"images/publicidad-celular.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{params}.get("mapImageEdadHabitantes")]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="596" y="28" width="168" height="16" forecolor="#F49700" uuid="25a84ea7-f63b-4c4a-bd78-bc79cb53a9bf">
@@ -517,17 +515,28 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/p
 				<text><![CDATA[TABLERO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="596" y="49" width="168" height="168" forecolor="#3C3C3B" uuid="be7deec7-3a04-47cb-bb61-3eb572123e25">
+				<reportElement x="596" y="49" width="168" height="201" forecolor="#3C3C3B" uuid="be7deec7-3a04-47cb-bb61-3eb572123e25">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement>
 					<font fontName="Montserrat Medium" size="12"/>
-					<paragraph lineSpacing="Fixed" lineSpacingSize="16.0"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="14.0"/>
 				</textElement>
-				<text><![CDATA[Te muestra información de valor que de acuerdo a tus expectativas te ayudará a tomar mejores decisiones si estás considerando rentar, comprar o invertir en un inmueble.]]></text>
+				<text><![CDATA[La información presentada es fundamental para entender la distribución de la población por edad y género en la zona. Esto permite identificar la edad predominante, lo que puede influir en decisiones de compra, renta o inversión.]]></text>
 			</staticText>
+			<rectangle radius="12">
+				<reportElement mode="Transparent" x="25" y="25" width="268" height="562" uuid="a0b8d430-e8ee-4e2c-810e-645764069dfb">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="6.0" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
 		</band>
 	</detail>
 </jasperReport>

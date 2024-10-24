@@ -273,6 +273,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[$P{params}.get( "pois_numero_1" ) != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
 					<font fontName="Montserrat SemiBold" size="12" isBold="false"/>
@@ -286,6 +287,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[$P{params}.get( "pois_numero_2" ) != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
 					<font fontName="Montserrat SemiBold" size="12" isBold="false"/>
@@ -394,7 +396,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				<textElement>
 					<font fontName="Montserrat SemiBold" size="12"/>
 				</textElement>
-				<text><![CDATA[PRECIO DE INMUEBLES POR m2]]></text>
+				<text><![CDATA[PRECIO DE INMUEBLES POR m2 MXN.]]></text>
 			</staticText>
 			<image>
 				<reportElement x="663" y="458" width="56" height="56" uuid="b8be4bd5-f078-47f5-bea2-52d96ae43cd9">
@@ -402,6 +404,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[$P{params}.get( "pois_numero_2" ) != null]]></printWhenExpression>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/" + $P{params}.get( "pois_icono_2" ) ):
@@ -413,11 +416,26 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/"
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[$P{params}.get( "pois_numero_1" ) != null]]></printWhenExpression>
 				</reportElement>
 				<imageExpression><![CDATA[$P{REPORT_CLASS_LOADER} != null ? 
 $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/" + $P{params}.get( "pois_icono_1" ) ):
 "images/icon-pois-tiendas.svg"]]></imageExpression>
 			</image>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement x="520" y="480" width="228" height="48" forecolor="#3C3C3B" uuid="29b71d59-8768-4dba-8c3e-d1fade9616a8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[$P{params}.get( "pois_numero_1" ) == null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Montserrat SemiBold" size="12" isBold="false"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="16.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No se encontraron sitios de interes básicos para la vida"]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>

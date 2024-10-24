@@ -142,6 +142,7 @@ public class HereMapsService implements IsochroneService {
         .modeValue(isoline.getRange().getValue() / SECONDS_IN_MINUTE)
         .transportType(request.getTransportType())
         .polygon(new Polygon(coords))
+        .center(request.getCenter())
         .build();
   }
 

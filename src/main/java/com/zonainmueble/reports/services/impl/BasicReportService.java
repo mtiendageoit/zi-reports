@@ -1,5 +1,7 @@
 package com.zonainmueble.reports.services.impl;
 
+import static com.zonainmueble.reports.maps.google.MapType.roadmap;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -314,13 +316,13 @@ public class BasicReportService implements ReportService {
     List<Marker> markers = List.of(new Marker(new Coordinate(input.getLatitude(), input.getLongitude())));
 
     Map<String, Object> params = new HashMap<String, Object>();
-    byte[] image1 = mapImageService.image(new MapImageRequest(447, 263, "roadmap", markers, null));
+    byte[] image1 = mapImageService.image(new MapImageRequest(447, 263, roadmap, markers, null));
     params.put("mapImage1", image1);
 
-    byte[] image2 = mapImageService.image(new MapImageRequest(232, 280, "roadmap", markers, polygons));
+    byte[] image2 = mapImageService.image(new MapImageRequest(232, 280, roadmap, markers, polygons));
     params.put("mapImage2", image2);
 
-    byte[] image3 = mapImageService.image(new MapImageRequest(232, 372, "roadmap", markers, polygons));
+    byte[] image3 = mapImageService.image(new MapImageRequest(232, 372, roadmap, markers, polygons));
     params.put("mapImage3", image3);
 
     return params;

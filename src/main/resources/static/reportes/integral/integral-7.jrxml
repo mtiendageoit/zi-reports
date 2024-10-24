@@ -10,10 +10,11 @@
 	<detail>
 		<band height="612" splitType="Stretch">
 			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
-				<reportElement mode="Transparent" x="0" y="0" width="792" height="612" isRemoveLineWhenBlank="true" forecolor="#3C3C3B" uuid="18b17603-c665-4298-a1d4-86ffa4944393">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<reportElement mode="Transparent" x="0" y="0" width="792" height="0" isRemoveLineWhenBlank="true" forecolor="#3C3C3B" uuid="18b17603-c665-4298-a1d4-86ffa4944393">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<printWhenExpression><![CDATA[0==1]]></printWhenExpression>
 				</reportElement>
 				<box padding="0">
@@ -93,11 +94,11 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 				</graphicElement>
 			</rectangle>
 			<rectangle radius="20">
-				<reportElement mode="Opaque" x="316" y="136" width="448" height="275" backcolor="#F49700" uuid="a6343d88-708b-42d0-8606-f2175536d5b4">
+				<reportElement mode="Opaque" x="316" y="136" width="448" height="250" backcolor="#F49700" uuid="a6343d88-708b-42d0-8606-f2175536d5b4">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
@@ -112,7 +113,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 				</reportElement>
 			</line>
 			<staticText>
-				<reportElement x="320" y="426" width="279" height="21" forecolor="#F49700" uuid="f5ad3d06-4a92-4590-94b8-db7cbc1f1535">
+				<reportElement x="320" y="405" width="279" height="21" forecolor="#F49700" uuid="f5ad3d06-4a92-4590-94b8-db7cbc1f1535">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
@@ -122,7 +123,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 				<text><![CDATA[NIVELES DE BIENESTAR PREPONDERANTES]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="348" y="165" width="234" height="16" forecolor="#FFFFFF" uuid="0cda4d0c-0d17-4dad-a1d0-4b544f6e79c9">
+				<reportElement x="348" y="152" width="234" height="16" forecolor="#FFFFFF" uuid="0cda4d0c-0d17-4dad-a1d0-4b544f6e79c9">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -131,10 +132,10 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 				<textElement verticalAlignment="Middle">
 					<font fontName="Montserrat SemiBold" size="12"/>
 				</textElement>
-				<text><![CDATA[POLÍGONO AZUL]]></text>
+				<text><![CDATA[ZONA DE ANÁLISIS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="316" y="458" width="60" height="39" forecolor="#3C3C3B" uuid="e0b9df91-ab82-4736-aa80-6ced588a891c">
+				<reportElement mode="Opaque" x="316" y="431" width="60" height="39" forecolor="#3C3C3B" uuid="e0b9df91-ab82-4736-aa80-6ced588a891c">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -146,7 +147,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 				<text><![CDATA[Zona]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="376" y="458" width="72" height="39" forecolor="#3C3C3B" uuid="24905fa4-3151-4e6a-ac03-365cdb760308">
+				<reportElement mode="Opaque" x="376" y="431" width="72" height="39" forecolor="#3C3C3B" uuid="24905fa4-3151-4e6a-ac03-365cdb760308">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -158,7 +159,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 				<text><![CDATA[Población]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="316" y="497" width="60" height="30" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="7a399e90-240e-4248-a718-fd1eb247b632">
+				<reportElement mode="Opaque" x="316" y="470" width="60" height="30" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="7a399e90-240e-4248-a718-fd1eb247b632">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -170,7 +171,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 				<text><![CDATA[5 min.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="316" y="527" width="60" height="30" forecolor="#3C3C3B" backcolor="#E3E367" uuid="3a056cfb-fa4a-45e2-b053-a379b4efe50b"/>
+				<reportElement mode="Opaque" x="316" y="500" width="60" height="30" forecolor="#3C3C3B" backcolor="#E3E367" uuid="3a056cfb-fa4a-45e2-b053-a379b4efe50b"/>
 				<box>
 					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
@@ -180,7 +181,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 				<text><![CDATA[10 min.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="316" y="557" width="60" height="30" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="28848222-0cc7-4990-98f6-a846ddc3d8d6"/>
+				<reportElement mode="Opaque" x="316" y="530" width="60" height="30" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="28848222-0cc7-4990-98f6-a846ddc3d8d6"/>
 				<box>
 					<pen lineWidth="1.0" lineColor="#4D3A6D"/>
 				</box>
@@ -189,8 +190,8 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 				</textElement>
 				<text><![CDATA[15 min.]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="348" y="198" width="391" height="201" forecolor="#FFFFFF" uuid="e0419e51-fd54-48e3-b945-2159adc2c6b1">
+			<textField textAdjust="ScaleFont">
+				<reportElement x="348" y="180" width="391" height="194" forecolor="#FFFFFF" uuid="e0419e51-fd54-48e3-b945-2159adc2c6b1">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -200,11 +201,10 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i7
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="15.0"/>
 				</textElement>
-				<text><![CDATA[Revela una notable concentración de segmentos socioeconómicos más altos en sus alrededores inmediatos. En el polígono de 5 minutos caminando, el 96% de los hogares pertenecen a los segmentos A/B y C+, y esta tendencia se mantiene en los polígonos de 10 y 15 minutos caminando, con 91% y 94% respectivamente. Comparado con la
-distribución promedio de la Ciudad de México, esta área muestra una mayor proporción de hogares de clase alta y media alta, indicando un entorno de alto nivel socioeconómico y destacándose por su elevado estándar de vida y calidad residencial.]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$P{params}.get( "conclusionNivelBienestarIngresos" )]]></textFieldExpression>
+			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="376" y="497" width="72" height="30" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="77faccf8-f669-4234-84d7-5fe1efdb8ce8">
+				<reportElement mode="Opaque" x="376" y="470" width="72" height="30" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="77faccf8-f669-4234-84d7-5fe1efdb8ce8">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
@@ -217,7 +217,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="376" y="527" width="72" height="30" forecolor="#3C3C3B" backcolor="#E3E367" uuid="28a7924f-6648-400b-9939-f726d1e64fc6">
+				<reportElement mode="Opaque" x="376" y="500" width="72" height="30" forecolor="#3C3C3B" backcolor="#E3E367" uuid="28a7924f-6648-400b-9939-f726d1e64fc6">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
@@ -230,7 +230,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="376" y="557" width="72" height="30" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="323ae48d-a026-4276-a63a-7125c368ee59">
+				<reportElement mode="Opaque" x="376" y="530" width="72" height="30" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="323ae48d-a026-4276-a63a-7125c368ee59">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
@@ -243,7 +243,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="448" y="458" width="105" height="21" forecolor="#FFFFFF" backcolor="#D1819E" uuid="05e8dc15-e1eb-4322-8ada-9025a2193052">
+				<reportElement mode="Opaque" x="448" y="431" width="105" height="21" forecolor="#FFFFFF" backcolor="#D1819E" uuid="05e8dc15-e1eb-4322-8ada-9025a2193052">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "nse_top_1_color" )]]></propertyExpression>
@@ -257,7 +257,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_1_desc" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="448" y="497" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="5a49e254-65c7-4912-9e5a-a14bdeb57432">
+				<reportElement mode="Opaque" x="448" y="470" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="5a49e254-65c7-4912-9e5a-a14bdeb57432">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -270,7 +270,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_1_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="553" y="458" width="105" height="21" forecolor="#FFFFFF" backcolor="#8198D1" uuid="12485512-d9ab-4c0e-acdd-543444fb3714">
+				<reportElement mode="Opaque" x="553" y="431" width="105" height="21" forecolor="#FFFFFF" backcolor="#8198D1" uuid="12485512-d9ab-4c0e-acdd-543444fb3714">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "nse_top_2_color" )]]></propertyExpression>
@@ -284,7 +284,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_2_desc" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="658" y="458" width="105" height="21" forecolor="#FFFFFF" backcolor="#62C6BC" uuid="84c0bcc3-24ad-4f3c-b3f5-e32d17032081">
+				<reportElement mode="Opaque" x="658" y="431" width="105" height="21" forecolor="#FFFFFF" backcolor="#62C6BC" uuid="84c0bcc3-24ad-4f3c-b3f5-e32d17032081">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$P{params}.get( "nse_top_3_color" )]]></propertyExpression>
@@ -298,7 +298,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_3_desc" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="448" y="479" width="105" height="18" forecolor="#D1819E" backcolor="#FFFFFF" uuid="3fafab19-7cf3-42d3-a793-c68e37ca07aa">
+				<reportElement mode="Opaque" x="448" y="452" width="105" height="18" forecolor="#D1819E" backcolor="#FFFFFF" uuid="3fafab19-7cf3-42d3-a793-c68e37ca07aa">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "nse_top_1_color" )]]></propertyExpression>
@@ -312,7 +312,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_1_nombre" ) + " " + $P{params}.get( "nse_top_1_nse" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="553" y="479" width="105" height="18" forecolor="#8198D1" backcolor="#FFFFFF" uuid="a54d2f24-8717-48a5-b4a5-939cf3b3fc8a">
+				<reportElement mode="Opaque" x="553" y="452" width="105" height="18" forecolor="#8198D1" backcolor="#FFFFFF" uuid="a54d2f24-8717-48a5-b4a5-939cf3b3fc8a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "nse_top_2_color" )]]></propertyExpression>
@@ -326,7 +326,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_2_nombre" ) + " " + $P{params}.get( "nse_top_2_nse" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="658" y="479" width="105" height="18" forecolor="#8198D1" backcolor="#FFFFFF" uuid="66882f4e-45ba-467f-8d49-a4e458cb9562">
+				<reportElement mode="Opaque" x="658" y="452" width="105" height="18" forecolor="#8198D1" backcolor="#FFFFFF" uuid="66882f4e-45ba-467f-8d49-a4e458cb9562">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[$P{params}.get( "nse_top_3_color" )]]></propertyExpression>
@@ -340,7 +340,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_top_3_nombre" ) + " " + $P{params}.get( "nse_top_3_nse" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="448" y="512" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="3181ab3a-d7dc-4765-8428-c597605fac1d">
+				<reportElement mode="Opaque" x="448" y="485" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="3181ab3a-d7dc-4765-8428-c597605fac1d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -353,7 +353,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_1_porcentaje" ) + "%"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="448" y="527" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="090a8640-aa78-42b6-bb10-c47415b7cb1d">
+				<reportElement mode="Opaque" x="448" y="500" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="090a8640-aa78-42b6-bb10-c47415b7cb1d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -366,7 +366,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_1_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="448" y="542" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="804b9d7f-751e-4e92-a58d-3f0a9493ec0a">
+				<reportElement mode="Opaque" x="448" y="515" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="804b9d7f-751e-4e92-a58d-3f0a9493ec0a">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -379,7 +379,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_1_porcentaje" ) + "%"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="448" y="557" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="bd5a7337-b21b-48ad-862d-c71171f80d28">
+				<reportElement mode="Opaque" x="448" y="530" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="bd5a7337-b21b-48ad-862d-c71171f80d28">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -392,7 +392,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_1_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="448" y="572" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="24c47378-091e-4333-bfcc-21b726d7d800">
+				<reportElement mode="Opaque" x="448" y="545" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="24c47378-091e-4333-bfcc-21b726d7d800">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -405,7 +405,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_1_porcentaje" ) + "%"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="553" y="497" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="434aa2db-e69a-440d-aaa7-6aab8f02529e">
+				<reportElement mode="Opaque" x="553" y="470" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="434aa2db-e69a-440d-aaa7-6aab8f02529e">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -418,7 +418,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_2_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="553" y="512" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="46327a69-a4a5-4740-8af5-dfc77977e13f">
+				<reportElement mode="Opaque" x="553" y="485" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="46327a69-a4a5-4740-8af5-dfc77977e13f">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -431,7 +431,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_2_porcentaje" ) + "%"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="553" y="527" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="e936037e-6204-41ce-a3ff-298c75136c16">
+				<reportElement mode="Opaque" x="553" y="500" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="e936037e-6204-41ce-a3ff-298c75136c16">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -444,7 +444,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_2_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="553" y="542" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="02d854bf-b384-4f0e-a321-eef74ae4d5aa">
+				<reportElement mode="Opaque" x="553" y="515" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="02d854bf-b384-4f0e-a321-eef74ae4d5aa">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -457,7 +457,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_2_porcentaje" ) + "%"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="553" y="557" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="22a533a1-f1c7-4009-9294-b7ca63f558c4">
+				<reportElement mode="Opaque" x="553" y="530" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="22a533a1-f1c7-4009-9294-b7ca63f558c4">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -470,7 +470,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_2_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="553" y="572" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="671959e1-ed98-4f3f-83c5-97a68157a59b">
+				<reportElement mode="Opaque" x="553" y="545" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="671959e1-ed98-4f3f-83c5-97a68157a59b">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -483,7 +483,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_2_porcentaje" ) + "%"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="658" y="497" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="bcf2378a-28e0-4842-816d-c032895de289">
+				<reportElement mode="Opaque" x="658" y="470" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="bcf2378a-28e0-4842-816d-c032895de289">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -496,7 +496,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_3_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="658" y="512" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="b1d6b410-47ae-443b-a492-4970b4e6416b">
+				<reportElement mode="Opaque" x="658" y="485" width="105" height="15" forecolor="#3C3C3B" backcolor="#A3DA91" uuid="b1d6b410-47ae-443b-a492-4970b4e6416b">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -509,7 +509,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso5_top_3_porcentaje" ) + "%"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="658" y="527" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="51a64646-ba6b-4c12-868f-9eb3afcb164d">
+				<reportElement mode="Opaque" x="658" y="500" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="51a64646-ba6b-4c12-868f-9eb3afcb164d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -522,7 +522,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_3_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="658" y="542" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="02a5d18c-f6cd-4fb2-9148-cfad178e9838">
+				<reportElement mode="Opaque" x="658" y="515" width="105" height="15" forecolor="#3C3C3B" backcolor="#E3E367" uuid="02a5d18c-f6cd-4fb2-9148-cfad178e9838">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -535,7 +535,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso10_top_3_porcentaje" ) + "%"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="658" y="557" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="c478dd47-313a-459c-99fe-535c7b8667c9">
+				<reportElement mode="Opaque" x="658" y="530" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="c478dd47-313a-459c-99fe-535c7b8667c9">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -548,7 +548,7 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_3_poblacion" )]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont">
-				<reportElement mode="Opaque" x="658" y="572" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="d0332b93-85c6-4ae1-8c2f-1a1021df29ba">
+				<reportElement mode="Opaque" x="658" y="545" width="105" height="15" forecolor="#3C3C3B" backcolor="#9BC1DB" uuid="d0332b93-85c6-4ae1-8c2f-1a1021df29ba">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -561,25 +561,33 @@ distribución promedio de la Ciudad de México, esta área muestra una mayor pro
 				<textFieldExpression><![CDATA[$P{params}.get( "nse_iso15_top_3_porcentaje" ) + "%"]]></textFieldExpression>
 			</textField>
 			<rectangle radius="10">
-				<reportElement mode="Transparent" x="316" y="458" width="447" height="129" uuid="bf6b6d87-1b0c-4038-a1e6-cc9670cae3c7">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<reportElement mode="Transparent" x="316" y="431" width="447" height="129" uuid="bf6b6d87-1b0c-4038-a1e6-cc9670cae3c7">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
 					<pen lineColor="#4D3A6D"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle radius="14">
-				<reportElement mode="Transparent" x="312" y="454" width="455" height="137" uuid="d2c4269c-6991-4192-9b27-0c4944947023">
+				<reportElement mode="Transparent" x="312" y="427" width="455" height="137" uuid="d2c4269c-6991-4192-9b27-0c4944947023">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
 					<pen lineWidth="7.0" lineColor="#FFFFFF"/>
 				</graphicElement>
 			</rectangle>
+			<staticText>
+				<reportElement x="316" y="557" width="447" height="30" forecolor="#B8B8B8" uuid="65a36956-ed3c-4bf5-bf25-5d73ef90a7e4"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Montserrat" size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Nota. Para facilitar la visualización e interpretación por parte del lector, se han omitido los niveles de bienestar que contienen datos estadísticos marginales para la ubicación y zona de análisis.
+]]></text>
+			</staticText>
 		</band>
 	</detail>
 </jasperReport>

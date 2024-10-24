@@ -12,4 +12,5 @@ public class Isochrone {
   private TransportType transportType;
 
   private Polygon polygon;
+  private Coordinate center;
 }

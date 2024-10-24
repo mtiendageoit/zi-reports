@@ -26,4 +26,11 @@ public class Poi {
     }
     return null;
   }
+
+  public boolean anyCategoryIs(String category) {
+    if (categories != null && !categories.isEmpty()) {
+      return categories.stream().anyMatch(i -> i.getId().equalsIgnoreCase(category));
+    }
+    return false;
+  }
 }

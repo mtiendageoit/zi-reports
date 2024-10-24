@@ -1,6 +1,6 @@
 package com.zonainmueble.reports.dto;
 
-import com.zonainmueble.reports.enums.PoiType;
+import com.zonainmueble.reports.enums.PoiCategory;
 
 import lombok.*;
 
@@ -9,5 +9,5 @@ import lombok.*;
 @AllArgsConstructor
 public class Poi {
   private int total;
-  private PoiType type;
+  private PoiCategory type;
 }

@@ -125,19 +125,6 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				</textElement>
 				<textFieldExpression><![CDATA["<font face='Montserrat SemiBold'>Hay " + $P{params}.get("viviendas") + " Viviendas habitadas</font><br/>De las cuales, " + $P{params}.get("viviendas_1_dormitorio") + " tienen 1 dormitorio y " + $P{params}.get("viviendas_2mas_dormitorios") + " tienen 2 o más dormitorios."]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="349" y="142" width="382" height="68" forecolor="#FFFFFF" uuid="da5e3b6d-19b1-4753-8d1d-cdcf4a18bcf4">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Top" markup="styled">
-					<font fontName="Montserrat Medium" size="12"/>
-					<paragraph lineSpacing="1_1_2" lineSpacingSize="16.0"/>
-				</textElement>
-				<textFieldExpression><![CDATA["El polígono azul te muestra hasta donde puedes llegar desde la ubicación de análisis, " + $P{params}.get( "isochrone_transport_type" ) +" por hasta " + $P{params}.get("isochrone_time_minutes")+ " minutos en cualquier dirección posible."]]></textFieldExpression>
-			</textField>
 			<image>
 				<reportElement x="346" y="264" width="42" height="36" uuid="20182407-37de-4eaa-8919-676fc465cab6">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -183,7 +170,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 "images/icon-viviendas-habitadas.svg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="348" y="55" width="234" height="16" forecolor="#FFFFFF" uuid="6de4a0e8-3571-4d3e-958b-924a71f2c32a">
+				<reportElement x="332" y="41" width="418" height="16" forecolor="#FFFFFF" uuid="6de4a0e8-3571-4d3e-958b-924a71f2c32a">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -194,20 +181,19 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reportes/integral/images/i
 				</textElement>
 				<text><![CDATA[POLÍGONO AZUL]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="348" y="88" width="383" height="40" forecolor="#FFFFFF" uuid="8a451656-8ccd-4748-88f0-970a538cc450">
+			<textField textAdjust="ScaleFont">
+				<reportElement x="332" y="65" width="418" height="145" forecolor="#FFFFFF" uuid="8a451656-8ccd-4748-88f0-970a538cc450">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement>
+				<textElement markup="styled">
 					<font fontName="Montserrat Medium" size="12"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="15.0"/>
 				</textElement>
-				<text><![CDATA[Este reporte básico de ubicación te entrega datos de gran valor del entorno demográfico. 
-]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA["Te muestra hasta donde puedes llegar desde la ubicación de análisis, " + $P{params}.get( "isochrone_transport_type" ) +" por hasta " + $P{params}.get("isochrone_time_minutes") +" minutos en cualquier dirección posible.<br/><br/>La información demográfica incluyen cifras sobre el número de familias, viviendas, la media de habitantes por vivienda y demas, lo que proporciona una visión completa de la estructura habitacional en la zona."]]></textFieldExpression>
+			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="106" y="61" width="174" height="40" forecolor="#3C3C3B" uuid="1c9c0fdc-79cf-464a-81eb-bb593738bb1c">
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>

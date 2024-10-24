@@ -50,7 +50,7 @@ public class GoogleMapsService implements MapImageService {
 
     StringBuilder urlBuilder = new StringBuilder(staticUrl).append("?");
     urlBuilder.append("format=png");
-    urlBuilder.append("&maptype=").append(input.getMapType());
+    urlBuilder.append("&maptype=").append(input.getMapType().name());
     urlBuilder.append("&size=").append(input.getSize().getWidth()).append("x").append(input.getSize().getHeight());
 
     if (input.getMarkers() != null && !input.getMarkers().isEmpty()) {
@@ -61,6 +61,10 @@ public class GoogleMapsService implements MapImageService {
     }
 
     urlBuilder.append("&key=").append(key);
+
+    if (input.getMapId() != null) {
+      urlBuilder.append("&map_id=").append(input.getMapId());
+    }
 
     return urlBuilder.toString();
   }
@@ -80,15 +84,19 @@ public class GoogleMapsService implements MapImageService {
       style = new PolygonStyle(); // Default style
     }
 
-    String color = style.getColor().replace("#", "0x");
-    String fillColor = style.getFillColor().replace("#", "0x");
     Integer weight = style.getWeight();
+    String color = style.getColor().replace("#", "0x");
 
-    return new StringBuilder("path=")
+    StringBuilder builder = new StringBuilder("path=")
         .append("color:").append(color).append("|")
-        .append("weight:").append(weight).append("|")
-        .append("fillcolor:").append(fillColor).append("|")
-        .append(coords).toString();
+        .append("weight:").append(weight).append("|");
+
+    if (style.getFillColor() != null) {
+      String fillColor = style.getFillColor().replace("#", "0x");
+      builder.append("fillcolor:").append(fillColor).append("|");
+    }
+
+    return builder.append(coords).toString();
   }
 
   private String markersToStr(List<Marker> markers) {
