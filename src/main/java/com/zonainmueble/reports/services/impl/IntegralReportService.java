@@ -347,16 +347,14 @@ public class IntegralReportService implements ReportService {
         .image(new MapImageRequest(232, 434, roadmap, markers, List.of(fiveMinIso.getPolygon())));
     params.put("mapImage3", image3);
 
-    if (hayPrecioM2) {
-      fiveMinIso = setStyle(fiveMinIso, FIVE_MINUTES);
-      Isochrone tenMinIso = setStyle(findIsochrone(TEN_MINUTES, walkIsochrones), TEN_MINUTES);
-      Isochrone fifMinIso = setStyle(findIsochrone(FIFTEEN_MINUTES, walkIsochrones), FIFTEEN_MINUTES);
+    fiveMinIso = setStyle(fiveMinIso, FIVE_MINUTES);
+    Isochrone tenMinIso = setStyle(findIsochrone(TEN_MINUTES, walkIsochrones), TEN_MINUTES);
+    Isochrone fifMinIso = setStyle(findIsochrone(FIFTEEN_MINUTES, walkIsochrones), FIFTEEN_MINUTES);
 
-      byte[] image4 = mapImageService.image(
-          new MapImageRequest(232, 416, roadmap, markers, List.of(fifMinIso.getPolygon(), tenMinIso.getPolygon(),
-              fiveMinIso.getPolygon())));
-      params.put("mapImage4", image4);
-    }
+    byte[] image4 = mapImageService.image(
+        new MapImageRequest(232, 416, roadmap, markers, List.of(fifMinIso.getPolygon(), tenMinIso.getPolygon(),
+            fiveMinIso.getPolygon())));
+    params.put("mapImage4", image4);
 
     return params;
   }
