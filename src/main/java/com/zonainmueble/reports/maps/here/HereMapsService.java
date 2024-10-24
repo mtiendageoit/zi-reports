@@ -175,6 +175,15 @@ public class HereMapsService implements IsochroneService {
     if (input.getMaxPoints() != null) {
       urlBuilder.append("&shape[maxPoints]=").append(input.getMaxPoints());
     }
+
+    if (input.getVehicle() != null && input.getVehicle().getSpeedKmPerHour() != null) {
+      int segundosPorHora = 3600;
+      int metrosEnKm = 1000;
+      int metrosPorSegundo = Double.valueOf(input.getVehicle().getSpeedKmPerHour() * metrosEnKm / segundosPorHora)
+          .intValue();
+      urlBuilder.append("&vehicle[speedCap]=").append(metrosPorSegundo);
+    }
+
     urlBuilder.append("&optimizeFor=performance");
     urlBuilder.append("&apiKey=").append(key);
 

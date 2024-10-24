@@ -16,6 +16,7 @@ import com.zonainmueble.reports.dto.*;
 import com.zonainmueble.reports.dto.Marker.MarkerSize;
 import com.zonainmueble.reports.enums.*;
 import com.zonainmueble.reports.maps.here.HereMapsService;
+import com.zonainmueble.reports.maps.here.isoline.Vehicle;
 import com.zonainmueble.reports.maps.here.pois.HereMapsPoisResponse;
 import com.zonainmueble.reports.models.*;
 import com.zonainmueble.reports.repositories.*;
@@ -33,6 +34,12 @@ public class IntegralReportService implements ReportService {
 
   @Value("${apis.google.maps.custom.map-id}")
   private String googleCustomMapId;
+
+  @Value("${app.isochrone.dayoff.vehicle-speed}")
+  private Integer dayoffVehicleSpeed;
+
+  @Value("${app.isochrone.workday.vehicle-speed}")
+  private Integer workdayVehicleSpeed;
 
   private final ReportRepository repository;
 
@@ -97,9 +104,9 @@ public class IntegralReportService implements ReportService {
     Coordinate center = new Coordinate(input.getLatitude(), input.getLongitude());
 
     LocalDateTime diaAsueto = common.getPreviousFromNowPlus(DayOfWeek.SUNDAY, 8);
-    List<Isochrone> isosAsueto = isochronesAutomovil(center, diaAsueto);
+    List<Isochrone> isosAsueto = isochronesAutomovil(center, diaAsueto, dayoffVehicleSpeed);
     LocalDateTime diaLaboral = common.getPreviousFromNowPlus(DayOfWeek.MONDAY, 8);
-    List<Isochrone> isosLaboral = isochronesAutomovil(center, diaLaboral);
+    List<Isochrone> isosLaboral = isochronesAutomovil(center, diaLaboral, workdayVehicleSpeed);
 
     List<Marker> location = List.of(Marker.builder()
         .coordinate(center)
@@ -200,10 +207,10 @@ public class IntegralReportService implements ReportService {
     return params;
   }
 
-  private List<Isochrone> isochronesAutomovil(Coordinate center, LocalDateTime departureTime) {
+  private List<Isochrone> isochronesAutomovil(Coordinate center, LocalDateTime departureTime, int kmPorHora) {
     List<Isochrone> isos = isochronesFrom(center,
         List.of(TEN_MINUTES.getValue(), THIRTY_MINUTES.getValue(), SIXTY_MINUTES.getValue()),
-        TransportType.DRIVING, departureTime);
+        TransportType.DRIVING, departureTime, kmPorHora);
 
     Isochrone iso1 = findIsochrone(TEN_MINUTES, isos);
     iso1.getPolygon().setStyle(new PolygonStyle("#A3DA91FF"));
@@ -218,7 +225,7 @@ public class IntegralReportService implements ReportService {
   }
 
   private List<Isochrone> isochronesFrom(Coordinate center, List<Integer> modeValues,
-      TransportType transportType, LocalDateTime departureTime) {
+      TransportType transportType, LocalDateTime departureTime, int kmPorHora) {
     IsochroneRequest request = IsochroneRequest.builder()
         .center(center)
         .modeValues(modeValues)
@@ -226,6 +233,7 @@ public class IntegralReportService implements ReportService {
         .transportType(transportType)
         .maxPoints(350)
         .mode(IsochroneMode.TIME_MINUTES)
+        .vehicle(new Vehicle(kmPorHora))
         .build();
 
     return isochroneService.isochroneFrom(request).getIsochrones();
