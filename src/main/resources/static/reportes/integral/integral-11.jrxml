@@ -87,7 +87,7 @@ $P{REPORT_CLASS_LOADER}.getResourceAsStream( "/static/reports/integral/images/i1
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Top">
-					<font fontName="Montserrat SemiBold" size="12" isBold="false"/>
+					<font fontName="Montserrat Medium" size="12" isBold="false"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="15.0"/>
 				</textElement>
 				<text><![CDATA[Se muestra el mapa con la ubicación del análisis como punto central, junto con gasolineras y estacionamientos cercanos. 
